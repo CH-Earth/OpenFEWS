@@ -76,7 +76,7 @@ Casson, D., & Imhoff, R. (2025). CH-Earth/OpenFEWS: v1.0 release (Version 0.1) [
 <pre><code>
 @software{casson_imhoff_2025_openfews,
   title     = {CH-Earth/OpenFEWS: v1.0 release},
-  author    = {Casson, Dave and Imhoff, Ruben},
+  author    = {Casson, David R. and Imhoff, Ruben},
   year      = {2025},
   month     = aug,
   version   = {0.1},
