@@ -6,10 +6,9 @@
 OpenFEWS is an open and shareable configuration for an operational hydrological forecasting system with [Delft-FEWS](https://oss.deltares.nl/web/delft-fews). This repository is meant to share developments and receive input from the forecasting community. It is experimental and demonstration only.
 
 
-The workflows allow data access and processing for a number of public data sources in Canada and the US. Primary data sources are the [NOAA Operational Model Archive and Distribution System (NOMADS)](https://nomads.ncep.noaa.gov/) [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but also include a variety of snow and meterological re-analysis products, such as ERA5.
+The workflows allow data access and processing for a number of public data sources in Canada and the US. Primary data sources are the [NOAA Operational Model Archive and Distribution System (NOMADS)](https://nomads.ncep.noaa.gov/) and the [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but also include a variety of snow and meterological re-analysis products, such as ERA5.
 
 This repo is intended for those with some experience with the Delft-FEWS software. It is hosted on GitHub so that users can access workflows, model connections and displays for their own use. Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
-
 
 ## Hydrological Models
 
