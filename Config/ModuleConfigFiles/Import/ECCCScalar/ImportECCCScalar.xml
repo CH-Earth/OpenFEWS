@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
-		<general>
-			<importType>CanadaMeteo</importType>
-			<serverUrl>https://dd.meteo.gc.ca/observations/xml</serverUrl>
-			<!-- Time period has to be configured for the importer to work -->
-			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
-			<idMapId>IdImportECCCScalar</idMapId>
-			<importTimeZone>
-				<timeZoneName>$TIMEZONE$</timeZoneName>
-			</importTimeZone>
-			<dataFeedId>$LOCATIONSET$</dataFeedId>
-		</general>
+      <general>
+         <importType>CanadaMeteo</importType>
+         <serverUrl>https://dd.meteo.gc.ca</serverUrl>
+         <!--<user>dummy_username</user>
+         <password>dummy_password</password>-->
+		 <!-- Time period has to be configured for the importer to work -->
+         <relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+		 <idMapId>IdImportECCCScalar</idMapId>
+		<importTimeZone>
+			<timeZoneName>PST</timeZoneName>
+		</importTimeZone>
+
+      </general>
 		<properties>
 			<!--Optional configuration field. Value is a comma separated string of the region folder to be included.-->
 			<!--If it is not configured, data will be fetched from all folders for the specified time. Case sensitive.-->
@@ -20,7 +22,7 @@
 			<!--Optional configuration field. Value is a comma separated string of the time folders to be included.-->
 			<!--If it is not configured, data will be fetched from all folders for the specified time.-->
 			<!--Possible choices: "hourly", "today", "yesterday"-->
-			<string key="TimeDirectory" value="today, yesterday"/>
+			<string key="TimeDirectory" value="hourly, today, yesterday"/>
 		</properties>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>

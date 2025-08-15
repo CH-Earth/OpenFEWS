@@ -3,9 +3,10 @@
 http://fews.wldelft.nl/schemas/version1.0/clientConfig.xsd">
         <clientType>Forecasting Shell</clientType>
         <otherRootConfigFiles>
-               <!--<name>patch.jar</name> - simplified patch - will get from AI-->
                 <name>fss_global.properties</name>
         </otherRootConfigFiles>
         <jvmOption>-Xmx4096m</jvmOption>
-        <autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
+	<autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
+	<autoExportModuleDataSet name="PythonLinuxBinaries" exportDir="Modules"/>
+	<autoExportModuleDataSet name="SUMMABinaries" exportDir="Modules"/>
 </clientConfiguration>

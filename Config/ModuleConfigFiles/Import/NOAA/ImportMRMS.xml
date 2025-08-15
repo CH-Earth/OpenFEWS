@@ -5,7 +5,7 @@
 		<general>
 			<importType>NETCDF-CF_GRID</importType>
 			<serverUrl>https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/MRMS/ALASKA/Precip/</serverUrl>
-			<relativeViewPeriod unit="hour" startOverrulable="true" start="-60" end="0"/>
+			<relativeViewPeriod unit="hour" startOverrulable="true" start="-6" end="0"/>
 			<logWarningsToSeparateFile>true</logWarningsToSeparateFile>
 			<idMapId>IdImportMRMSOpenDAP</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>

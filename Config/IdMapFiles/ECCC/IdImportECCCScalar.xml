@@ -3,8 +3,12 @@
 <!-- For Real Time Data Imports -->
 	<parameter internal="TA.obs" external="air_temperature"/>
 	<parameter internal="PC.obs" external="total_precipitation"/>
-	<parameter internal="TAmax.obs" internalQualifier="max" external="air_temperature_yesterday_high"/>
+	<parameter internal="TAmax.obs" external="air_temperature_yesterday_high"/>
+	<parameter internal="TAmin.obs" external="air_temperature_yesterday_low"/>
+	<parameter internal="TAmax.obs" external="air_temperature_today_high"/>
+	<parameter internal="TAmin.obs" external="air_temperature_today_low"/>
+	<!--<parameter internal="TAmax.obs" internalQualifier="max" external="air_temperature_yesterday_high"/>
 	<parameter internal="TAmin.obs" internalQualifier="min" external="air_temperature_yesterday_low"/>
 	<parameter internal="TAmax.obs" internalQualifier="max" external="air_temperature_today_high"/>
-	<parameter internal="TAmin.obs" internalQualifier="min" external="air_temperature_today_low"/>
+	<parameter internal="TAmin.obs" internalQualifier="min" external="air_temperature_today_low"/>-->
 </idMap>

@@ -11,6 +11,7 @@ running
 *.grib2
 *.nc
 *.tif
+*.gz
 
 # Ignore folders that are produced by running Delft-FEWS
 DumpFiles/

@@ -4,15 +4,15 @@
 		<string key="INPUTGRID" value="ERA5Yukon"/>
 		<string key="BASINLOCATIONS" value="ProcessBasins"/>
 	</properties>
-<!--	<activity>
+	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>RetrieveERA5</moduleInstanceId>
 		<moduleConfigFileName>RetrieveERA5</moduleConfigFileName>
-	</activity>-->
+	</activity>
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportERA5</moduleInstanceId>
-		<moduleConfigFileName>ImportERA5Merged</moduleConfigFileName>
+		<moduleConfigFileName>ImportERA5</moduleConfigFileName>
 	</activity>
 	<activity>
 		<properties>
