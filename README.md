@@ -1,9 +1,9 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Deltares/NextOpenFEWS/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Deltares/OpenFEWS/pulls)
 
-# NextOpenFEWS
+# OpenFEWS
 
-NextOpenFEWS is an open and shareable configuration for an operational hydrological forecasting system with [Delft-FEWS](https://oss.deltares.nl/web/delft-fews). This repository is meant to share developments and receive input from the forecasting community. It is experimental and demonstration only.
+OpenFEWS is an open and shareable configuration for an operational hydrological forecasting system with [Delft-FEWS](https://oss.deltares.nl/web/delft-fews). This repository is meant to share developments and receive input from the forecasting community. It is experimental and demonstration only.
 
 
 The workflows allow data access and processing for a number of public data sources in Canada and the US. Primary data sources are the [NOAA Operational Model Archive and Distribution System (NOMADS)](https://nomads.ncep.noaa.gov/) [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but also include a variety of snow and meterological re-analysis products, such as ERA5.
@@ -13,7 +13,7 @@ This repo is intended for those with some experience with the Delft-FEWS softwar
 
 ## Hydrological Models
 
-NextOpenFEWS currently contains hydrological modelling frameworks over the Yukon River Basin, a transboundary basin across the Yukon and Alaska. 
+OpenFEWS currently contains several hydrological modelling frameworks over the Yukon River Basin, a transboundary basin across the Yukon and Alaska and the Bow River Basin in Alberta. 
 
 ### SUMMA
 
@@ -22,7 +22,17 @@ NextOpenFEWS currently contains hydrological modelling frameworks over the Yukon
 SUMMA can be used to configure a wide range of hydrological model alternatives. Different modeling approaches can then be implemented within the structural core, enabling a controlled and systematic analysis of alternative modeling options, and providing insight for future model development. SUMMA allows different model representations of physical processes and spatial configurations to be flexibly implemented and tested.
 Creation of SUMMA models is enabled by the well documented [CWARHM](https://github.com/CH-Earth/CWARHM) workflow. This provides all tools necessary to build SUMMA models from scratch.
 
-In NextOpenFEWS, a SUMMA model is implemented for the Bow River basin, using a semi-distributed Hydrological Response Unit approach to better represent the spatial distribution of snow and other variables.
+### Raven
+
+[Raven](http://raven.uwaterloo.ca/) is flexible hydrological modelling framework, allowing flexibility in spatial discretization, interpolation, process representation, and forcing function generation. In this repository, a semi-distributed HBV-EC concept model is implemented to demonstrate the model bindings and connections.
+
+### MESH
+
+[MESH](https://research-groups.usask.ca/hydrology/modelling/mesh.php) (short for Modélisation Environnementale communautaire – Surface and Hydrology) is a Canadian community land-surface–hydrology modeling system developed primarily by Environment and Climate Change Canada (ECCC). It is designed to simulate both the energy and water budgets over watersheds, regions, or the entire country, and is often used for river forecasting, climate change impact studies, and water resources planning.
+
+### wflow
+
+[wflow](https://deltares.github.io/Wflow.jl/stable/) allows multiple distributed model concepts are available, allowing the use of open earth observation data, making it the hydrological model of choice for data scarce environments. Based on gridded topography, soil, land use and climate data, wflow calculates all hydrological fluxes at any given grid cell in the model at a given time step. Creation of wflow models is enabled by the [HydroMT](https://deltares.github.io/hydromt/latest/) python package. In CanOpenFEWS, a wflow_sbm model is included for the Bow River. The parameterization of this model is automatically derived using HydroMT, by making use of transfer functions that relate open geographic data (soil, land use, land cover, etc.) to a parameter value. The model can be further improved by calibrating its most sensitive parameters.
 
 ## Getting Started
 
@@ -34,7 +44,7 @@ Download and installation instructions are available [at this webpage, at the bo
 
 Please note that Delft-FEWS runs on Windows and Linux, and is not normally run on Mac OS.
 
-### Using the NextOpenFEWS configuration
+### Using the OpenFEWS configuration
 
 A complete functioning configuration is available on this GitHub repository. 
 
@@ -42,10 +52,10 @@ If you do not plan on contributing back to the repository, it can simply be down
 
 ## License
 
-NextOpenFEWS is licensed under an MIT license, which generally is quite open and permissive. Please see the LICENSE file for details.
+OpenFEWS is licensed under an MIT license, which generally is quite open and permissive. Please see the LICENSE file for details.
 
 ## How to contribute?
-Contributions to NextOpenFEWS are much appreciated. However, to ensure continuity and a stable code base, we ask you to do the following when you plan to contribute with changes, new config or new models:
+Contributions to OpenFEWS are much appreciated. However, to ensure continuity and a stable code base, we ask you to do the following when you plan to contribute with changes, new config or new models:
 
 *(1) Fork the repository*
 
@@ -69,3 +79,15 @@ Clark, M. P., B. Nijssen, J. Lundquist, D. Kavetski, D. Rupp, R. Woods, E. Gutma
 Clark, M. P., B. Nijssen, J. Lundquist, D. Kavetski, D. Rupp, R. Woods, E. Gutmann, A. Wood, D. Gochis, R. Rasmussen, D. Tarboton, V. Mahat, G. Flerchinger, and D. Marks, 2015b: A unified approach for process-based hydrologic modeling: Part 2. Model implementation and example applications. Water Resources Research, 51, doi: [10.1002/2015WR017200](https://doi.org/10.1002/2015WR017200)
 
 Knoben, W. J. M., Clark, M. P., Bales, J., Bennett, A., Gharari, S., Marsh, C. B., et al. (2022). Community Workflows to Advance Reproducibility in Hydrologic Modeling: Separating model-agnostic and model-specific configuration steps in applications of large-domain hydrologic models. Water Resources Research, 58, e2021WR031753. doi: [10.1029/2021WR031753](https://doi.org/10.1029/2021WR031753)
+
+### Raven
+
+Craig, J.R., G. Brown, R. Chlumsky, W. Jenkinson, G. Jost, K. Lee, J. Mai, M. Serrer, M. Shafii, N. Sgro, A. Snowdon, and B.A. Tolson, Flexible watershed simulation with the Raven hydrological modelling framework, Environmental Modelling and Software, 129, 104728, July 2020 [doi:10.1016/j.envsoft.2020.104728](https://doi.org/10.1016/j.envsoft.2020.104728)
+
+### MESH
+
+Pietroniro, A., V. Fortin, N. Kouwen, et al. “Development of the MESH Modelling System for Hydrological Ensemble Forecasting of the Laurentian Great Lakes at the Regional Scale.” Hydrology and Earth System Sciences 11, no. 4 (2007): 1279–94. [doi:10.5194/hess-11-1279-2007]("https://doi.org/10.5194/hess-11-1279-2007)
+
+### wflow
+van Verseveld, W.J., Weerts, A.H., Visser, M., Buitink, J., Imhoff, R.O., Boisgontier, H., Bouaziz, L., Eilander, D., Hegnauer, M., ten Velden, C., and Russell, B. (2022). Wflow_sbm v0.6.1, a spatially distributed hydrologic model: from global data to local applications. *Hydrol Earth Syst Sc Discussion*. doi: [10.5194/gmd-2022-182](https://doi.org/10.5194/gmd-2022-182).
+
