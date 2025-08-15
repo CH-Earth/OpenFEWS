@@ -1,5 +1,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Deltares/OpenFEWS/pulls)
+[![DOI](https://zenodo.org/badge/905301586.svg)](https://doi.org/10.5281/zenodo.16884208)
 
 # OpenFEWS
 
@@ -68,6 +69,22 @@ The pull requests are checked by the main contributors and merged with the main 
 
 ## Citations
 
+### OpenFEWS
+
+Casson, D., & Imhoff, R. (2025). CH-Earth/OpenFEWS: v1.0 release (Version 0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.16884208
+
+<pre><code>
+@software{casson_imhoff_2025_openfews,
+  title     = {CH-Earth/OpenFEWS: v1.0 release},
+  author    = {Casson, Dave and Imhoff, Ruben},
+  year      = {2025},
+  month     = aug,
+  version   = {0.1},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.16884208},
+  url       = {https://doi.org/10.5281/zenodo.16884208}
+}
+</code></pre>
 ### Delft-FEWS
 Werner, M., Schellekens, J., Gijsbers, P., van Dijk, M., van den Akker, O., and Heynert, K. (2013). The Delft-FEWS flow forecasting system. *Environ Modell Softw*, 40, 65–77. doi: [10.1016/j.envsoft.2012.07.010](https://doi.org/10.1016/j.envsoft.2012.07.010).
 
