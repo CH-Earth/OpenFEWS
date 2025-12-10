@@ -32,7 +32,7 @@
 		</startUpActivities>
 		<exportActivities>
 			<exportStateActivity>
-				<moduleInstanceId>MESH$MODEL$Historic</moduleInstanceId>
+				<moduleInstanceId>$MODEL$MESHHistoric</moduleInstanceId>
 				<stateExportDir>%ROOT_DIR%</stateExportDir>
 				<stateSelection>
 					<warmState>
@@ -44,108 +44,90 @@
 				<moduleInstanceId>MESHBinaries</moduleInstanceId>
 			</exportDataSetActivity>
 			<exportDataSetActivity>
-				<moduleInstanceId>MESH$MODEL$Model</moduleInstanceId>
+				<moduleInstanceId>$MODEL$MESH</moduleInstanceId>
 			</exportDataSetActivity>
 			<exportNetcdfActivity>
-				<exportFile>basin_rain.nc</exportFile>
+				<exportFile>MESH_FEWS_output.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
-						<parameterId>PC.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<valueType>scalar</valueType>
+						<parameterId>PR.nwp</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_temperature.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>TA.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_pres.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>PA.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_humidity.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>XS.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_longwave.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>RL.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_shortwave.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>RS.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</exportNetcdfActivity>
-			<exportNetcdfActivity>
-				<exportFile>basin_wind.nc</exportFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>US.nwp</parameterId>
-						<locationId>$MODELGRID$</locationId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour"/>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<ensembleId>$ENSEMBLE$</ensembleId>
 					</timeSeriesSet>
@@ -162,6 +144,28 @@
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
 		<executeActivities>
+			<executeActivity>
+				<description>Run State Update Script</description>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%/mesh_preadaptor.py</argument>
+					<argument>%ROOT_DIR%/MESH_FEWS_output.nc</argument>
+					<argument>%ROOT_DIR%/MESH_forcing.nc</argument>
+					<argument>%ROOT_DIR%/MESH_drainage_database.nc</argument>
+					<argument>%ROOT_DIR%/MESH_preadapter_logs.log</argument>
+				</arguments>
+				<logFile>
+					<file>MESH_preadapter_logs.log</file>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<debugLinePattern>*READING*</debugLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<warningLinePattern>*ERROR*</warningLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
 			<executeActivity>
 				<description>Run MESH Model</description>
 				<command>
@@ -185,11 +189,11 @@
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>
@@ -200,11 +204,11 @@
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>ROF.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>
@@ -215,11 +219,11 @@
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>RFF.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>
@@ -230,41 +234,41 @@
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>RCHG.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</importNetcdfActivity>
-			<importNetcdfActivity>
+<!--			<importNetcdfActivity>
 				<importFile>%ROOT_DIR%/output/ET_H_GRD.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
+						<valueType>scalar</valueType>
 						<parameterId>ET.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</importNetcdfActivity>
+			</importNetcdfActivity>-->
 			<importNetcdfActivity>
 				<importFile>%ROOT_DIR%/output/SNO_H_GRD.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>grid</valueType>
-						<parameterId>SW.sim</parameterId>
-						<locationId>$MODELGRID$</locationId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeStep unit="hour" multiplier="$FORECAST_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 						<expiryTime unit="day" multiplier="3"/>
 					</timeSeriesSet>

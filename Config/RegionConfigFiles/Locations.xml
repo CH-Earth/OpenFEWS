@@ -96,6 +96,10 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="IFS" name="IFS">
+		<x>0</x>
+		<y>0</y>
+	</location>
 	<location id="Snowcast_GWF" name="SnowCast GWF Tiff ">
 		<shortName>Snowcast</shortName>
 		<!--original domain 

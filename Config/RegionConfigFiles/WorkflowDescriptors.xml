@@ -78,6 +78,23 @@
 	<workflowDescriptor id="ImportNOAAGrids" name="Retrieve All NOAA Grids" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from FTP and Websites</description>
 	</workflowDescriptor>
+	<!-- Retrieve and Import ECWMF from Server Workflows -->
+	<workflowDescriptor id="ImportIFSDetGrids" name="Import IFS Deterministic" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from ECWMF</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportIFSEnsGrids" name="Import IFS Ensemble" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from ECWMF</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportAIFSDetGrids" name="Import AIFS Deterministic" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from ECWMF</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportAIFSEnsGrids" name="Import AIFS Ensemble" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from ECWMF</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
 	<!--Additional Gridded Data Imports -->
 	<workflowDescriptor id="ImportERA5Yukon" name="Import ERA5 Yukon data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportERA5Chena" name="Import ERA5 Chena data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
@@ -286,6 +303,12 @@
 			<workflowId>ImportSREFGrids</workflowId>
 			<workflowId>ImportHRRRGrids</workflowId>
 			<workflowId>ImportMRMSGrids</workflowId>
+		</node>
+		<node name="ECWMF NWP Forecast Import">
+			<workflowId>ImportIFSDetGrids</workflowId>
+			<workflowId>ImportIFSEnsGrids</workflowId>
+			<workflowId>ImportAIFSDetGrids</workflowId>
+			<workflowId>ImportAIFSEnsGrids</workflowId>
 		</node>
 		<node name="ECCC NSRPS Import">
 			<workflowId>ImportNSRPSGrids</workflowId>

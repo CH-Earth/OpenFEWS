@@ -303,8 +303,8 @@
 		<locationSet id="BowProcessBasins">
 		<locationSetId>BowBasins</locationSetId>
 		<locationSetId>BowSubBasins</locationSetId>
+		<locationSetId>BowMESHBasins</locationSetId>
 	</locationSet>
-
 	<locationSet id="ModelBasins">
 		<!--<locationSetId>BowSubBasins</locationSetId>-->
 		<locationSetId>ChenaSubBasins</locationSetId>
@@ -329,11 +329,11 @@
 		<locationSetId>RossBasins</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayMeteoStations">
-		<!--<locationSetId>BowMeteoStations</locationSetId>-->
+		<locationSetId>BowMeteoStations</locationSetId>
 		<locationSetId>YukonMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayHydroStations">
-		<!--<locationSetId>BowHydroStations</locationSetId>-->
+		<locationSetId>BowHydroStations</locationSetId>
 		<locationSetId>YukonHydroStations</locationSetId>
 		<locationSetId>USGSStations</locationSetId>
 	</locationSet>

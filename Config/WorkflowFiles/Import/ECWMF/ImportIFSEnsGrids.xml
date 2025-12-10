@@ -3,19 +3,19 @@
 	<!--Define Properties for Templates-->
 	<properties>
 		<!-- NWP Name-->
-		<string key="FORECAST" value="GEPS"/>
+		<string key="FORECAST" value="IFS"/>
 		<!-- NWP Timestep-->
 		<string key="TIMESTEP" value="3"/>
 		<!-- Expiry Timestep-->
 		<string key="EXPIRYTIME" value="7"/>
 		<!-- Input Grid-->
-		<string key="INPUTGRID" value="GEPS"/>
+		<string key="INPUTGRID" value="IFS"/>
 		<!-- Output Grid-->
-		<string key="OUTPUTGRID" value="GEPS"/>
+		<string key="OUTPUTGRID" value="IFS"/>
 		<!-- Module Instance ID to be given to  Timeseries-->
-		<string key="INPUTMODULEINSTANCE" value="ImportGEPS"/>
+		<string key="INPUTMODULEINSTANCE" value="ImportIFSEns"/>
 		<!-- EnsembleID if needed-->
-		<string key="ENSEMBLE" value="GEPS"/>
+		<string key="ENSEMBLE" value="IFS"/>
 		<!--Basin Location-->
 		<string key="BASINLOCATIONS" value="ProcessBasins"/>
 		<!--Station Locations-->
@@ -26,19 +26,16 @@
 	<!-- Retrieve NWP grids from Environment Canada -->
 	<activity>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RetrieveGEPS</moduleInstanceId>
+		<moduleInstanceId>RetrieveIFSEns</moduleInstanceId>
     </activity>
 <!-- Import NWP grids from Environment Canada -->
 	<activity>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ImportGEPS</moduleInstanceId>
+		<moduleInstanceId>ImportIFSEns</moduleInstanceId>
     </activity>
 	<!-- Preprocess Forecast for Model -->
 <!--	<activity>
-		<workflowId>PreprocessGEPS</workflowId>
+		<workflowId>PreprocessIFSEns</workflowId>
 	</activity>-->
-	<!-- Preprocess Forecast for Model -->
-<!--	<activity>
-		<workflowId>PreprocessGEPSRaven</workflowId>
-	</activity>-->
+
 </workflow>

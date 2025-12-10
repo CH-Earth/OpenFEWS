@@ -55,7 +55,7 @@
 						<parameterId>PC.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -65,7 +65,7 @@
 						<parameterId>TA.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -75,7 +75,7 @@
 						<parameterId>PA.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -85,7 +85,7 @@
 						<parameterId>XS.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -95,7 +95,7 @@
 						<parameterId>RL.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -105,7 +105,7 @@
 						<parameterId>RS.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>
@@ -115,7 +115,7 @@
 						<parameterId>US.sim</parameterId>
 						<locationSetId>$MODELBASINS$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour"/>
+						<timeStep unit="hour" multiplier="$METEO_TIMESTEP$"/>
 						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
 						<readWriteMode>read only</readWriteMode>
 					</timeSeriesSet>

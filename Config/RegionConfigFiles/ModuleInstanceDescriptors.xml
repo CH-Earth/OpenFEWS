@@ -237,6 +237,37 @@
 	<moduleInstanceDescriptor id="PreprocessERA5">
 		<description>Import the ERA5 variables on the predefined grid</description>
 	</moduleInstanceDescriptor>
+	<!--Import ECWMF NWP data-->
+	<moduleInstanceDescriptor id="RetrieveIFSDet">
+		<description>Download the ECMWF IFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportIFSDet">
+		<description>Import the ECMWF IFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveIFSEns">
+		<description>Download the ECMWF IFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportIFSEns">
+		<description>Import the ECMWF IFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessIFS">
+		<description>Import the ECMWF IFS NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveAIFSDet">
+		<description>Download the ECMWF AIFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportAIFSDet">
+		<description>Import the ECMWF AIFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveAIFSEns">
+		<description>Download the ECMWF AIFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportAIFSEns">
+		<description>Import the ECMWF IFS Deterministic NWP</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessAIFS">
+		<description>Import the ECMWF AIFS NWP</description>
+	</moduleInstanceDescriptor>
 	<!--Preprocess NWP Inputs-->
 	<moduleInstanceDescriptor id="PreprocessRDPA">
 		<description>Preprocess for ECCC Precipitation Re-Analysis</description>

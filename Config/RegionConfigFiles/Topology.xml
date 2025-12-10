@@ -152,6 +152,28 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="ImportECWMFGridNodes" name="Import ECWMF NWP Forecasts">
+		<node id="ImportIFSDet" name="Import IFS Deterministic Forecast">
+			<workflowId>ImportIFSDetGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportIFSEns" name="Import IFS Ensemble Forecast">
+			<workflowId>ImportIFSEnsGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportAIFSDet" name="Import AIFS Deterministic Forecast">
+			<workflowId>ImportAIFSDetGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportAIFSEns" name="Import AIFS Ensemble Forecast">
+			<workflowId>ImportAIFSEnsGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 	<nodes id="ImportSnow" name="Import Snow Data">
 		<node id="ImportSnowCast" name="Import SnowCast">
 			<workflowId>ImportSnowcastGrids</workflowId>
