@@ -2,6 +2,10 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Retrieve NWP grids from Environment Canada -->
 	<properties>
+		<!-- Data Source Name-->
+		<string key="DATA_SOURCE" value="ECCC_PRECIP_GRID"/>
+		<!-- Data Source Name-->
+		<string key="MODEL" value="RDPA"/>
 		<!-- Input Grid-->
 		<string key="INPUTGRID" value="RDPA"/>
 		<!-- Input Module Instance ID-->
@@ -29,6 +33,7 @@
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>RetrieveRDPA</moduleInstanceId>
+		<moduleConfigFileName>RetrieveDataTemplate</moduleConfigFileName>
     </activity>
 	<activity>
 		<runIndependent>true</runIndependent>

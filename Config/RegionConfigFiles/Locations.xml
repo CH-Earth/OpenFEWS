@@ -7,6 +7,11 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="HREPA" name="High Resolution Ensemble Precipitation Analysis (HREPA) 2.5m">
+		<shortName>HREPA</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 	<location id="RDPA" name="Regional Deterministic Precipitation Analysis (RDPA) 10km">
 		<shortName>RDPA</shortName>
 		<x>0</x>

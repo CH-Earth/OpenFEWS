@@ -4,8 +4,8 @@ http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 	<import>
 		<general>
 			<importType>generalCSV</importType>
-			<folder>%REGION_HOME%/Import/ECCCAPI/hydrometric-realtime/</folder>
-			<fileNamePatternFilter>$LOOP_LOCATION_ID$.csv</fileNamePatternFilter>
+			<folder>%REGION_HOME%/Import/$DATA_SOURCE$/$MODEL$/</folder>
+			<fileNamePatternFilter>$LOOP_LOCATION_ID$_$MODEL$.csv</fileNamePatternFilter>
 			<table>
 				<dateTimeColumn name="DATETIME" pattern="yyyy-MM-dd'T'HH:mm:ss'Z'"/>
 				<valueColumn name="DISCHARGE" unit="m3/s" parameterId="QR.obs"/>

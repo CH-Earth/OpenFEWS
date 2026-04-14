@@ -13,9 +13,7 @@
 	<workflowDescriptor id="ImportRecentObservations" name="Import Recent Observations (Test)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportSNOTEL" name="Import Data from SNOTEL" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportMESHHistoric" name="Import MESH Historic Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
-	<workflowDescriptor id="ImportAlbertaAPI" name="Import Snow Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true">
-		<viewPermission>AlbertaForecaster</viewPermission>
-	</workflowDescriptor>
+	<workflowDescriptor id="ImportAlbertaAPI" name="Import Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
 	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
@@ -255,6 +253,13 @@
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
+	<!--Import Hindcasting Workflows -->
+	<workflowDescriptor id="ImportECCCAPIMeteoHindcast" name="Import ECCC Meteo Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCAPIHydroHindcast" name="Import ECCC Hydro Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCGridsHindcast" name="Import ECCC NWP for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportNWPHindcastTemplate" name="Template for Accessing and Processing NWP Hindcast" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCPrecipAnalysisHindcast" name="Import ECCC Precip Analysis for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCPrecipAnalysisTemplate" name="Template for Accessing and Processing Precip Analysis" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<rootNode>
 		<node name="Import Hydrological Data">
 			<workflowId>ImportWSCDaily</workflowId>
@@ -280,7 +285,7 @@
 			<workflowId>RetrieveECCCRadarComposite</workflowId>
 		</node>
 		<node name="Import Snow Data">
-			<workflowId>ImportAlbertaAPI</workflowId>
+
 			<workflowId>ImportSnowcastGrids</workflowId>
 			<workflowId>ImportSNODASGrids</workflowId>
 			<workflowId>ImportGLOBSNOWGrids</workflowId>
@@ -353,6 +358,13 @@
 		<node name="Run Model - Nowcasting">
 			<workflowId>ECCCRadarNowcastSTEPS</workflowId>
 			<workflowId>ECCCRadarNowcastLINDA</workflowId>
+		</node>
+		<node name="Run Hindcasting">
+			<workflowId>ImportECCCAPIMeteoHindcast</workflowId>
+			<workflowId>ImportECCCAPIHydroHindcast</workflowId>
+			<workflowId>ImportAlbertaAPI</workflowId>
+			<workflowId>ImportECCCGridsHindcast</workflowId>
+			<workflowId>ImportECCCPrecipAnalysisHindcast</workflowId>
 		</node>
 	</rootNode>
 </workflowDescriptors>

@@ -61,6 +61,14 @@
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_162_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_165_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_168_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_171_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_174_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_177_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_180_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_183_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_186_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_189_Hour_Accumulation" externalLocation="GDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_192_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="RS.nwp" internalLocation="GDPS" externalParameter="Downward_short-wave_radiation_flux_surface_3_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="RS.nwp" internalLocation="GDPS" externalParameter="Downward_short-wave_radiation_flux_surface_6_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="RS.nwp" internalLocation="GDPS" externalParameter="Downward_short-wave_radiation_flux_surface_9_Hour_Accumulation" externalLocation="GDPS"/>

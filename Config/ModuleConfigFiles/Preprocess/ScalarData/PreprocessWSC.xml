@@ -9,10 +9,11 @@
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
-			<readWriteMode>read complete forecast</readWriteMode>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -21,10 +22,11 @@
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
-			<readWriteMode>read complete forecast</readWriteMode>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -33,7 +35,7 @@
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -45,7 +47,7 @@
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -58,9 +60,11 @@
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
+			<qualifierId>temp</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -70,9 +74,11 @@
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
+			<qualifierId>temp</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -82,9 +88,10 @@
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -95,7 +102,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>mean</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -110,7 +117,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>max</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -125,7 +132,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>min</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -140,7 +147,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>10</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -155,7 +162,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>25</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -170,7 +177,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>75</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -185,7 +192,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>90</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -199,9 +206,10 @@
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -212,7 +220,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>mean</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -227,7 +235,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>max</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -242,7 +250,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>min</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -257,7 +265,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>10</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -272,7 +280,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>25</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -287,7 +295,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>75</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -302,7 +310,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>90</qualifierId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
@@ -327,10 +335,10 @@
 		<merge>
 			<simple>
 				<inputVariable>
-					<variableId>QR_day</variableId>
+					<variableId>QR_day_temp</variableId>
 				</inputVariable>
 				<inputVariable>
-					<variableId>QR_day_temp</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_merge</variableId>
@@ -354,10 +362,10 @@
 		<merge>
 			<simple>
 				<inputVariable>
-					<variableId>HG_day</variableId>
+					<variableId>HG_day_temp</variableId>
 				</inputVariable>
 				<inputVariable>
-					<variableId>HG_day_temp</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>HG_day_merge</variableId>

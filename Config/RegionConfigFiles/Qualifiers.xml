@@ -14,8 +14,7 @@
 	<qualifier id="90" name="90%"/>
 	<!-- Additional Qualifiers-->
 	<qualifier id="Observed" name="Observed"/>
-	<qualifier id="GFS" name="GFS"/>
-	<qualifier id="E2O" name="E2O"/>
+	<qualifier id="temp" name="temp"/>
 	<qualifier id="rainonly" name="rainonly"/>
 	<qualifier id="snowonly" name="snowonly"/>
 	<qualifier id="historic" name="historic"/>

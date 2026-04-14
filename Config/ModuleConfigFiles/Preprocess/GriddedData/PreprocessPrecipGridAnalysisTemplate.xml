@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Gridded_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>Basin_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Subbasin_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Station_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Basin_parameter_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Subbasin_parameter_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Station_parameter_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="basin_parameter_daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Basin_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Basin_parameter_daily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="basin_parameter">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Basin_parameter</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+		<transformation id="subbasin_parameter">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Subbasin_parameter</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="station_parameter">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>Station_parameter</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+		<transformation id="basin_parameter_daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Basin_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Basin_parameter_daily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="subbasin_parameter_daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Subbasin_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Subbasin_parameter_daily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<transformation id="station_parameter_daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Station_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Station_parameter_daily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+</transformationModule>

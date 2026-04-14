@@ -51,10 +51,10 @@
 	<moduleInstanceDescriptor id="ImportECCCHistoric">
 		<description>Import Station data from dd.meteo.gc.ca server</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="RetrieveECCCAPIRecent">
+	<moduleInstanceDescriptor id="RetrieveECCCAPIMeteoHourly">
 		<description>Retrieve Recent Station from ECCC API</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="RetrieveECCCAPIHistoric">
+	<moduleInstanceDescriptor id="RetrieveECCCAPIMeteoDaily">
 		<description>Retrieve Historic Station from ECCC API</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportECCCAPIRecent">
@@ -62,6 +62,21 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportECCCAPIHistoric">
 		<description>Import Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIMeteo">
+		<description>Import Meteo Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIMeteoHourly">
+		<description>Import Meteo Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIMeteoDaily">
+		<description>Import Meteo Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIHydro">
+		<description>Import Meteo Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportMeteoStations">
+		<description>Import Meteo Stations</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportRavenNetCDF">
 		<description>Import Raven NetCDF from Local Source</description>
@@ -89,11 +104,14 @@
 	<moduleInstanceDescriptor id="PreprocessECCCScalar">
 		<description>Preprocess Station data from dd.meteo.gc.ca server</description>
 	</moduleInstanceDescriptor>
-		<moduleInstanceDescriptor id="PreprocessUSGS">
+	<moduleInstanceDescriptor id="PreprocessUSGS">
 		<description>Preprocess USGS Station Data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessMESHHistoric">
 		<description>Preprocess MESH Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessScalarRavenInput">
+		<description>Preprocess Scalar Raven Data</description>
 	</moduleInstanceDescriptor>
 	<!--ModuleDataSets-->
 	<moduleInstanceDescriptor id="SnowDownload">
@@ -121,6 +139,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="RetrieveHRDPA">
 		<description>Retrieve HRDPA GRIB2 files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveHREPA">
+		<description>Retrieve HREPA GRIB2 files</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="RetrieveRDPS">
 		<description>Retrieve GRIB2 files for regional model</description>
@@ -179,6 +200,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportHRDPA">
 		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHREPA">
+		<description>Import for ECCC Precipitation Ensemble Re-Analysis</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportRDPS">
 		<description>Import for Regional Deterministic Prediction System</description>
@@ -275,6 +299,9 @@
 	<moduleInstanceDescriptor id="PreprocessHRDPA">
 		<description>Preprocess for ECCC High Resolution Precipitation Re-Analysis</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessHREPA">
+		<description>Preprocess for ECCC High Resolution Ensemble Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessHRDPS">
 		<description>Preprocess for High Resolution Deterministic Prediction System</description>
 	</moduleInstanceDescriptor>
@@ -296,6 +323,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessWSC">
 		<description>Preprocess WSC data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessWSCToDaily">
+		<description>Preprocess WSC data to Daily</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessECCCScalarRavenInput">
 		<description>Preprocess WSC data</description>

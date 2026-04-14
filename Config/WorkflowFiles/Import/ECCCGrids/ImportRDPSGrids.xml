@@ -2,43 +2,33 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!--Define Properties for Templates-->
 	<properties>
-		<!-- NWP Name-->
-		<string key="FORECAST" value="RDPS"/>
-		<!-- NWP Timestep-->
-		<string key="TIMESTEP" value="1"/>
-		<!-- Expiry Timestep-->
-		<string key="EXPIRYTIME" value="7"/>
-		<!-- Input Grid-->
-		<string key="INPUTGRID" value="RDPS"/>
-		<!-- Output Grid-->
-		<string key="OUTPUTGRID" value="ModelGrid"/>
-		<!-- Module Instance ID to be given to  Timeseries-->
-		<string key="INPUTMODULEINSTANCE" value="ImportRDPS"/>
 		<!-- EnsembleID if needed-->
 		<string key="ENSEMBLE" value="main"/>
+		<!--Subbasin Location-->
+		<string key="BASINLOCATIONS" value="HindcastBasins"/>
 		<!--Basin Location-->
-		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<string key="SUBBASINLOCATIONS" value="HindcastSubBasins"/>
 		<!--Station Locations-->
-		<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
 		<!--Time Series Type-->
-		<string key="TIMESERIESTYPE" value="external forecasting"/>
-	</properties>		
-		<!-- Retrieve NWP grids from Environment Canada -->
+		<string key="GRID_TIMESERIESTYPE" value="external forecasting"/>
+		<string key="PROCESSED_TIMESERIESTYPE" value="external forecasting"/>
+		<string key="SUBBASIN_TIMESERIESTYPE" value="external forecasting"/>
+		<!-- Unit Conversion -->
+		<string key="UNITCONVERSION" value="ImportECCCNWPUnitConversions"/>
+	</properties>
 	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RetrieveRDPS</moduleInstanceId>
-    </activity>
-	<!-- Retrieve NWP grids from Environment Canada -->
-	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ImportRDPS</moduleInstanceId>
-	</activity>
-	<!-- Preprocess Forecast for Model -->
-	<activity>
-		<workflowId>PreprocessRDPS</workflowId>
-	</activity>
-	<!-- Preprocess Forecast for Model -->
-	<activity>
-		<workflowId>PreprocessRDPSRaven</workflowId>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="RDPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="1"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
 	</activity>
 </workflow>
+

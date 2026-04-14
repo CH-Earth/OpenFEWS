@@ -97,8 +97,6 @@
 				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
 					<string key="RunName" value="$MODEL$"/>
-	<!--				<locationAttribute key="BlockRavenCustomOutput" locationId="$MODEL$" attributeId="BlockRavenCustomOutput"/>
-					<locationAttribute key="BlockRavenWarnings" locationId="$MODEL$" attributeId="BlockRavenWarnings"/>-->
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>

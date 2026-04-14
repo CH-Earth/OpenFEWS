@@ -118,6 +118,16 @@
 			</attribute>
 		</csvFile>
 	</locationSet>
+	<locationSet id="elbow_alberta_meteo_stations">
+		<csvFile>
+			<file>elbow_meteo_stations.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<name>%NAME%</name>
+			<x>%X%</x>
+			<y>%Y%</y>
+		</csvFile>
+	</locationSet>
 	<!--- Snow Stations -->
 	<locationSet id="SnowStationsBow">
 		<csvFile>
@@ -198,6 +208,48 @@
 				<text>%COMID%</text>
 			</attribute>
 		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Elbow -->
+	<locationSet id="ElbowWatershed">
+		<esriShapeFile>
+			<file>Elbow_Watershed.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>Elbow_Watershed</id>
+			<name>Elbow_Watershed</name>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Bow Basins-->
+	<locationSet id="ElbowBasins">
+		<esriShapeFile>
+			<file>Elbow_Basins.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%name%</id>
+			<name>%name%</name>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Bow Sub- Basins-->
+	<locationSet id="ElbowSubBasins">
+		<esriShapeFile>
+			<file>Elbow_HRU.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>Elbow_HRU_%HRU_ID%</id>
+			<name>Elbow_HRU_%HRU_ID%</name>
+			<attribute id="HRU_ID">
+				<text>%HRU_ID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<locationSet id="ElbowMeteoStations">
+		<!-- Calgary International Airport -->
+		<locationId>3031092</locationId>
+		<!-- Bow Valley -->
+		<locationId>3050778</locationId>
+		<locationSetId>elbow_alberta_meteo_stations</locationSetId>
+	</locationSet>
+	<locationSet id="ElbowHydroStations">
+		<locationId>05BJ004</locationId>
+		<locationId>05BJ010</locationId>
+		<locationId>05BJ001</locationId>
 	</locationSet>
 	<!--ShapeFiles for YukonRiverBasin-->
 	<locationSet id="YukonRiverBasin">
@@ -292,7 +344,7 @@
 		<locationSetId>RossProcessBasins</locationSetId>
 		<locationSetId>BowProcessBasins</locationSetId>
 	</locationSet>
-		<locationSet id="RossProcessBasins">
+	<locationSet id="RossProcessBasins">
 		<locationSetId>RossBasins</locationSetId>
 		<locationSetId>RossSubBasins</locationSetId>
 	</locationSet>
@@ -300,7 +352,7 @@
 		<locationSetId>ChenaBasins</locationSetId>
 		<locationSetId>ChenaSubBasins</locationSetId>
 	</locationSet>
-		<locationSet id="BowProcessBasins">
+	<locationSet id="BowProcessBasins">
 		<locationSetId>BowBasins</locationSetId>
 		<locationSetId>BowSubBasins</locationSetId>
 		<locationSetId>BowMESHBasins</locationSetId>
@@ -368,6 +420,19 @@
 		<constraints>
 			<attributeTextEquals id="Yukon" equals="Y"/>
 		</constraints>
+	</locationSet>
+	<!-- Hindcast Location Definitions-->
+	<locationSet id="HindcastBasins">
+		<locationSetId>ElbowBasins</locationSetId>
+	</locationSet>
+	<locationSet id="HindcastSubBasins">
+		<locationSetId>ElbowSubBasins</locationSetId>
+	</locationSet>
+	<locationSet id="HindcastMeteoStations">
+		<locationSetId>ElbowMeteoStations</locationSetId>
+	</locationSet>
+	<locationSet id="HindcastHydroStations">
+		<locationSetId>ElbowHydroStations</locationSetId>
 	</locationSet>
 	<!--Comment-->
 	<locationSet id="ECCCStationsAB">
@@ -508,5 +573,4 @@
 			</attribute>
 		</csvFile>
 	</locationSet>
-	
 </locationSets>

@@ -26,7 +26,7 @@ http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -35,7 +35,7 @@ http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
 			<readWriteMode>add originals</readWriteMode>

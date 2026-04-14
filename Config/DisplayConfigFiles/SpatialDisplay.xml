@@ -6,11 +6,11 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		<geoMap>
 			<geoDatum>WGS 1984</geoDatum>
 			<projection>web_mercator</projection>
-			<defaultExtent id="YukonRiverBasin" name="Yukon River Basin">
-				<left>-165</left>
-				<right>-128</right>
-				<top>70</top>
-				<bottom>58</bottom>
+			<defaultExtent id="Elbow Basin" name="Elbow Basin">
+				<left>-115.5</left>
+				<right>-113.5</right>
+				<top>51.5</top>
+				<bottom>50</bottom>
 			</defaultExtent>
 			<extraExtent id="Alberta" name="Alberta">
 				<left>-128</left>
@@ -23,6 +23,12 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<right>-111</right>
 				<top>53</top>
 				<bottom>50</bottom>
+			</extraExtent>
+			<extraExtent id="YukonRiverBasin" name="Yukon River Basin">
+				<left>-165</left>
+				<right>-128</right>
+				<top>70</top>
+				<bottom>58</bottom>
 			</extraExtent>
 			<extraExtent id="North America">
 				<left>-152</left>
@@ -154,11 +160,37 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<lineColor>blue</lineColor>
 				<opaquenessPercentage>10</opaquenessPercentage>
 			</esriShapeLayer>
+			<esriShapeLayer id="Elbow Basins">
+				<description>Elbow Basins</description>
+				<file>Elbow_Basins.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Elbow HRUs / Sub Basins">
+				<description>Elbow Sub Basins</description>
+				<file>Elbow_HRU.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Bow Flow Lines">
+				<description>Bow Flow lines</description>
+				<file>Bow_Flowlines.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>10</opaquenessPercentage>
+			</esriShapeLayer>
 			<esriShapeLayer id="Bow Basins">
 				<description>Bow Basins</description>
 				<file>Bow_Basins.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
-				<visible>true</visible>
+				<visible>false</visible>
 				<toolTip>%NAME%</toolTip>
 				<lineColor>black</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
@@ -168,7 +200,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<description>Bow Sub Basins</description>
 				<file>Bow_SubBasins.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
-				<visible>true</visible>
+				<visible>false</visible>
 				<toolTip>%HRU_ID%</toolTip>
 				<lineColor>black</lineColor>
 				<fillRgbColor>FFFFFF</fillRgbColor>
@@ -178,7 +210,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<description>Bow Flow lines</description>
 				<file>Bow_Flowlines.shp</file>
 				<geoDatum>WGS 1984</geoDatum>
-				<visible>true</visible>
+				<visible>false</visible>
 				<lineColor>blue</lineColor>
 				<opaquenessPercentage>10</opaquenessPercentage>
 			</esriShapeLayer>

@@ -333,4 +333,21 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="HindcastingWorkflows" name="Run Hindcasting Workflows">
+		<node id="ImportHindcastMeteoObservationECCC" name="Import Meteo Observations (ECCC)">
+			<workflowId>ImportECCCAPIMeteoHindcast</workflowId>
+		</node>
+		<node id="ImportHindcastMeteoObservationAlberta" name="Import Meteo Observations (Alberta)">
+			<workflowId>ImportAlbertaAPI</workflowId>
+		</node>
+		<node id="ImportHindcastHydroObservationECCC" name="Import Hydro Observations (WSC)">
+			<workflowId>ImportECCCAPIHydroHindcast</workflowId>
+		</node>
+		<node id="ImportHindcastPrecipAnalysis" name="Import Precipitation Re-analysis">
+			<workflowId>ImportECCCPrecipAnalysisHindcast</workflowId>
+		</node>
+		<node id="ImportHindcastECCCNWP" name="Import ECCC NWP Hindcasts">
+			<workflowId>ImportECCCGridsHindcast</workflowId>
+		</node>
+	</nodes>
 </topology>

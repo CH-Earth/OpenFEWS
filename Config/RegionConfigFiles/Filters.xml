@@ -2,6 +2,116 @@
 	<!-- Add default filter Id -->
 	<defaultFilterId>HydroStations</defaultFilterId>
 	<!-- Timeseries Sets -->
+	<!-- Timeseries Sets - Hindcast Observation Data-->
+	<timeSeriesSets id="HindcastHydroStations">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HindcastMeteoStations">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Timeseries Sets - Hindcast Reanalysis Data-->
+	<!-- Timeseries Sets - Hindcast NWP Data-->
+	<timeSeriesSets id="HindcastPrecipAnalysisStations">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHREPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HindcastPrecipAnalysisBasins">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHREPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- Timeseries Sets - Water Survey of Canada -->
 	<timeSeriesSets id="HydroStations">
 		<timeSeriesSet>
@@ -406,6 +516,13 @@
 		</timeSeriesSet>
 	</timeSeriesSets>
 	<!-- First Level Filters -->
+	<filter id="webservices" name="webservices">
+		<child foreignKey="HindcastData"/>
+	</filter>
+	<filter id="HindcastData" name="Hindcast Data">
+		<child foreignKey="HindcastHydroStations"/>
+		<child foreignKey="HindcastMeteoStations"/>
+	</filter>
 	<filter id="MeasuredData" name="Hydro and Meteo Station Data">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HydroStations"/>
@@ -538,8 +655,12 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>BowWflowSTEPS</timeSeriesSetsId>
 	</filter>
-	<filter id="BowWflowLINDA" name="BowWflow LINDA">
+	<filter id="HindcastHydroStations" name="Hindcast Hydro Stations">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>BowWflowLINDA</timeSeriesSetsId>
+		<timeSeriesSetsId>HindcastHydroStations</timeSeriesSetsId>
+	</filter>
+	<filter id="HindcastMeteoStations" name="Hindcast Meteo Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HindcastMeteoStations</timeSeriesSetsId>
 	</filter>
 </filters>

@@ -27,5 +27,7 @@ __pycache__
 # Shortcut Files
 CanOpenFEWS.sh
 
+
 # Large binaries
 Config/ModuleDataSetFiles/PythonLinuxBinaries.zip
+Import/

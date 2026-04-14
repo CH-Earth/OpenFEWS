@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!--Gauge Model Mapping-->
+	<!-- we export the temp and precip data from the met stations to Raven. Raven does its own interpolation of the data to each HRU -->
+	<map internalLocation="MSC-005" internalParameter="PC.obs" externalLocation="1" externalParameter="PRECIP"/>
+	<map internalLocation="MSC-005" internalParameter="TA.obs" externalLocation="1" externalParameter="TEMP_AVE"/>
+	<map internalLocation="05BL813" internalParameter="PC.obs" externalLocation="2" externalParameter="PRECIP"/>
+	<map internalLocation="05BL813" internalParameter="TA.obs" externalLocation="2" externalParameter="TEMP_AVE"/>
+	<map internalLocation="MSC-008" internalParameter="PC.obs" externalLocation="3" externalParameter="PRECIP"/>
+	<map internalLocation="MSC-008" internalParameter="TA.obs" externalLocation="3" externalParameter="TEMP_AVE"/>
+	<map internalLocation="05BJ804" internalParameter="PC.obs" externalLocation="4" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BJ804" internalParameter="TA.obs" externalLocation="4" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BL809" internalParameter="PC.obs" externalLocation="5" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BL809" internalParameter="TA.obs" externalLocation="5" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="FIRES-B4" internalParameter="PC.obs" externalLocation="6" externalParameter="PRECIP"/>
+ 	<map internalLocation="FIRES-B4" internalParameter="TA.obs" externalLocation="6" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BJ805" internalParameter="PC.obs" externalLocation="7" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BJ805" internalParameter="TA.obs" externalLocation="7" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BL812" internalParameter="PC.obs" externalLocation="8" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BL812" internalParameter="TA.obs" externalLocation="8" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="FIRES-B5" internalParameter="PC.obs" externalLocation="9" externalParameter="PRECIP"/>
+ 	<map internalLocation="FIRES-B5" internalParameter="TA.obs" externalLocation="9" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BJ806" internalParameter="PC.obs" externalLocation="10" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BH803" internalParameter="PC.obs" externalLocation="11" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BF825" internalParameter="PC.obs" externalLocation="12" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BH802" internalParameter="PC.obs" externalLocation="13" externalParameter="PRECIP"/>	
+	<map internalLocation="05BL810" internalParameter="PC.obs" externalLocation="14" externalParameter="PRECIP"/>
+	<map internalLocation="05BF827" internalParameter="PC.obs" externalLocation="15" externalParameter="PRECIP"/>
+	<map internalLocation="WMO-014" internalParameter="PC.obs" externalLocation="16" externalParameter="PRECIP"/>
+	<map internalLocation="WMO-015" internalParameter="PC.obs" externalLocation="17" externalParameter="PRECIP"/>
+	<map internalLocation="WMO-016" internalParameter="PC.obs" externalLocation="18" externalParameter="PRECIP"/>
+	<map internalLocation="05BJ004" internalParameter="QR.sim" externalLocation="7" externalParameter="HYDROGRAPH"/>
+	<map internalLocation="05BJ010" internalParameter="QR.sim" externalLocation="11" externalParameter="HYDROGRAPH"/>
+	<map internalLocation="05BJ001" internalParameter="QR.sim" externalLocation="13" externalParameter="HYDROGRAPH"/>
+</idMap>
