@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="PR.nwp" internalLocation="HRDPS" externalParameter="Precipitation_rate_surface" externalLocation="HRDPS"/>	
 	<map internalParameter="TA.nwp" internalLocation="HRDPS" externalParameter="Temperature_height_above_ground" externalLocation="HRDPS"/>
 	<map internalParameter="XS.nwp" internalLocation="HRDPS" externalParameter="Specific_humidity_isobaric" externalLocation="HRDPS"/>
 	<map internalParameter="PA.nwp" internalLocation="HRDPS" externalParameter="Pressure_surface" externalLocation="HRDPS"/>

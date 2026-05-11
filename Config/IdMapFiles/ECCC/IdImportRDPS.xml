@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="PR.nwp" internalLocation="RDPS" externalParameter="Precipitation_rate_surface" externalLocation="RDPS"/>	
 	<map internalParameter="TA.nwp" internalLocation="RDPS" externalParameter="Temperature_height_above_ground" externalLocation="RDPS"/>
 	<map internalParameter="XS.nwp" internalLocation="RDPS" externalParameter="Specific_humidity_isobaric" externalLocation="RDPS"/>
 	<map internalParameter="PA.nwp" internalLocation="RDPS" externalParameter="Pressure_surface" externalLocation="RDPS"/>
@@ -59,6 +60,36 @@
 	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_52_Hour_Accumulation" externalLocation="RDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_53_Hour_Accumulation" externalLocation="RDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_54_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_55_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_56_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_57_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_58_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_59_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_60_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_61_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_62_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_63_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_64_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_65_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_66_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_67_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_68_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_69_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_70_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_71_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_72_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_73_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_74_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_75_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_76_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_77_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_78_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_79_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_80_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_81_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_82_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_83_Hour_Accumulation" externalLocation="RDPS"/>
+	<map internalParameter="PC.nwp" internalLocation="RDPS" externalParameter="Total_precipitation_surface_84_Hour_Accumulation" externalLocation="RDPS"/>		
 	<!--Short-wave Radiation-->
 	<map internalParameter="RS.nwp" internalLocation="RDPS" externalParameter="Downward_short-wave_radiation_flux_surface_1_Hour_Accumulation" externalLocation="RDPS"/>
 	<map internalParameter="RS.nwp" internalLocation="RDPS" externalParameter="Downward_short-wave_radiation_flux_surface_2_Hour_Accumulation" externalLocation="RDPS"/>

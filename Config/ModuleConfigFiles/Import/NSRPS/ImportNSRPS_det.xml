@@ -22,7 +22,7 @@
 			<parameterId>QR.fcst</parameterId>
 			<locationId>NSRPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 	</import>

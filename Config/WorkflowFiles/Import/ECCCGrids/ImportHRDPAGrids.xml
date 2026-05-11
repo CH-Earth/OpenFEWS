@@ -2,53 +2,41 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Retrieve NWP grids from Environment Canada -->
 	<properties>
-		<!-- Input Grid-->
-		<string key="INPUTGRID" value="HRDPA"/>
-		<!-- Input Module Instance ID-->
-		<string key="INPUTMODULEINSTANCE" value="ImportHRDPA"/>
-		<!-- Output Grid-->
-		<string key="OUTPUTGRID" value="HRDPA"/>
+		<!-- Data Source Name-->
+		<string key="DATA_SOURCE" value="ECCC_PRECIP_GRID"/>
 		<!--Basin Location-->
-		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<string key="BASINLOCATIONS" value="HindcastBasins"/>
+		<!--Subbasin Location-->
+		<string key="SUBBASINLOCATIONS" value="HindcastSubBasins"/>
 		<!--Station Locations-->
-		<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
 		<!--Starttime-->
-		<string key="STARTTIME" value="-7"/>
+		<string key="STARTTIME" value="-14"/>
 		<!--Endtime-->
 		<string key="ENDTIME" value="0"/>
 		<!--Timeseries Type-->
-		<string key="TIMESERIESTYPE" value="external historical"/>
-		<!--Timeseries Type-->
-		<string key="TIMESTEP" value="6"/>
-		<!--Parameter Type-->
-		<string key="PARAMETER" value="PC.sim"/>
-		<!--Ensemble ID-->
-		<string key="ENSEMBLE" value="main"/>
-	</properties>	
-		<!-- Retrieve NWP grids from Environment Canada -->
+		<string key="GRIDTIMESERIESTYPE" value="external historical"/>
+		<string key="STATIONTIMESERIESTYPE" value="external historical"/>
+		<string key="SUBBASINTIMESERIESTYPE" value="temporary"/>
+		<string key="BASINTIMESERIESTYPE" value="external historical"/>
+	</properties>
 	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RetrieveHRDPA</moduleInstanceId>
-    </activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ImportHRDPA</moduleInstanceId>
-	</activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
-		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
-	</activity>
-	<!-- Accumulate Precipitation-->
-		<activity>
 		<properties>
-			<string key="LOCATIONSET" value="ProcessBasins"/>
-			<string key="INPUTMODULEINSTANCE" value="PreprocessHRDPA"/>
-			<string key="INPUTPARAMETER" value="PC.sim"/>
-			<string key="ACCUMPARAMETER" value="PC.sim.acc"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="HRDPA"/>
+			<!-- Input Grid-->
+			<string key="INPUTGRID" value="HRDPA"/>
+			<!-- Input Module Instance ID-->
+			<string key="INPUTMODULEINSTANCE" value="ImportHRDPA"/>
+			<!--Ensemble-->
+			<string key="ENSEMBLE" value="main"/>
+			<!--Timeseries Type-->
+			<string key="TIMESTEP" value="6"/>
+			<!--Parameter Type-->
+			<string key="PARAMETER" value="PC.sim"/>
+			<!--File Type-->
+			<string key="IMPORTTYPE" value="grib2"/>
 		</properties>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
-		<moduleConfigFileName>AccumulateForecastPrecipTemplate</moduleConfigFileName>
+		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
 	</activity>
 </workflow>

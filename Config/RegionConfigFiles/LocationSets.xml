@@ -29,7 +29,7 @@
 			<attribute id="wflow_code" name="wflow_code">
 				<text>%wflow_code%</text>
 			</attribute>
-			<!-- Add attribute files for Bow-->
+			<!-- Add attribute files for Yukon-->
 			<attributeFile>
 				<csvFile>hydrometric_Yukon.csv</csvFile>
 				<id>%ID%</id>
@@ -45,7 +45,7 @@
 					<text>%Bow%</text>
 				</attribute>
 			</attributeFile>
-			<!-- Add attribute files for Yukon River Basin-->
+			<!-- Add attribute files for NSRPS-->
 			<attributeFile>
 				<csvFile>nsrps_stn_locations.csv</csvFile>
 				<id>%STATION_NUMBER%</id>
@@ -162,7 +162,7 @@
 		</csvFile>
 	</locationSet>
 	<!--LocationSets built from ShapeFiles-->
-	<!--ShapeFiles for Bow-->
+	<!--ShapeFiles for Bow -->
 	<locationSet id="BowWatershed">
 		<esriShapeFile>
 			<file>Bow_Watershed.shp</file>
@@ -195,7 +195,7 @@
 			</attribute>
 		</esriShapeFile>
 	</locationSet>
-	<!--ShapeFiles for Bow Sub- Basins-->
+	<!--ShapeFiles for Bow MESH -->
 	<locationSet id="BowMESHBasins">
 		<esriShapeFile>
 			<file>BowMESHBasins.shp</file>
@@ -218,7 +218,7 @@
 			<name>Elbow_Watershed</name>
 		</esriShapeFile>
 	</locationSet>
-	<!--ShapeFiles for Bow Basins-->
+	<!--ShapeFiles for Elbow Basins-->
 	<locationSet id="ElbowBasins">
 		<esriShapeFile>
 			<file>Elbow_Basins.shp</file>
@@ -325,7 +325,7 @@
 		<subLocationSetIdFunction>WSCStations@Region@</subLocationSetIdFunction>
 		<locationSetId>WSCStations</locationSetId>
 	</locationSet>
-	<!-- Build LocationSets for Bow Catchment-->
+	<!--HydroStations Location Sets Built from WSC Stations-->
 	<locationSet id="BowHydroStations">
 		<locationSetId>WSCStations</locationSetId>
 		<constraints>
@@ -338,12 +338,20 @@
 			<attributeTextEquals id="Yukon" equals="Y"/>
 		</constraints>
 	</locationSet>
-	<!--Build LocationSets for Display-->
+	<!--Build LocationSets for Data Processing-->
 	<locationSet id="ProcessBasins">
-		<locationSetId>ChenaProcessBasins</locationSetId>
-		<locationSetId>RossProcessBasins</locationSetId>
-		<locationSetId>BowProcessBasins</locationSetId>
+		<locationSetId>HindcastBasins</locationSetId>
 	</locationSet>
+	<locationSet id="ProcessSubBasins">
+		<locationSetId>HindcastSubBasins</locationSetId>
+	</locationSet>
+	<locationSet id="ProcessMeteoStations">
+		<locationSetId>HindcastMeteoStations</locationSetId>
+	</locationSet>
+	<locationSet id="ProcessHydroStations">
+		<locationSetId>HindcastHydroStations</locationSetId>
+	</locationSet>
+	<!--Build LocationSets for Display-->
 	<locationSet id="RossProcessBasins">
 		<locationSetId>RossBasins</locationSetId>
 		<locationSetId>RossSubBasins</locationSetId>
@@ -357,17 +365,21 @@
 		<locationSetId>BowSubBasins</locationSetId>
 		<locationSetId>BowMESHBasins</locationSetId>
 	</locationSet>
+	<locationSet id="ElbowProcessBasins">
+		<locationSetId>ElbowBasins</locationSetId>
+		<locationSetId>ElbowSubBasins</locationSetId>
+	</locationSet>
 	<locationSet id="ModelBasins">
-		<!--<locationSetId>BowSubBasins</locationSetId>-->
+		<locationSetId>BowSubBasins</locationSetId>
 		<locationSetId>ChenaSubBasins</locationSetId>
 		<locationSetId>RossSubBasins</locationSetId>
 	</locationSet>
 	<locationSet id="ModelMeteoStations">
-		<!--<locationSetId>BowMeteoStations</locationSetId>-->
+		<locationSetId>BowMeteoStations</locationSetId>
 		<locationSetId>YukonMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="ModelHydroStations">
-		<!--<locationSetId>BowHydroStations</locationSetId>-->
+		<locationSetId>BowHydroStations</locationSetId>
 		<locationSetId>YukonHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DownloadMeteoStations">
@@ -393,7 +405,7 @@
 		<locationSetId>BowHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DischargeDisplayLocationsElbow">
-		<locationSetId>BowHydroStations</locationSetId>
+		<locationSetId>ElbowHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="BowForecastLocations">
 		<locationSetId>BowHydroStations</locationSetId>

@@ -1,0 +1,82 @@
+<thresholdValueSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdValueSets.xsd">
+	<thresholdValueSet id="DischargeElbowatSarcee" name="Discharge Elbow at Sarcee">
+		<levelThresholdValue>
+			<levelThresholdId>2yr</levelThresholdId>
+			<value>70</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>5yr</levelThresholdId>
+			<value>157</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>10yr</levelThresholdId>
+			<value>253</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>20yr</levelThresholdId>
+			<value>379</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>35yr</levelThresholdId>
+			<value>509</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>50yr</levelThresholdId>
+			<value>610</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>100yr</levelThresholdId>
+			<value>841</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>05BJ010</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-15" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+		<thresholdValueSet id="DischargeElbowatBraggCreek" name="DischargeElbowatBraggCreek">
+		<levelThresholdValue>
+			<levelThresholdId>2yr</levelThresholdId>
+			<value>68</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>5yr</levelThresholdId>
+			<value>155</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>10yr</levelThresholdId>
+			<value>250</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>20yr</levelThresholdId>
+			<value>377</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>35yr</levelThresholdId>
+			<value>508</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>50yr</levelThresholdId>
+			<value>607</value>
+		</levelThresholdValue>
+		<levelThresholdValue>
+			<levelThresholdId>100yr</levelThresholdId>
+			<value>840</value>
+		</levelThresholdValue>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>05BJ004</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-15" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</thresholdValueSet>
+</thresholdValueSets>

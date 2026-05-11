@@ -42,6 +42,11 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="GEFS" name="Global Ensemble Forecast System">
+		<shortName>GEFS</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 	<location id="ERA5" name="ERA5">
 		<shortName>ERA5</shortName>
 		<x>0</x>

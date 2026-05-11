@@ -5,5 +5,7 @@
 	<parameter internal="QR.obs" external="Discharge"/>
 	<parameter internal="QR.obs" external="DISCHARGE"/>
 	<parameter internal="HG.obs" external="LEVEL"/>
+	<parameter internal="QR.obs" external="6"/>
+	<parameter internal="HG.obs" external="3"/>
 	<enableOneToOneMapping/>
 </idMap>

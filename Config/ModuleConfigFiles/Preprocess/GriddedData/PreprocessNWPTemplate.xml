@@ -3,11 +3,11 @@
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<!--Input-->
 	<variable>
-		<variableId>gridded_precip</variableId>
+		<variableId>gridded_precip_rate</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PR.nwp</parameterId>
 			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>$GRID_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
@@ -31,11 +31,11 @@
 	<!--Output-->
 	<!-- Precipitation Output-->
 	<variable>
-		<variableId>basin_precip_cumulative</variableId>
+		<variableId>basin_precip_rate</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PR.nwp</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
@@ -70,11 +70,11 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>subbasin_precip_cumulative</variableId>
+		<variableId>subbasin_precip_rate</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PR.nwp</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
@@ -109,6 +109,19 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>station_precip_rate</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PR.nwp</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+		<variable>
 		<variableId>station_precip</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
@@ -117,6 +130,19 @@
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
 			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_precip_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
@@ -244,29 +270,27 @@
 		</timeSeriesSet>
 	</variable>
 	<!--Transformations - precip-->
-	<transformation id="basin_precip_cumulative">
+	<transformation id="precip_grid_to_basin">
 		<interpolationSpatial>
 			<average>
 				<inputVariable>
-					<variableId>gridded_precip</variableId>
+					<variableId>gridded_precip_rate</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>basin_precip_cumulative</variableId>
+					<variableId>basin_precip_rate</variableId>
 				</outputVariable>
 			</average>
 		</interpolationSpatial>
 	</transformation>
-	<transformation id="basin_precip_disaggregate">
-		<disaggregation>
-			<accumulative>
-				<inputVariable>
-					<variableId>basin_precip_cumulative</variableId>
-				</inputVariable>
+	<transformation id="basin_precip_rate_to_accum">
+		<user>
+			<simple>
+				<expression>basin_precip_rate * 3600 * $TIMESTEP$</expression>
 				<outputVariable>
 					<variableId>basin_precip</variableId>
 				</outputVariable>
-			</accumulative>
-		</disaggregation>
+			</simple>
+		</user>
 	</transformation>
 	<transformation id="basin_precip_daily">
 		<aggregation>
@@ -280,29 +304,27 @@
 			</accumulative>
 		</aggregation>
 	</transformation>
-	<transformation id="subbasin_precip_cumulative">
+	<transformation id="precip_grid_to_subbasin">
 		<interpolationSpatial>
 			<average>
 				<inputVariable>
-					<variableId>gridded_precip</variableId>
+					<variableId>gridded_precip_rate</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>subbasin_precip_cumulative</variableId>
+					<variableId>subbasin_precip_rate</variableId>
 				</outputVariable>
 			</average>
 		</interpolationSpatial>
 	</transformation>
-	<transformation id="subbasin_precip_disaggregate">
-		<disaggregation>
-			<accumulative>
-				<inputVariable>
-					<variableId>subbasin_precip_cumulative</variableId>
-				</inputVariable>
+	<transformation id="basin_precip_rate_to_accum">
+		<user>
+			<simple>
+				<expression>subbasin_precip_rate * 3600 * $TIMESTEP$</expression>
 				<outputVariable>
 					<variableId>subbasin_precip</variableId>
 				</outputVariable>
-			</accumulative>
-		</disaggregation>
+			</simple>
+		</user>
 	</transformation>
 	<transformation id="subbasin_precip_daily">
 		<aggregation>
@@ -316,18 +338,40 @@
 			</accumulative>
 		</aggregation>
 	</transformation>
-	<transformation id="station_precip">
+	<transformation id="station_precip_rate">
 		<interpolationSpatial>
 			<closestDistance>
 				<inputVariable>
-					<variableId>gridded_precip</variableId>
+					<variableId>gridded_precip_rate</variableId>
 				</inputVariable>
 				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
 				<outputVariable>
-					<variableId>station_precip</variableId>
+					<variableId>station_precip_rate</variableId>
 				</outputVariable>
 			</closestDistance>
 		</interpolationSpatial>
+	</transformation>
+		<transformation id="station_precip_rate_to_accum">
+		<user>
+			<simple>
+				<expression>station_precip_rate * 3600 * $TIMESTEP$</expression>
+				<outputVariable>
+					<variableId>station_precip</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+		<transformation id="station_precip_daily">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>station_precip</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>station_precip_daily</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
 	</transformation>
 	<!--Transformations-->
 	<transformation id="basin_temperature">

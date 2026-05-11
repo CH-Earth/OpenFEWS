@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+<map internalParameter="PR.nwp" internalLocation="GEPS" externalParameter="Precipitation_rate_surface_ens" externalLocation="GEPS"/>	
 <map internalParameter="TA.nwp" internalLocation="GEPS" externalParameter="Temperature_height_above_ground_ens" externalLocation="GEPS"/>
 <map internalParameter="XS.nwp" internalLocation="GEPS" externalParameter="Specific_humidity_height_above_ground_ens" externalLocation="GEPS"/>
 <map internalParameter="PA.nwp" internalLocation="GEPS" externalParameter="Pressure_surface_ens" externalLocation="GEPS"/>

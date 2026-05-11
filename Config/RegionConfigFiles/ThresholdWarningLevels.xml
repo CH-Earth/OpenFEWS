@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<thresholdWarningLevels xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholdWarningLevels.xsd">
+	<thresholdWarningLevel id="2yr" name="2 year threshold">
+		<color>red</color>
+		<iconName>default1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>historicwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+	<thresholdWarningLevel id="5yr" name="5 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+		<thresholdWarningLevel id="10yr" name="10 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+		<thresholdWarningLevel id="20yr" name="20 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+		<thresholdWarningLevel id="35yr" name="35 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+		<thresholdWarningLevel id="50yr" name="50 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+		<thresholdWarningLevel id="100yr" name="100 year threshold">
+		<color>red</color>
+		<iconName>warninglevel1.gif</iconName>
+		<historicOverlayIconName>historicwarninglevel1.gif</historicOverlayIconName>
+		<forecastOverlayIconName>forecastwarninglevel1.gif</forecastOverlayIconName>
+	</thresholdWarningLevel>
+</thresholdWarningLevels>

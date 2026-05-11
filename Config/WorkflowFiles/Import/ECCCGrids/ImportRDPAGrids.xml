@@ -4,56 +4,39 @@
 	<properties>
 		<!-- Data Source Name-->
 		<string key="DATA_SOURCE" value="ECCC_PRECIP_GRID"/>
-		<!-- Data Source Name-->
-		<string key="MODEL" value="RDPA"/>
-		<!-- Input Grid-->
-		<string key="INPUTGRID" value="RDPA"/>
-		<!-- Input Module Instance ID-->
-		<string key="INPUTMODULEINSTANCE" value="ImportRDPA"/>
-		<!-- Output Grid-->
-		<string key="OUTPUTGRID" value="RDPA"/>
 		<!--Basin Location-->
-		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<string key="BASINLOCATIONS" value="HindcastBasins"/>
+		<!--Subbasin Location-->
+		<string key="SUBBASINLOCATIONS" value="HindcastSubBasins"/>
 		<!--Station Locations-->
-		<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
 		<!--Starttime-->
-		<string key="STARTTIME" value="-7"/>
+		<string key="STARTTIME" value="-14"/>
 		<!--Endtime-->
 		<string key="ENDTIME" value="0"/>
 		<!--Timeseries Type-->
-		<string key="TIMESERIESTYPE" value="external historical"/>
-		<!--Timeseries Type-->
-		<string key="TIMESTEP" value="6"/>
-		<!--Parameter Type-->
-		<string key="PARAMETER" value="PC.sim"/>
-		<!--Ensemble ID-->
-		<string key="ENSEMBLE" value="main"/>
-	</properties>	
-		<!-- Retrieve NWP grids from Environment Canada -->
+		<string key="GRIDTIMESERIESTYPE" value="external historical"/>
+		<string key="STATIONTIMESERIESTYPE" value="external historical"/>
+		<string key="SUBBASINTIMESERIESTYPE" value="temporary"/>
+		<string key="BASINTIMESERIESTYPE" value="external historical"/>
+	</properties>
 	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RetrieveRDPA</moduleInstanceId>
-		<moduleConfigFileName>RetrieveDataTemplate</moduleConfigFileName>
-    </activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ImportRDPA</moduleInstanceId>
-	</activity>
-	<activity>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
-		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
-	</activity>
-	<!-- Accumulate Precipitation-->
-		<activity>
 		<properties>
-			<string key="LOCATIONSET" value="ProcessBasins"/>
-			<string key="INPUTMODULEINSTANCE" value="PreprocessRDPA"/>
-			<string key="INPUTPARAMETER" value="PC.sim"/>
-			<string key="ACCUMPARAMETER" value="PC.sim.acc"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="RDPA"/>
+			<!-- Input Grid-->
+			<string key="INPUTGRID" value="RDPA"/>
+			<!-- Input Module Instance ID-->
+			<string key="INPUTMODULEINSTANCE" value="ImportRDPA"/>
+			<!--Ensemble-->
+			<string key="ENSEMBLE" value="main"/>
+			<!--Timeseries Type-->
+			<string key="TIMESTEP" value="6"/>
+			<!--Parameter Type-->
+			<string key="PARAMETER" value="PC.sim"/>
+			<!--File Type-->
+			<string key="IMPORTTYPE" value="grib2"/>
 		</properties>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
-		<moduleConfigFileName>AccumulateForecastPrecipTemplate</moduleConfigFileName>
+		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
 	</activity>
 </workflow>

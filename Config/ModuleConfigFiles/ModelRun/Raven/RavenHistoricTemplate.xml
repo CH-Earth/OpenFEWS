@@ -53,6 +53,7 @@
 						<stateSearchPeriod startOverrulable="true" start="$STARTTIME$" end="0" unit="day"/>
 					</warmState>
 				</stateSelection>
+				<!--<loopTimeStep id="$DAY_TIMESTEP$"/>-->
 			</exportStateActivity>
 			<exportDataSetActivity>
 				<moduleInstanceId>$MODEL$RavenHistoric</moduleInstanceId>
@@ -64,7 +65,7 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>PC.obs</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<locationSetId>$INPUTLOCATIONSET$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
@@ -73,18 +74,8 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>TAmax.obs</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep id="$DAY_TIMESTEP$"/>
-						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-					<timeSeriesSet>
-						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>TAmin.obs</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<parameterId>TA.obs</parameterId>
+						<locationSetId>$INPUTLOCATIONSET$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
@@ -136,14 +127,14 @@
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>$MODEL$Basins</locationSetId>
+						<locationSetId>$MODEL$HydroStations</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="day"/>
+						<timeStep id="$DAY_TIMESTEP$"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</importNetcdfActivity>
-			<importNetcdfActivity>
+<!--			<importNetcdfActivity>
 				<importFile>$MODEL$_SNOW_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
@@ -156,35 +147,7 @@
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>$MODEL$_SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>SWE.mlt</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>$MODEL$_SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>SMI.sim</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
+			</importNetcdfActivity>-->
 		</importActivities>
 	</activities>
 </generalAdapterRun>

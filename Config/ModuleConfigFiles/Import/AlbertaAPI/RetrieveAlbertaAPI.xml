@@ -16,9 +16,9 @@
 			<purgeActivity>
 				<filter>%ROOT_DIR%/work/*.*</filter>
 			</purgeActivity>
-			<purgeActivity>
+<!--			<purgeActivity>
 				<filter>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$/*.*</filter>
-			</purgeActivity>
+			</purgeActivity>-->
 		</startUpActivities>
 		<exportActivities>
 			<exportLocationAttributesCsvActivity>
@@ -32,6 +32,9 @@
 			</exportLocationAttributesCsvActivity>
 			<exportNetcdfRunFileActivity>
 				<exportFile>%WORK_DIR%/runinfo.nc</exportFile>
+				<properties>
+					<string key="dummy" value="dummy"/>
+				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
 		<executeActivities>
@@ -51,7 +54,14 @@
 					<argument>--output-dir</argument>
 					<argument>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$</argument>
 				</arguments>
-				<timeOut>900000</timeOut>
+				<logFile>
+					<file>coldcast_download.log</file>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+				</logFile>
+				<timeOut>9000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
 		</executeActivities>

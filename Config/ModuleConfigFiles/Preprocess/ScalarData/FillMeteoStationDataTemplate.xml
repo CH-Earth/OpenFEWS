@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>station_precip_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUT_MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_temperature_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUT_MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output Station-->
+	<variable>
+		<variableId>station_precip_filled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_temperature_filled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="station_precip_fill">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>station_precip_unfilled</variableId>
+				</inputVariable>
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>station_precip_filled</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="station_temperature_fill">
+	<interpolationSerial>
+		<block>
+			<inputVariable>
+				<variableId>station_temperature_unfilled</variableId>
+			</inputVariable>
+			<outputVariable>
+				<variableId>station_temperature_filled</variableId>
+			</outputVariable>
+		</block>
+	</interpolationSerial>
+	</transformation>
+</transformationModule>

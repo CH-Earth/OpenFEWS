@@ -46,7 +46,7 @@
 			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.sim</parameterId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -58,7 +58,7 @@
 			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -70,7 +70,7 @@
 			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -84,7 +84,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>min</qualifierId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -97,7 +97,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>25%</qualifierId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -110,7 +110,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>50%</qualifierId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -123,7 +123,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>75%</qualifierId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -136,7 +136,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>max</qualifierId>
-			<locationSetId>ModelHydroStations</locationSetId>
+			<locationSetId>HindcastHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+<parameter internal="QR.obs" external="QR_obs"/>
+<parameter internal="QR.sim" external="QR_sim"/>
+<parameter internal="PC.obs" external="PC_obs"/>
+<parameter internal="PC.sim" external="PC_sim"/>
+<parameter internal="PC.nwp" external="PC_nwp"/>
+<parameter internal="TA.obs" external="TA_obs"/>
+<parameter internal="TAmax.obs" external="TAmax_obs"/>
+<parameter internal="TAmin.obs" external="TAmin_obs"/>
+
+<parameter internal="TA.nwp" external="TA_nwp"/>
+<parameter internal="SWE.obs" external="SWE_obs"/>
+<parameter internal="SWE.sim" external="SWE_sim"/>
+<enableOneToOneMapping/>
+</idMap>

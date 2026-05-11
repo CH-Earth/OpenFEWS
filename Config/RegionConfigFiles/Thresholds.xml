@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholdGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/thresholds.xsd">
+	<eventExpiryTime unit="day"/>
+	<maxActionEventDuration unit="hour" multiplier="24"/>
+	<thresholdGroup id="Warning_Flows" name="Warning Flows">
+		<defaultThreshold shortName="Q_Thresholds"/>
+		<levelThreshold id="Q_Threshold" name="Q_Threshold" shortName="Q_Threshold">
+		</levelThreshold>
+	</thresholdGroup>
+	<thresholdGroup id="Discharge">
+		<defaultThreshold shortName="2yr"/>
+		<levelThreshold id="2yr" name="2 year">
+			<upWarningLevelId>2yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="5yr" name="5 year">
+			<upWarningLevelId>5yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="10yr" name="19 year">
+			<upWarningLevelId>10yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="20yr" name="20 year">
+			<upWarningLevelId>20yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="35yr" name="35 year">
+			<upWarningLevelId>35yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="50yr" name="50 year">
+			<upWarningLevelId>50yr</upWarningLevelId>
+		</levelThreshold>
+		<levelThreshold id="100yr" name="100 year">
+			<upWarningLevelId>100yr</upWarningLevelId>
+		</levelThreshold>
+	</thresholdGroup>
+</thresholdGroups>

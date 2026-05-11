@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
-	<!--R Scripts-->
-	<moduleInstanceDescriptor id="HelloWorld">
-		<description>Using R Script to Write Hello World</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="InstallUpdateRLibraries">
-		<description>Using R Scripts to install/update requried R libraries</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="DownloadUpdateHYDAT">
-		<description>Using R Scripts download or update HYDAT database</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="DownloadHistoricalHydrometricData">
-		<description>Using R Scripts download historical Hydrometric Data with tidyhydat</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="DownloadRealTimeHydrometricData">
-		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="DownloadHydrometricData">
-		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="ImportHYDATHistorical">
-		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="ImportHYDATRecent">
-		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
-	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="GenerateHydrometricReport">
-		<description>Using R Scripts to generate hydrometric report</description>
-	</moduleInstanceDescriptor>
 	<!--Import Scalar Data-->
 	<moduleInstanceDescriptor id="ImportWSCHistoric">
 		<description>Import Station data from Local Directory</description>
@@ -123,6 +95,9 @@
 	<moduleInstanceDescriptor id="RavenBinaries">
 		<description>Module Instance for Raven Binaries Export</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ColdcastSettings">
+		<description>Module Instance for Coldcast Settings yaml</description>
+	</moduleInstanceDescriptor>
 	<!--Download Snow Products-->
 	<moduleInstanceDescriptor id="RetrieveSNODAS">
 		<description>Download SNODAS grib2 files</description>
@@ -166,6 +141,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportECCCRadarComposite">
 		<description>Import Composite Radar Images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGEFS">
+		<description>Retrieve GEFS</description>
 	</moduleInstanceDescriptor>
 	<!-- Gridded Data Import Modules-->
 	<moduleInstanceDescriptor id="ImportNSRPS">
@@ -236,6 +214,9 @@
 	<moduleInstanceDescriptor id="ImportGFS">
 		<description>Import Global Forecast System from NOAA</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGEFS">
+		<description>Import Global Ensemble Forecast System from NOAA</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportNAM">
 		<description>Import North American Meso-scale Data from NOAA</description>
 	</moduleInstanceDescriptor>
@@ -262,6 +243,12 @@
 		<description>Import the ERA5 variables on the predefined grid</description>
 	</moduleInstanceDescriptor>
 	<!--Import ECWMF NWP data-->
+	<moduleInstanceDescriptor id="RetrieveIFS">
+		<description>Download the ECMWF IFS </description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportIFS">
+		<description>Import the ECMWF IFS</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="RetrieveIFSDet">
 		<description>Download the ECMWF IFS Deterministic NWP</description>
 	</moduleInstanceDescriptor>
@@ -320,6 +307,9 @@
 	<!-- Preprocess NOAA grids-->
 	<moduleInstanceDescriptor id="PreprocessHRRR">
 		<description>Preprocess HRRR data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessGEFS">
+		<description>Preprocess GEFS data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessWSC">
 		<description>Preprocess WSC data</description>
@@ -430,28 +420,28 @@
 		<description>Run the Bow model with Wflow REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<!-- Model Run Module Instances - Raven -->
-	<moduleInstanceDescriptor id="BowRavenHistoricUpdate">
+	<moduleInstanceDescriptor id="ElbowRavenHistoricUpdate">
 		<description>ModuleInstanceId holder for Model</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenHistoric">
-		<description>Run the Bow model with Historic Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenHistoric">
+		<description>Run the Elbow model with Historic Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenForecast">
-		<description>Run the Bow model with Forecast Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenForecast">
+		<description>Run the Elbow model with Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenHRDPSForecast">
-		<description>Run the Bow model with HRDPS Forecast Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenHRDPSForecast">
+		<description>Run the Elbow model with HRDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenRDPSForecast">
-		<description>Run the Bow model with RDPS Forecast Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenRDPSForecast">
+		<description>Run the Elbow model with RDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenGDPSForecast">
-		<description>Run the Bow model with GDPS Forecast Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenGDPSForecast">
+		<description>Run the Elbow model with GDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenREPSForecast">
-		<description>Run the Bow model with REPS Forecast Data</description>
+	<moduleInstanceDescriptor id="ElbowRavenREPSForecast">
+		<description>Run the Elbow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRavenGEPSForecast">
+	<moduleInstanceDescriptor id="ElbowRavenGEPSForecast">
 		<description>Run the Bow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<!-- Model Run Module Instances - SUMMA -->

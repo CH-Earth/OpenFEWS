@@ -1,27 +1,16 @@
-2025-05-06 18:04:08.805 INFO - main.Application.main2 - Boot from /opt/fews/bin version: 2024.02, build: 503191253 Mar19, type: stable (2 s)
-2025-05-06 18:04:09.451 INFO - main.Application.launchNewInstance - Restart with patch version: 2024.02, build: 505011415 May1, type: stable and base build /opt/fews/bin version: 2024.02, build: 503191253 Mar19, type: stable
-2025-05-06 18:04:10.876 INFO - main.Application.main2 - Patch loaded (2 s)
-2025-05-06 18:04:12.981 WARN - main.AzureInstanceMetaData.getAzureVirtualMachineName - Azure VM name Response code 404
-2025-05-06 18:04:13.018 WARN - main.AzureInstanceMetaData.getAzureVirtualMachineName - Error response from Azure API <html>
-	 <head>
-	  <title>404 Not Found</title>
-	 </head>
-	 <body>
-	  <h1>404 Not Found</h1>
-	  The resource could not be found.<br /><br />
-	
-	
-	
-	 </body>
-	</html>
-2025-05-06 18:04:13.020 WARN - main.SystemUtils.getHostName - Resolving host name host-10-0-85-11.js2local took too much time (1 s) 
-	Please add local host to /etc/hosts
-2025-05-06 18:04:13.206 INFO - main.DataStore.getConfigDirStorage - Use configuration from /home/exouser/GitRepos/CanOpenFEWS/Config
-2025-05-06 18:04:13.346 INFO - main.ModuleDataSetUpdater.updateModuleDataSet - Updating ModuleDataSet PyscriptsBinaries
-2025-05-06 18:04:13.569 INFO - Load Fews.Application.init - Application.Info: version: 2024.02, build: 505011415 (patched from 503191253) , May 1, 2025, type: stable, jre: 17.0.13, os:Linux, user:exouser, mx: 8589m, db: Derby, region: CanOpenFEWS
-2025-05-06 18:04:15.049 WARN - Load Fews.ExplorerRollingBarrel.<init> - ROLLING BARREL IS DISABLED WITH -DautoRollingBarrel=false VM parameter debug option
-2025-05-06 18:04:15.133 INFO - InitialRefreshDataStore.IndexFilesSnapshotsTable.unzipSnapshot - Unpack index snapshot to /home/exouser/GitRepos/CanOpenFEWS/temp/index
-2025-05-06 18:04:17.569 ERROR - AWT-EventQueue-0.CefBrowserPanel.getCefClient - Config.Error: Failed to open the Web Browser window (Missing directory Modules/jcef) 
-	 Instructions for installation of JCEF (Java Chromium Embedded Framework) are provided in the FEWS WIKI: https://publicwiki.deltares.nl/x/xQtHBw
-2025-05-06 18:04:17.698 INFO - AWT-EventQueue-0.Application.run - Application.Startup.Finished: The application finished starting up. (10s;Unmarshall region config 1 s;Data Display 1 s;cpu 25%)
-2025-05-06 18:04:37.689 INFO - AWT-EventQueue-0.FewsExplorerEnvironment.exit - FewsExplorer: exiting ... 
+2026-05-05 06:40:19.926 INFO - main.Application.main2 - Boot from C:\FEWS\bin_test version: 2025.02, build: 603100957 Mar10, type: stable (9 s)
+2026-05-05 06:40:23.245 INFO - main.Application.launchNewInstance - Restart with patch version: 2025.02, build: 603231219 Mar23, type: stable and base build C:\FEWS\bin_test version: 2025.02, build: 603100957 Mar10, type: stable
+2026-05-05 06:40:24.837 INFO - main.Application.main2 - Patch loaded (2 s)
+2026-05-05 06:40:28.501 INFO - main.DataStore.getConfigDirStorage - Use configuration from C:\GitHub\OpenFEWS\Config
+2026-05-05 06:40:28.752 INFO - Load Fews.Application.init - Application.Info: version: 2025.02, build: 603231219 (patched from 603100957) , March 23, 2026, type: stable, jre: 21.0.9, os:Windows 11, user:David Casson, mx: 8589m, db: Derby, region: OpenFEWS
+2026-05-05 06:40:30.860 ERROR - Load Fews.WorkflowDescriptor.createFromCastor - Config.Error: Config/Workflows/*/ImportERA5.xml does not exist.
+	RegionConfigFiles/WorkflowDescriptors.xml
+2026-05-05 06:40:32.708 WARN - Load Fews.ExplorerRollingBarrel.<init> - ROLLING BARREL IS DISABLED WITH -DautoRollingBarrel=false VM parameter debug option
+2026-05-05 06:40:36.857 INFO - AWT-EventQueue-0.Application.run - Application.Startup.Finished: The application finished starting up. (26s;Connecting to Derby database 1 s;Unmarshall region config 3 s;Data Display 1 s;Spatial Data 1 s;cpu 17%)
+2026-05-05 06:40:52.075 INFO - StartFewsWebServices.WebserviceServletContextListener.contextInitialized - Delft-FEWS Web Services - version: 2025.02, build: 603231219 Mar23, type: stable, jre: 21.0.9, os:Windows 11, mx: 8589m
+2026-05-05 06:40:52.103 INFO - StartFewsWebServices.WebserviceInstance.getWebServiceSystemConfigFileProperties - Successfully loaded webServices configuration file WebServices.xml
+2026-05-05 06:40:52.283 WARN - StartFewsWebServices.FewsTestPageFilter.loadProperties - The test page is enabled.
+2026-05-05 06:40:53.648 INFO - StartFewsWebServices.FewsExplorerEnvironment.startFewsWebServicesRunnable - Started FewsWebServices: http://localhost:8080/FewsWebServices/
+2026-05-05 06:46:42.162 INFO - AWT-EventQueue-0.FewsExplorerEnvironment.exit - FewsExplorer: exiting ... 
+2026-05-05 06:46:42.209 INFO - shutdown.FewsExplorerEnvironment.stopFewsWebServices - Stopping FewsWebServices
+2026-05-05 06:46:42.250 INFO - shutdown.WebserviceServletContextListener.contextDestroyed - Webservice instance shutdown

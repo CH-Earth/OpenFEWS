@@ -5,6 +5,7 @@
 	<workflowDescriptor id="ImportWSCHistoric" name="Import WSC Historic Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="ImportWSCDaily" name="Import WSC Daily Hydro Station Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="ImportWSCHourly" name="Import WSC Hourly Hydro Station Data " visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="ImportECCCWaterOffice" name="Import WSC Data From Water Office" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="ImportECCCScalar" name="Import Real Time ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCHistoric" name="Import Historic ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCAPIRecent" name="Import Recent ECCC API Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
@@ -16,40 +17,34 @@
 	<workflowDescriptor id="ImportAlbertaAPI" name="Import Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
 	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportHREPAGrids" name="Import HREPA" forecast="false" allowApprove="false" visible="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportRDPAGrids" name="Import RDPA" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportHRDPSGrids" name="Import HRDPS" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportRDPSGrids" name="Import RDPS" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportGDPSGrids" name="Import GDPS" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_12hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportREPSGrids" name="Import REPS" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_12hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportGEPSGrids" name="Import GEPS" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids ECCC DataMart</description>
 		<cardinalTimeStep id="GMT_12hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="RetrieveECCCRadarComposite" name="Import Radar (Composite)" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve ECCC Composite Radar Images</description>
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 		<runExpiryTime unit="day" multiplier="7"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportNSRPSGrids" name="Import NSRPS (WCS Service)" forecast="false" allowApprove="false" visible="true">
-		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
 		<cardinalTimeStep id="GMT_6hourly"/>
 		<runExpiryTime unit="day" multiplier="14"/>
 	</workflowDescriptor>
@@ -93,7 +88,17 @@
 		<description>Retrieve Forecast Grids from ECWMF</description>
 		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
 	</workflowDescriptor>
+	<!-- Retrieve and Import Data from Dynamical -->
+	<workflowDescriptor id="ImportGEFSDynamical" name="Import GEFS (Dynamical)" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve GEFS Forecast Grids from Dynamical</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportIFSDynamical" name="Import IFS (Dynamical)" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve IFS Forecast Grids from Dynamical</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
 	<!--Additional Gridded Data Imports -->
+	<workflowDescriptor id="ImportERA5" name="Import ERA5 data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportERA5Yukon" name="Import ERA5 Yukon data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportERA5Chena" name="Import ERA5 Chena data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportERA5Ross" name="Import ERA5 Ross data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
@@ -136,23 +141,22 @@
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>-->
 	<!--Raven Model Run Workflow Descriptors -->
-	<workflowDescriptor id="RunBowRavenHistoric" name="Run Bow Raven (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="RunElbowRavenHistoric" name="Run Elbow Raven (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
-	<workflowDescriptor id="RunBowRavenHRDPSForecast" name="Run Bow Raven (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="RunElbowRavenRDPSForecast" name="Run Elbow Raven (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
-	<workflowDescriptor id="RunBowRavenRDPSForecast" name="Run Bow Raven (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="RunElbowRavenGDPSForecast" name="Run Elbow Raven (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
-	<workflowDescriptor id="RunBowRavenGDPSForecast" name="Run Bow Raven (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
-		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
-		<viewPermission>AlbertaForecaster</viewPermission>
-	</workflowDescriptor>
-	<workflowDescriptor id="RunBowRavenREPSForecast" name="Run Bow Raven (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="RunElbowRavenREPSForecast" name="Run Elbow Raven (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
@@ -257,13 +261,13 @@
 	<workflowDescriptor id="ImportECCCAPIMeteoHindcast" name="Import ECCC Meteo Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCAPIHydroHindcast" name="Import ECCC Hydro Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCGridsHindcast" name="Import ECCC NWP for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
-	<workflowDescriptor id="ImportNWPHindcastTemplate" name="Template for Accessing and Processing NWP Hindcast" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCPrecipAnalysisHindcast" name="Import ECCC Precip Analysis for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
-	<workflowDescriptor id="ImportECCCPrecipAnalysisTemplate" name="Template for Accessing and Processing Precip Analysis" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportPrecipAnalysisTemplate" name="Template for Accessing and Processing Precip Analysis" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<rootNode>
 		<node name="Import Hydrological Data">
 			<workflowId>ImportWSCDaily</workflowId>
 			<workflowId>ImportWSCHourly</workflowId>
+			<workflowId>ImportECCCWaterOffice</workflowId>
 			<workflowId>ImportECCCAPIRecent</workflowId>
 			<workflowId>ImportECCCAPIHistoric</workflowId>
 			<workflowId>ImportUSGS</workflowId>
@@ -276,6 +280,7 @@
 			<workflowId>PreprocessECCCMeteoRecent</workflowId>
 		</node>
 		<node name="Import ERA5 Reanalysis Data">
+			<workflowId>ImportERA5</workflowId>
 			<workflowId>ImportERA5Yukon</workflowId>
 			<workflowId>ImportERA5Bow</workflowId>
 			<workflowId>ImportERA5Chena</workflowId>
@@ -285,7 +290,6 @@
 			<workflowId>RetrieveECCCRadarComposite</workflowId>
 		</node>
 		<node name="Import Snow Data">
-
 			<workflowId>ImportSnowcastGrids</workflowId>
 			<workflowId>ImportSNODASGrids</workflowId>
 			<workflowId>ImportGLOBSNOWGrids</workflowId>
@@ -318,11 +322,15 @@
 		<node name="ECCC NSRPS Import">
 			<workflowId>ImportNSRPSGrids</workflowId>
 		</node>
-		<node name="Run Model - Bow Raven">
-			<workflowId>RunBowRavenHistoric</workflowId>
-			<workflowId>RunBowRavenRDPSForecast</workflowId>
-			<workflowId>RunBowRavenGDPSForecast</workflowId>
-			<workflowId>RunBowRavenREPSForecast</workflowId>
+		<node name="Dynamical Import">
+			<workflowId>ImportGEFSDynamical</workflowId>
+			<workflowId>ImportIFSDynamical</workflowId>
+		</node>
+		<node name="Run Model - Elbow Raven">
+			<workflowId>RunElbowRavenHistoric</workflowId>
+			<workflowId>RunElbowRavenRDPSForecast</workflowId>
+			<workflowId>RunElbowRavenGDPSForecast</workflowId>
+			<workflowId>RunElbowRavenREPSForecast</workflowId>
 		</node>
 		<node name="Run Model - Bow SUMMA">
 			<workflowId>RunBowSUMMAHistoric</workflowId>

@@ -2,7 +2,7 @@
 <webServices xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/webServices.xsd">
     <general>
         <filters>
-            <filterId>HydroStations</filterId>
+            <filterId>webservices</filterId>
         </filters>
         <testPageEnabled>true</testPageEnabled>
     </general>

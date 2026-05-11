@@ -73,17 +73,6 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>TA.nwp</parameterId>
-						<qualifierId>min</qualifierId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep id="$DAY_TIMESTEP$"/>
-						<readWriteMode>read complete forecast</readWriteMode>
-					</timeSeriesSet>
-					<timeSeriesSet>
-						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>TA.nwp</parameterId>
-						<qualifierId>max</qualifierId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
@@ -96,8 +85,6 @@
 				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
 					<string key="RunName" value="$MODEL$"/>
-<!--					<locationAttribute key="BlockRavenCustomOutput" locationId="$MODEL$" attributeId="BlockRavenCustomOutput"/>
-					<locationAttribute key="BlockRavenWarnings" locationId="$MODEL$" attributeId="BlockRavenWarnings"/>-->
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
@@ -130,52 +117,7 @@
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>$MODEL$Basins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>$MODEL$_SNOW_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>SWE.sim</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>$MODEL$_SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>SWE.mlt</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>$MODEL$_SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>SMI.sim</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<locationSetId>$MODEL$HydroStations</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
