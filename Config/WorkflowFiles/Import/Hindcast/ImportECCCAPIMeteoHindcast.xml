@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.2">
+	<properties>
+		<string key="LOCATIONSET" value="HindcastMeteoStations"/>
+		<string key="DATA_SOURCE" value="ECCC_API"/>
+	</properties>
+	<activity>
+		<properties>
+			<string key="MODEL" value="climate-daily"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+		<moduleConfigFileName>RetrieveECCCAPITemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="TIMESTEP" value="day_GMT"/>
+			<string key="MODEL" value="climate-daily"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+		<moduleConfigFileName>ImportECCCAPIMeteoDaily</moduleConfigFileName>
+		<loopLocationSetId>HindcastMeteoStations</loopLocationSetId>
+	</activity>
+<!--	<activity>
+		<properties>
+			<string key="MODEL" value="climate-hourly"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+		<moduleConfigFileName>RetrieveECCCAPITemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="TIMESTEP" value="hourly"/>
+			<string key="MODEL" value="climate-hourly"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+		<moduleConfigFileName>ImportECCCAPIMeteoHourly</moduleConfigFileName>
+		<loopLocationSetId>HindcastMeteoStations</loopLocationSetId>
+	</activity>-->
+
+</workflow>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/Modules/coldcast</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>%ROOT_DIR%/work</exportDir>
+		<exportDataSetDir>%ROOT_DIR%/work</exportDataSetDir>
+		<importDir>$IMPORT_FOLDER$/$MODEL$</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportDataSetActivity>
+				<moduleInstanceId>ColdcastSettings</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfRunFileActivity>
+				<exportFile>%WORK_DIR%/runinfo.nc</exportFile>
+				<properties>
+					<string key="dummy" value="dummy"/>
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>-m</argument>
+					<argument>coldcast.cli</argument>
+					<argument>download</argument>
+					<argument>$DATA_SOURCE$</argument>
+					<argument>--settings</argument>
+					<argument>%WORK_DIR%/coldcast_settings.yaml</argument>
+					<argument>--model</argument>
+					<argument>$MODEL$</argument>
+					<argument>--run-info-netcdf</argument>
+					<argument>%WORK_DIR%/runinfo.nc</argument>
+					<argument>--output-dir</argument>
+					<argument>$IMPORT_FOLDER$/$MODEL$</argument>
+				</arguments>
+				<logFile>
+					<file>%WORK_DIR%/coldcast_download.log</file>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+				</logFile>
+				<timeOut>9000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

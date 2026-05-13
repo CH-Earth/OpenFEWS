@@ -182,6 +182,18 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<timeSeriesSets id="HREPABasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHREPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>HREPA</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<timeSeriesSets id="RDPABasins">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
@@ -203,10 +215,12 @@
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HRDPSBasins">
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>TA.nwp</parameterId>
+			<parameterId>PC.nwp</parameterId>
 			<locationSetId>HindcastBasins</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
@@ -321,6 +335,171 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<!-- Timeseries Sets - Forecast @ Basins Daily-->
+	<timeSeriesSets id="HRDPABasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HREPABasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHREPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>HREPA</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPABasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HRDPSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GDPSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="REPSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GEPSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GEFSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="IFSBasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessIFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessIFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- Timeseries Sets @ Forecast Stations-->
 	<timeSeriesSets id="HRDPAStations">
 		<timeSeriesSet>
@@ -368,6 +547,26 @@
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HRDPSStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>HindcastMeteoStations</locationSetId>
@@ -484,6 +683,189 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<!-- Forecast Data at Stations - Daily-->
+	<timeSeriesSets id="HRDPAStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPAStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HREPAStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHREPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>HREPA</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="HRDPSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GDPSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="REPSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GEPSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GEFSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="IFSStationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessIFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessIFS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- First Level Filters -->
 	<filter id="webservices" name="webservices">
 		<child foreignKey="HindcastData"/>
@@ -493,12 +875,16 @@
 		<child foreignKey="HindcastMeteoStations"/>
 		<child foreignKey="ForecastDataStations"/>
 		<child foreignKey="ForecastDataBasins"/>
+		<child foreignKey="ForecastDataBasinsDaily"/>
+		<child foreignKey="ForecastDataStationsDaily"/>
 	</filter>
 	<filter id="ForecastDataStations" name="Forecast Data - By Station">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HRDPAStations"/>
+		<child foreignKey="HREPAStations"/>
 		<child foreignKey="RDPAStations"/>
 		<child foreignKey="RDPSStations"/>
+		<child foreignKey="HRDPSStations"/>
 		<child foreignKey="GDPSStations"/>
 		<child foreignKey="REPSStations"/>
 		<child foreignKey="GEPSStations"/>
@@ -508,13 +894,41 @@
 	<filter id="ForecastDataBasins" name="Forecast Data - By Basin">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HRDPABasins"/>
+		<child foreignKey="HREPABasins"/>
 		<child foreignKey="RDPABasins"/>
 		<child foreignKey="RDPSBasins"/>
+		<child foreignKey="HRDPSBasins"/>
 		<child foreignKey="GDPSBasins"/>
 		<child foreignKey="REPSBasins"/>
 		<child foreignKey="GEPSBasins"/>
 		<child foreignKey="GEFSBasins"/>
 		<child foreignKey="IFSBasins"/>
+	</filter>
+	<filter id="ForecastDataBasinsDaily" name="Forecast Data Daily - By Basin">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="HRDPABasinsDaily"/>
+		<child foreignKey="HREPABasinsDaily"/>
+		<child foreignKey="RDPABasinsDaily"/>
+		<child foreignKey="RDPSBasinsDaily"/>
+		<child foreignKey="HRDPSBasinsDaily"/>
+		<child foreignKey="GDPSBasinsDaily"/>
+		<child foreignKey="REPSBasinsDaily"/>
+		<child foreignKey="GEPSBasinsDaily"/>
+		<child foreignKey="GEFSBasinsDaily"/>
+		<child foreignKey="IFSBasinsDaily"/>
+	</filter>
+	<filter id="ForecastDataStationsDaily" name="Forecast Data Daily - By Basin">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="HRDPAStationsDaily"/>
+		<child foreignKey="HREPAStationsDaily"/>
+		<child foreignKey="RDPAStationsDaily"/>
+		<child foreignKey="RDPSStationsDaily"/>
+		<child foreignKey="HRDPSStationsDaily"/>
+		<child foreignKey="GDPSStationsDaily"/>
+		<child foreignKey="REPSStationsDaily"/>
+		<child foreignKey="GEPSStationsDaily"/>
+		<child foreignKey="GEFSStationsDaily"/>
+		<child foreignKey="IFSStationsDaily"/>
 	</filter>
 	<!-- Second Level Filters -->
 	<filter id="HydroStations" name="Hydro Stations">
@@ -527,7 +941,7 @@
 	</filter>
 	<filter id="HRDPAStations" name="HRDPA @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>RDPAStations</timeSeriesSetsId>
+		<timeSeriesSetsId>HRDPAStations</timeSeriesSetsId>
 	</filter>
 	<filter id="HREPAStations" name="HREPA @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -536,6 +950,10 @@
 	<filter id="RDPSStations" name="RDPS @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPSStations</timeSeriesSetsId>
+	</filter>
+	<filter id="HRDPSStations" name="HRDPS @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPSStations</timeSeriesSetsId>
 	</filter>
 	<filter id="GDPSStations" name="GDPS @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -557,9 +975,56 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSStations</timeSeriesSetsId>
 	</filter>
+	<!--NWP Stations - Daily-->
+	<filter id="HRDPAStationsDaily" name="HRDPA Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPAStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="HREPAStationsDaily" name="HREPA Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HREPAStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPAStationsDaily" name="RDPA Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPAStationsDaily</timeSeriesSetsId>
+	</filter>
+
+	<filter id="RDPSStationsDaily" name="RDPS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="HRDPSStationsDaily" name="HRDPS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GDPSStationsDaily" name="GDPS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GDPSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="REPSStationsDaily" name="REPS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>REPSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GEPSStationsDaily" name="GEPS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GEPSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GEFSStationsDaily" name="GEFS Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GEFSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="IFSStationsDaily" name="IFS Daily@ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>IFSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<!-- NWP Basins -->
 	<filter id="HRDPABasins" name="HRDPA @ Basins">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>RDPABasins</timeSeriesSetsId>
+		<timeSeriesSetsId>HRDPABasins</timeSeriesSetsId>
+	</filter>
+	<filter id="HREPABasins" name="HREPA @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HREPABasins</timeSeriesSetsId>
 	</filter>
 	<filter id="RDPABasins" name="RDPA @ Basins">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -568,6 +1033,10 @@
 	<filter id="RDPSBasins" name="RDPS @ Basins">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPSBasins</timeSeriesSetsId>
+	</filter>
+	<filter id="HRDPSBasins" name="HRDPS @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPSBasins</timeSeriesSetsId>
 	</filter>
 	<filter id="GDPSBasins" name="GDPS @ Basins">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -589,6 +1058,48 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSBasins</timeSeriesSetsId>
 	</filter>
+	<!-- NWP Basins Daily-->
+	<filter id="HRDPABasinsDaily" name="HRDPA @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPABasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="HREPABasinsDaily" name="HREPA @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HREPABasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPABasinsDaily" name="RDPA @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPABasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPSBasinsDaily" name="RDPS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="HRDPSBasinsDaily" name="HRDPS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HRDPSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GDPSBasinsDaily" name="GDPS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GDPSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="REPSBasinsDaily" name="REPS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>REPSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GEPSBasinsDaily" name="GEPS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GEPSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="GEFSBasinsDaily" name="GEFS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GEFSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="IFSBasinsDaily" name="IFS @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>IFSBasinsDaily</timeSeriesSetsId>
+	</filter>
+	<!-- Obsevation Stations - Filters -->
 	<filter id="HindcastHydroStations" name="Hindcast Hydro Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>HindcastHydroStations</timeSeriesSetsId>

@@ -61,25 +61,9 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
-	<nodes id="ImportERA5Nodes" name="Import ERA5 Re-Analysis">
-		<node id="ImportERA5Yukon" name="Import ERA5 for Entire Yukon Basin">
-			<workflowId>ImportERA5Yukon</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ImportERA5Chena" name="Import ERA5 for Chena">
-			<workflowId>ImportERA5Chena</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ImportERA5Ross" name="Import ERA5 for Ross">
-			<workflowId>ImportERA5Ross</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ImportERA5Bow" name="Import ERA5 Bow">
-			<workflowId>ImportERA5Bow</workflowId>
-			<viewPermission>AlbertaForecaster</viewPermission>
+	<nodes id="ImportERA5Nodes" name="Import ERA5">
+		<node id="ImportERA5" name="Import ERA5 Re-Analysis">
+			<workflowId>ImportERA5</workflowId>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>

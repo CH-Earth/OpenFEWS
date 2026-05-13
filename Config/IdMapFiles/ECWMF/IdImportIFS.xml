@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="TA.nwp" internalLocation="IFS" externalParameter="t2m" externalLocation="IFS"/>
+	<map internalParameter="PC.nwp" internalLocation="IFS" externalParameter="tp" externalLocation="IFS"/>
+	<map internalParameter="TA.nwp" internalLocation="IFS" externalParameter="temperature_height_above_ground" externalLocation="IFS"/>
+	<parameter internal="PR.nwp" external="precipitation_flux"/>
+	<parameter internal="TA.nwp" external="air_temperature"/>
+	<enableOneToOneMapping/>
+</idMap>

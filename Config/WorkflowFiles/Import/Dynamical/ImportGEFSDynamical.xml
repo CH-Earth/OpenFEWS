@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<!-- EnsembleID if needed-->
+		<string key="ENSEMBLE" value="GEFS"/>
+		<!--Subbasin Location-->
+		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<!--Basin Location-->
+		<string key="SUBBASINLOCATIONS" value="ProcessSubBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="ProcessMeteoStations"/>
+		<!--Time Series Type-->
+		<string key="GRIDTIMESERIESTYPE" value="external forecasting"/>
+		<string key="BASINTIMESERIESTYPE" value="external forecasting"/>
+		<string key="SUBBASINTIMESERIESTYPE" value="external forecasting"/>
+		<string key="STATIONTIMESERIESTYPE" value="external forecasting"/>
+		<!-- Unit Conversion -->
+		<string key="UNITCONVERSION" value="ImportECCCNWPUnitConversions"/>
+	</properties>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="DYNAMICAL_CATALOG"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="GEFS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="3"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+		</properties>
+		<workflowId>ImportNWPDynamicalTemplate</workflowId>
+	</activity>
+</workflow>

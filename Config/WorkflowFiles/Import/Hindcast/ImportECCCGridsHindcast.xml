@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<!-- EnsembleID if needed-->
+		<string key="ENSEMBLE" value="main"/>
+		<!--Subbasin Location-->
+		<string key="BASINLOCATIONS" value="HindcastBasins"/>
+		<!--Basin Location-->
+		<string key="SUBBASINLOCATIONS" value="HindcastSubBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
+		<!--Time Series Type-->
+		<string key="GRIDTIMESERIESTYPE" value="temporary"/>
+		<string key="BASINTIMESERIESTYPE" value="external forecasting"/>
+		<string key="SUBBASINTIMESERIESTYPE" value="temporary"/>
+		<string key="STATIONTIMESERIESTYPE" value="external forecasting"/>
+		<!-- Unit Conversion -->
+		<string key="UNITCONVERSION" value="ImportECCCNWPUnitConversions"/>
+		<!--Time Series Type-->
+		<string key="PREPROCESSWORKFLOW" value="PreprocessNWPHindastTemplate"/>
+	</properties>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="HRDPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="1"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="RDPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="1"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="GDPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="3"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="REPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="3"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+			<!-- Ensemble -->
+			<string key="ENSEMBLE" value="REPS"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="DATA_SOURCE" value="ECCC_NWP"/>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="GEPS"/>
+			<!-- NWP Timestep-->
+			<string key="TIMESTEP" value="3"/>
+			<!-- Expiry Timestep-->
+			<string key="EXPIRYTIME" value="7"/>
+			<!-- Ensemble -->
+			<string key="ENSEMBLE" value="GEPS"/>
+		</properties>
+		<workflowId>ImportNWPTemplate</workflowId>
+	</activity>
+</workflow>

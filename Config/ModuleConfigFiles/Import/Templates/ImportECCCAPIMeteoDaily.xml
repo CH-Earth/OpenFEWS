@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/$DATA_SOURCE$/$MODEL$/</folder>
+			<fileNamePatternFilter>$LOOP_LOCATION_ID$_$MODEL$.csv</fileNamePatternFilter>
+			<table>
+				<dateTimeColumn name="DATETIME" pattern="yyyy-MM-dd HH:mm:ss"/>
+				<valueColumn name="MAX_TEMPERATURE" unit="oC" parameterId="TAmax.obs"/>
+				<valueColumn name="MIN_TEMPERATURE" unit="oC" parameterId="TAmin.obs"/>
+				<valueColumn name="MEAN_TEMPERATURE" unit="oC" parameterId="TA.obs"/>
+				<valueColumn name="TOTAL_PRECIPITATION" unit="mm" parameterId="PC.obs"/>
+			</table>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+
+		</general>
+		<tolerance timeUnit="day" unitCount="1" parameterId="TAmax.obs"/>
+		<tolerance timeUnit="day" unitCount="1" parameterId="TAmin.obs"/>
+		<tolerance timeUnit="day" unitCount="1" parameterId="TA.obs"/>
+		<tolerance timeUnit="day" unitCount="1" parameterId="PC.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

@@ -9,7 +9,7 @@
 			<valueType>grid</valueType>
 			<parameterId>PR.nwp</parameterId>
 			<locationId>$INPUTGRID$</locationId>
-			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$GRID_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -22,7 +22,7 @@
 			<valueType>grid</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationId>$INPUTGRID$</locationId>
-			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$GRID_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -50,7 +50,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -63,7 +63,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -89,7 +89,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -102,7 +102,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -128,7 +128,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -141,7 +141,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>PC.nwp</parameterId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -155,7 +155,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -168,7 +168,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -182,7 +182,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>max</qualifierId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -196,7 +196,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>min</qualifierId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -209,7 +209,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -222,7 +222,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -236,7 +236,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>max</qualifierId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -250,7 +250,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>min</qualifierId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
-			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -263,7 +263,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -276,7 +276,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -290,7 +290,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>max</qualifierId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
@@ -304,7 +304,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<qualifierId>min</qualifierId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
-			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$PROCESSED_TIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>

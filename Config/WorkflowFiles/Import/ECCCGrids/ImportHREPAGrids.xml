@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Retrieve NWP grids from Environment Canada -->
+	<properties>
+		<!-- Data Source Name-->
+		<string key="DATA_SOURCE" value="ECCC_PRECIP_GRID"/>
+		<!--Basin Location-->
+		<string key="BASINLOCATIONS" value="HindcastBasins"/>
+		<!--Subbasin Location-->
+		<string key="SUBBASINLOCATIONS" value="HindcastSubBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
+		<!--Starttime-->
+		<string key="STARTTIME" value="-14"/>
+		<!--Endtime-->
+		<string key="ENDTIME" value="0"/>
+		<!--Timeseries Type-->
+		<string key="GRIDTIMESERIESTYPE" value="temporary"/>
+		<string key="STATIONTIMESERIESTYPE" value="external historical"/>
+		<string key="SUBBASINTIMESERIESTYPE" value="temporary"/>
+		<string key="BASINTIMESERIESTYPE" value="external historical"/>
+	</properties>
+	<activity>
+		<properties>
+			<!-- Data Source Name-->
+			<string key="MODEL" value="HREPA"/>
+			<!-- Input Grid-->
+			<string key="INPUTGRID" value="HREPA"/>
+			<!-- Input Module Instance ID-->
+			<string key="INPUTMODULEINSTANCE" value="ImportHREPA"/>
+			<!--Ensemble-->
+			<string key="ENSEMBLE" value="main"/>
+			<!--Timeseries Type-->
+			<string key="TIMESTEP" value="6"/>
+			<!--Parameter Type-->
+			<string key="PARAMETER" value="PC.sim"/>
+			<!--File Type-->
+			<string key="IMPORTTYPE" value="NETCDF-CF_GRID"/>
+		</properties>
+		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
+	</activity>
+</workflow>

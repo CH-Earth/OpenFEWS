@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<!-- Input Grid-->
+		<string key="INPUTGRID" value="$MODEL$"/>
+		<!-- Module Instance ID to be given to  Timeseries-->
+		<string key="INPUTMODULEINSTANCE" value="Import$MODEL$"/>
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>Retrieve$MODEL$</moduleInstanceId>
+		<moduleConfigFileName>RetrieveDataTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Retrieve NWP grids from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>Import$MODEL$</moduleInstanceId>
+		<moduleConfigFileName>ImportRenalysisTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Forecast Data for Input to Modelling-->
+	<activity>
+		<properties>
+			<string key="GRID_TIMESERIESTYPE" value="temporary"/>
+			<string key="PROCESSED_TIMESERIESTYPE" value="external historical"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>Preprocess$MODEL$</moduleInstanceId>
+		<moduleConfigFileName>PreprocessReanalysisTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

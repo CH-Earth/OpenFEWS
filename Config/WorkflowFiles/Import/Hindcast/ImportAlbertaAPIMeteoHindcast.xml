@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<string key="DATA_SOURCE" value="ALBERTA_API"/>
+		<string key="LOCATIONSET" value="elbow_alberta_meteo_stations"/>
+		<string key="MODEL" value="meteo"/>
+		<string key="TIMESTEP" value="hourly"/>
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveAlbertaAPI</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportAlbertaAPI</moduleInstanceId>
+		<loopLocationSetId>elbow_alberta_meteo_stations</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="INPUT_MODULE_INSTANCE_ID" value="ImportAlbertaAPI"/>
+			<string key="STATIONLOCATIONS" value="elbow_alberta_meteo_stations"/>
+			<string key="BASINLOCATIONS" value="HindcastBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportMeteoStations</moduleInstanceId>
+		<moduleConfigFileName>PreprocessMeteoStationDataTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

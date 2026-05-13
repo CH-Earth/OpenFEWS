@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.2">
+	<properties>
+		<string key="LOCATIONSET" value="HindcastHydroStations"/>
+		<string key="DATA_SOURCE" value="ECCC_API"/>
+	</properties>
+	<activity>
+		<properties>
+			<string key="MODEL" value="hydrometric-realtime"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportWSC</moduleInstanceId>
+		<moduleConfigFileName>RetrieveECCCAPITemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MODEL" value="hydrometric-realtime"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportECCCAPIRecent</moduleInstanceId>
+		<loopLocationSetId>HindcastHydroStations</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MODEL" value="hydrometric-daily-mean"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportWSC</moduleInstanceId>
+		<moduleConfigFileName>RetrieveECCCAPITemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MODEL" value="hydrometric-daily-mean"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportECCCAPIHistoric</moduleInstanceId>
+		<loopLocationSetId>HindcastHydroStations</loopLocationSetId>
+	</activity>
+	<activity>
+		<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+	</activity>
+</workflow>

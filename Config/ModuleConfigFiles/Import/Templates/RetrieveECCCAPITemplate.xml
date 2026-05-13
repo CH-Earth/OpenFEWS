@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/Modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$</exportDir>
+		<importDir>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportLocationAttributesCsvActivity>
+				<exportFile>$LOCATIONSET$.csv</exportFile>
+				<locationSetId>$LOCATIONSET$</locationSetId>
+				<attributeColumn columnName="ID" attributeId="ID"/>
+				<attributeColumn columnName="CLIMATE_IDENTIFIER" attributeId="ID"/>
+				<attributeColumn columnName="NAME" attributeId="NAME"/>
+				<attributeColumn columnName="X" attributeId="X"/>
+				<attributeColumn columnName="Y" attributeId="Y"/>
+			</exportLocationAttributesCsvActivity>
+			<exportNetcdfRunFileActivity>
+				<exportFile>%WORK_DIR%/runinfo.nc</exportFile>
+				<properties>
+					<string key="dummy" value="dummy"/>
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>-m</argument>
+					<argument>coldcast.cli</argument>
+					<argument>download</argument>
+					<argument>$DATA_SOURCE$</argument>
+					<argument>--model</argument>
+					<argument>$MODEL$</argument>
+					<argument>--stations-csv</argument>
+					<argument>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$/$LOCATIONSET$.csv</argument>
+					<argument>--run-info-netcdf</argument>
+					<argument>%WORK_DIR%/runinfo.nc</argument>
+					<argument>--output-dir</argument>
+					<argument>$IMPORT_FOLDER$/$DATA_SOURCE$/$MODEL$</argument>
+				</arguments>
+				<timeOut>900000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

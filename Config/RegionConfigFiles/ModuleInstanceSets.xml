@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleInstanceSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceSets.xsd" version="1.1">
+	<moduleInstanceSet id="ImportNWP">
+		<moduleInstanceId>ImportRDPS</moduleInstanceId>
+		<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+		<moduleInstanceId>ImportGDPS</moduleInstanceId>
+		<moduleInstanceId>ImportREPS</moduleInstanceId>
+		<moduleInstanceId>ImportGEPS</moduleInstanceId>
+		<moduleInstanceId>ImportGEFS</moduleInstanceId>
+		<moduleInstanceId>ImportIFS</moduleInstanceId>
+	</moduleInstanceSet>
+	<moduleInstanceSet id="PreprocessNWP">
+		<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
+		<moduleInstanceId>PreprocessIFS</moduleInstanceId>
+	</moduleInstanceSet>
 	<moduleInstanceSet id="BowWflowForecast">
-	<moduleInstanceIdPattern>BowWflow*Forecast</moduleInstanceIdPattern>
+		<moduleInstanceIdPattern>BowWflow*Forecast</moduleInstanceIdPattern>
 	</moduleInstanceSet>
 	<moduleInstanceSet id="ElbowRavenForecast">
-	<moduleInstanceIdPattern>ElbowRaven*Forecast</moduleInstanceIdPattern>
+		<moduleInstanceIdPattern>ElbowRaven*Forecast</moduleInstanceIdPattern>
 	</moduleInstanceSet>
 </moduleInstanceSets>

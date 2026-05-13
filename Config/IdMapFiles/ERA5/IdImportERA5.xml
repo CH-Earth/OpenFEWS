@@ -2,7 +2,7 @@
 <idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
 	<parameter internal="RSext" external="tisr"/>
 	<parameter internal="PA" external="sp"/>
-	<parameter internal="PC.sim" external="tp"/>
+	<parameter internal="PC.obs" external="tp"/>
 	<parameter internal="TA.obs" external="t2m"/>
 	<parameter internal="PET.obs" external="pev"/>
 	<parameter internal="RS.sim" external="ssrd"/>
@@ -24,5 +24,9 @@
 	<parameter internal="RS" external="SWRadAtm"/>
 	<parameter internal="RH" external="spechum"/>
 	<parameter internal="US" external="windspd"/>
+	
+	<parameter internal="PR.nwp" external="avg_tprate"/>
+	<parameter internal="TA.nwp" external="t2m"/>
+	
 	<enableOneToOneMapping/>
 </idMap>

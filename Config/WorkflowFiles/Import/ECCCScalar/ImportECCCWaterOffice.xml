@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<string key="LOCATIONSET" value="HindcastHydroStations"/>
+		<string key="DATA_SOURCE" value="ECCC_WATER_OFFICE"/>
+		<string key="MODEL" value="ECCC_WATER_OFFICE"/>
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportWSC</moduleInstanceId>
+		<moduleConfigFileName>RetrieveDataTemplate</moduleConfigFileName>
+		<loopLocationSetId>HindcastHydroStations</loopLocationSetId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportWSC</moduleInstanceId>
+		<moduleConfigFileName>ImportECCCWaterOffice</moduleConfigFileName>
+		<loopLocationSetId>HindcastHydroStations</loopLocationSetId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+	</activity>
+</workflow>
