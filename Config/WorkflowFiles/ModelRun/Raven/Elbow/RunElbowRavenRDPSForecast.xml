@@ -2,15 +2,15 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Run Model Forecast -->
 	<properties>
-		<string key="MODEL" value="Bow"/>
+		<string key="MODEL" value="Elbow"/>
 		<string key="FORECAST" value="RDPS"/>
 		<string key="STARTTIME" value="-5"/>
 		<string key="ENDTIME" value="3"/>
 		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
-		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="HISTORICMODULEINSTANCE" value="ImportMeteoStations"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessRDPS"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="BowRavenForecast"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
 		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
 	</properties>
 <!--Set Forecast Length-->
@@ -22,7 +22,7 @@
 	<!--Set Merge Historic and Forecast Data-->
 	<activity>
 		<properties>
-		<string key="LOCATIONSET" value="BowSubBasins"/>
+		<string key="LOCATIONSET" value="ElbowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
@@ -34,7 +34,7 @@
 		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessRDPS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Postprocess Model Results-->
@@ -48,7 +48,7 @@
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

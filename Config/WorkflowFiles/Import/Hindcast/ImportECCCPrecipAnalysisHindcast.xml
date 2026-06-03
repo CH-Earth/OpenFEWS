@@ -58,24 +58,24 @@
 		</properties>
 		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
 	</activity>
-	<activity>
+<!--	<activity>
 		<properties>
-			<!-- Data Source Name-->
+			--><!-- Data Source Name--><!--
 			<string key="MODEL" value="HREPA"/>
-			<!-- Input Grid-->
+			--><!-- Input Grid--><!--
 			<string key="INPUTGRID" value="HREPA"/>
-			<!-- Input Module Instance ID-->
+			--><!-- Input Module Instance ID--><!--
 			<string key="INPUTMODULEINSTANCE" value="ImportHREPA"/>
-			<!--Ensemble-->
+			--><!--Ensemble--><!--
 			<string key="ENSEMBLE" value="HREPA"/>
-			<!--Timeseries Type-->
+			--><!--Timeseries Type--><!--
 			<string key="TIMESTEP" value="6"/>
-			<!--Parameter Type-->
+			--><!--Parameter Type--><!--
 			<string key="PARAMETER" value="PC.sim"/>
-			<!--File Type-->
+			--><!--File Type--><!--
 			<string key="IMPORTTYPE" value="NETCDF-CF_GRID"/>
 		</properties>
 		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
-	</activity>
+	</activity>-->
 
 </workflow>

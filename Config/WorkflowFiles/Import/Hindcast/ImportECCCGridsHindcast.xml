@@ -30,8 +30,10 @@
 			<string key="TIMESTEP" value="1"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="48"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportNWPHindcastTemplate</workflowId>
 	</activity>
 	<activity>
 		<properties>
@@ -43,8 +45,10 @@
 			<string key="TIMESTEP" value="1"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="84"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportNWPHindcastTemplate</workflowId>
 	</activity>
 	<activity>
 		<properties>
@@ -56,8 +60,10 @@
 			<string key="TIMESTEP" value="3"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="168"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportNWPHindcastTemplate</workflowId>
 	</activity>
 	<activity>
 		<properties>
@@ -71,8 +77,10 @@
 			<string key="EXPIRYTIME" value="7"/>
 			<!-- Ensemble -->
 			<string key="ENSEMBLE" value="REPS"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="72"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportNWPHindcastTemplate</workflowId>
 	</activity>
 	<activity>
 		<properties>
@@ -86,7 +94,9 @@
 			<string key="EXPIRYTIME" value="7"/>
 			<!-- Ensemble -->
 			<string key="ENSEMBLE" value="GEPS"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="168"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportNWPHindcastTemplate</workflowId>
 	</activity>
 </workflow>

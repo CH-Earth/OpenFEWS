@@ -14,7 +14,7 @@
 		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessREPS"/>
 		<string key="ENSEMBLE" value="REPS"/>
-		<string key="EXPORTDATASET" value="RavenForecastEns"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecastEns"/>
 	</properties>
 	<!--Set Forecast Length-->
 	<activity>
@@ -25,7 +25,7 @@
 	<!--Set Merge Historic and Forecast Data-->
 	<activity>
 		<properties>
-			<string key="LOCATIONSET" value="BowSubBasins"/>
+			<string key="LOCATIONSET" value="ElbowSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
@@ -42,7 +42,7 @@
 			<string key="MODULEDATASET" value="RavenForecastEns"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenREPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenREPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>REPS</ensembleId>
@@ -60,7 +60,7 @@
 			<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenREPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenREPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>REPS</ensembleId>

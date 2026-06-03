@@ -14,7 +14,7 @@
 		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessGEPS"/>
 		<string key="ENSEMBLE" value="GEPS"/>
-		<string key="EXPORTDATASET" value="RavenForecastEns"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecastEns"/>
 	</properties>
 	<!--Set Forecast Length-->
 	<activity>
@@ -42,7 +42,7 @@
 			<string key="MODULEDATASET" value="RavenForecastEns"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenGEPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>GEPS</ensembleId>

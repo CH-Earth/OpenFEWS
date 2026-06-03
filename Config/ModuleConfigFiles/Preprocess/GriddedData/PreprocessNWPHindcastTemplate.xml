@@ -3,19 +3,6 @@
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<!--Input-->
 	<variable>
-		<variableId>gridded_precip</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
-			<valueType>grid</valueType>
-			<parameterId>PC.nwp</parameterId>
-			<locationId>$INPUTGRID$</locationId>
-			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-			<ensembleId>$ENSEMBLE$</ensembleId>
-		</timeSeriesSet>
-	</variable>
-	<variable>
 		<variableId>gridded_temperature</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
@@ -28,8 +15,37 @@
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>gridded_precip_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
 	<!--Output-->
 	<!-- Precipitation Output-->
+	<variable>
+		<variableId>gridded_precip</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<qualifierId>temp</qualifierId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
 	<variable>
 		<variableId>basin_precip_cumulative</variableId>
 		<timeSeriesSet>
@@ -314,6 +330,34 @@
 		</timeSeriesSet>
 	</variable>
 	<!--Transformations - precip-->
+	<!--	<transformation id="fill_gridded_precip">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>gridded_precip_unfilled</variableId>
+				</inputVariable>
+				<maxGapLength>1</maxGapLength>
+				<defaultValue>0</defaultValue>
+				<extrapolateDirection>start</extrapolateDirection>
+				<outputVariable>
+					<variableId>gridded_precip</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>-->
+	<transformation id="fill_gridded_precip">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>gridded_precip_unfilled</variableId>
+				</inputVariable>
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>gridded_precip</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
 	<transformation id="basin_precip_cumulative">
 		<interpolationSpatial>
 			<average>
@@ -326,17 +370,17 @@
 			</average>
 		</interpolationSpatial>
 	</transformation>
-	<transformation id="basin_precip_disaggregate">
-		<deaccumulation>
-			<sum>
+	<transformation id="basin_precip_disaggregate_timestep">
+		<disaggregation>
+			<accumulative>
 				<inputVariable>
 					<variableId>basin_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>basin_precip</variableId>
 				</outputVariable>
-			</sum>
-		</deaccumulation>
+			</accumulative>
+		</disaggregation>
 	</transformation>
 	<transformation id="basin_precip_daily">
 		<aggregation>
@@ -363,16 +407,17 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="subbasin_precip">
-				<deaccumulation>
-			<sum>
+		<disaggregation>
+			<accumulative>
 				<inputVariable>
 					<variableId>subbasin_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>subbasin_precip</variableId>
 				</outputVariable>
-			</sum>
-		</deaccumulation>	</transformation>
+			</accumulative>
+		</disaggregation>
+	</transformation>
 	<transformation id="subbasin_precip_daily">
 		<aggregation>
 			<accumulative>
@@ -399,16 +444,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="station_precip">
-			<deaccumulation>
-			<sum>
+		<disaggregation>
+			<accumulative>
 				<inputVariable>
 					<variableId>station_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>station_precip</variableId>
 				</outputVariable>
-			</sum>
-		</deaccumulation>
+			</accumulative>
+		</disaggregation>
 	</transformation>
 	<transformation id="station_precip_daily">
 		<aggregation>

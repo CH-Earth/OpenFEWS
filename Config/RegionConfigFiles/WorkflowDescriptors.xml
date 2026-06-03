@@ -17,28 +17,28 @@
 	<workflowDescriptor id="ImportAlbertaAPI" name="Import Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
 	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_6hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportHREPAGrids" name="Import HREPA" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_6hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportRDPAGrids" name="Import RDPA" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_6hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportHRDPSGrids" name="Import HRDPS" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_6hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportRDPSGrids" name="Import RDPS" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_6hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportGDPSGrids" name="Import GDPS" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_12hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportREPSGrids" name="Import REPS" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_12hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportGEPSGrids" name="Import GEPS" forecast="false" allowApprove="false" visible="true">
-		<cardinalTimeStep id="GMT_12hourly"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="RetrieveECCCRadarComposite" name="Import Radar (Composite)" forecast="false" allowApprove="false" visible="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
@@ -74,11 +74,11 @@
 	<!-- Retrieve and Import ECWMF from Server Workflows -->
 	<workflowDescriptor id="ImportIFSDetGrids" name="Import IFS Deterministic" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from ECWMF</description>
-		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportIFSEnsGrids" name="Import IFS Ensemble" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from ECWMF</description>
-		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportAIFSDetGrids" name="Import AIFS Deterministic" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from ECWMF</description>
@@ -91,11 +91,11 @@
 	<!-- Retrieve and Import Data from Dynamical -->
 	<workflowDescriptor id="ImportGEFSDynamical" name="Import GEFS (Dynamical)" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve GEFS Forecast Grids from Dynamical</description>
-		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="ImportIFSDynamical" name="Import IFS (Dynamical)" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve IFS Forecast Grids from Dynamical</description>
-		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+		<cardinalTimeStep id="GMT_24hourly"/>
 	</workflowDescriptor>
 	<!--Additional Gridded Data Imports -->
 	<workflowDescriptor id="ImportERA5" name="Import ERA5 data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
@@ -189,7 +189,7 @@
 	<workflowDescriptor id="RunRossSUMMAGEPSForecast" name="Run Ross SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
-		<!--SUMMA Model Run Workflow Descriptors -->
+	<!--SUMMA Model Run Workflow Descriptors -->
 	<workflowDescriptor id="RunBowMESHHistoric" name="Run Bow MESH (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
@@ -260,7 +260,9 @@
 	<!--Import Hindcasting Workflows -->
 	<workflowDescriptor id="ImportECCCAPIMeteoHindcast" name="Import ECCC Meteo Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCAPIHydroHindcast" name="Import ECCC Hydro Historic Data" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
-	<workflowDescriptor id="ImportECCCGridsHindcast" name="Import ECCC NWP for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCGridsHindcast" name="Import ECCC NWP for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_24hourly"/>
+	</workflowDescriptor>
 	<workflowDescriptor id="ImportECCCPrecipAnalysisHindcast" name="Import ECCC Precip Analysis for Hindcasting" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportPrecipAnalysisTemplate" name="Template for Accessing and Processing Precip Analysis" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
 	<rootNode>

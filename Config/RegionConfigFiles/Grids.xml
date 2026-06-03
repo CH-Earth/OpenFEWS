@@ -63,29 +63,20 @@
 		<yCellSize>0.0225</yCellSize>
 	</regular>
 	<regular locationId="RDPS">
-		<rows>824</rows>
-		<columns>935</columns>
-		<polarStereographic>
-			<originLatitude>90.0</originLatitude>
-			<originLongitude>249.0</originLongitude>
-			<scaleAtOrigin>0.9330127018922193</scaleAtOrigin>
-			<equatorRadius>6371229.0</equatorRadius>
-			<poleRadius>6371229.0</poleRadius>
-		</polarStereographic>
-		<gridCorners>
-			<geoDatum>WGS 1984</geoDatum>
-			<upperLeft>
-				<x>147.57653032124486</x>
-				<y>47.289183285578574</y>
-				<z>0.0</z>
-			</upperLeft>
-			<lowerRight>
-				<x>-77.77846054786623</x>
-				<y>17.299437426457636</y>
-				<z>0.0</z>
-			</lowerRight>
-		</gridCorners>
-	</regular>
+        <rows>1045</rows>
+        <columns>1140</columns>
+        <rotatedNorthPole>
+            <latitude>31.758312225341797</latitude>
+            <longitude>-92.40298461914062</longitude>
+        </rotatedNorthPole>
+        <firstCellCenter>
+            <x>-53.85858154296875</x>
+            <y>45.46516036987305</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.090298</xCellSize>
+        <yCellSize>0.090298</yCellSize>
+    </regular>
 	<regular locationId="GDPS">
 		<rows>1201</rows>
 		<columns>2400</columns>

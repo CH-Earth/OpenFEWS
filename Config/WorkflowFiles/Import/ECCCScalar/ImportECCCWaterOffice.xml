@@ -8,8 +8,7 @@
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportWSC</moduleInstanceId>
-		<moduleConfigFileName>RetrieveDataTemplate</moduleConfigFileName>
-		<loopLocationSetId>HindcastHydroStations</loopLocationSetId>
+		<moduleConfigFileName>RetrieveECCCAPITemplate</moduleConfigFileName>
 	</activity>
 	<activity>
 		<runIndependent>true</runIndependent>

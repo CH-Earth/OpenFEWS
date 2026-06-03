@@ -26,6 +26,8 @@
 			<string key="MODEL" value="REPS"/>
 			<!-- NWP Timestep-->
 			<string key="TIMESTEP" value="3"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="48"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
 		</properties>

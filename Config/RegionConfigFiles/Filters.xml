@@ -335,6 +335,27 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<timeSeriesSets id="ERA5Basins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- Timeseries Sets - Forecast @ Basins Daily-->
 	<timeSeriesSets id="HRDPABasinsDaily">
 		<timeSeriesSet>
@@ -500,7 +521,27 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
-	<!-- Timeseries Sets @ Forecast Stations-->
+	<timeSeriesSets id="ERA5BasinsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Timeseries Sets @ Meteo Forecast Stations-->
 	<timeSeriesSets id="HRDPAStations">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
@@ -683,7 +724,27 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
-	<!-- Forecast Data at Stations - Daily-->
+	<timeSeriesSets id="ERA5Stations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!--Timeseries Sets @ Meteo Forecast Stations-->
 	<timeSeriesSets id="HRDPAStationsDaily">
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
@@ -866,6 +927,49 @@
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<timeSeriesSets id="ERA5StationsDaily">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>HindcastMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!--Timeseries Sets @ Model Hydro Forecasts-->
+	<timeSeriesSets id="RavenElbowDischargeHistoric">
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RavenElbowDischargeForecast">
+		<timeSeriesSet>
+			<moduleInstanceSetId>ElbowRavenForecast</moduleInstanceSetId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- First Level Filters -->
 	<filter id="webservices" name="webservices">
 		<child foreignKey="HindcastData"/>
@@ -873,16 +977,18 @@
 	<filter id="HindcastData" name="Hindcast Data">
 		<child foreignKey="HindcastHydroStations"/>
 		<child foreignKey="HindcastMeteoStations"/>
-		<child foreignKey="ForecastDataStations"/>
-		<child foreignKey="ForecastDataBasins"/>
+		<!--		<child foreignKey="ForecastDataStations"/>
+		<child foreignKey="ForecastDataBasins"/>-->
 		<child foreignKey="ForecastDataBasinsDaily"/>
 		<child foreignKey="ForecastDataStationsDaily"/>
+		<child foreignKey="HydroModelResults"/>
 	</filter>
 	<filter id="ForecastDataStations" name="Forecast Data - By Station">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HRDPAStations"/>
 		<child foreignKey="HREPAStations"/>
 		<child foreignKey="RDPAStations"/>
+		<child foreignKey="ERA5Stations"/>
 		<child foreignKey="RDPSStations"/>
 		<child foreignKey="HRDPSStations"/>
 		<child foreignKey="GDPSStations"/>
@@ -896,6 +1002,7 @@
 		<child foreignKey="HRDPABasins"/>
 		<child foreignKey="HREPABasins"/>
 		<child foreignKey="RDPABasins"/>
+		<child foreignKey="ERA5Basins"/>
 		<child foreignKey="RDPSBasins"/>
 		<child foreignKey="HRDPSBasins"/>
 		<child foreignKey="GDPSBasins"/>
@@ -909,6 +1016,7 @@
 		<child foreignKey="HRDPABasinsDaily"/>
 		<child foreignKey="HREPABasinsDaily"/>
 		<child foreignKey="RDPABasinsDaily"/>
+		<child foreignKey="ERA5BasinsDaily"/>
 		<child foreignKey="RDPSBasinsDaily"/>
 		<child foreignKey="HRDPSBasinsDaily"/>
 		<child foreignKey="GDPSBasinsDaily"/>
@@ -922,6 +1030,7 @@
 		<child foreignKey="HRDPAStationsDaily"/>
 		<child foreignKey="HREPAStationsDaily"/>
 		<child foreignKey="RDPAStationsDaily"/>
+		<child foreignKey="ERA5StationsDaily"/>
 		<child foreignKey="RDPSStationsDaily"/>
 		<child foreignKey="HRDPSStationsDaily"/>
 		<child foreignKey="GDPSStationsDaily"/>
@@ -929,6 +1038,11 @@
 		<child foreignKey="GEPSStationsDaily"/>
 		<child foreignKey="GEFSStationsDaily"/>
 		<child foreignKey="IFSStationsDaily"/>
+	</filter>
+	<filter id="HydroModelResults" name="Hydro Model - Results">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="RavenElbowHistoric"/>
+		<child foreignKey="RavenElbowForecast"/>
 	</filter>
 	<!-- Second Level Filters -->
 	<filter id="HydroStations" name="Hydro Stations">
@@ -975,6 +1089,10 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSStations</timeSeriesSetsId>
 	</filter>
+	<filter id="ERA5Stations" name="ERA5 @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>ERA5Stations</timeSeriesSetsId>
+	</filter>
 	<!--NWP Stations - Daily-->
 	<filter id="HRDPAStationsDaily" name="HRDPA Daily @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -988,7 +1106,6 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPAStationsDaily</timeSeriesSetsId>
 	</filter>
-
 	<filter id="RDPSStationsDaily" name="RDPS Daily @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPSStationsDaily</timeSeriesSetsId>
@@ -1013,9 +1130,13 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>GEFSStationsDaily</timeSeriesSetsId>
 	</filter>
-	<filter id="IFSStationsDaily" name="IFS Daily@ Stations">
+	<filter id="IFSStationsDaily" name="IFS Daily @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSStationsDaily</timeSeriesSetsId>
+	</filter>
+	<filter id="ERA5StationsDaily" name="ERA5 Daily @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>ERA5StationsDaily</timeSeriesSetsId>
 	</filter>
 	<!-- NWP Basins -->
 	<filter id="HRDPABasins" name="HRDPA @ Basins">
@@ -1058,6 +1179,10 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSBasins</timeSeriesSetsId>
 	</filter>
+	<filter id="ERA5Basins" name="ERA5 @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>ERA5Basins</timeSeriesSetsId>
+	</filter>
 	<!-- NWP Basins Daily-->
 	<filter id="HRDPABasinsDaily" name="HRDPA @ Basins (Daily)">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -1099,7 +1224,11 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSBasinsDaily</timeSeriesSetsId>
 	</filter>
-	<!-- Obsevation Stations - Filters -->
+	<filter id="ERA5BasinsDaily" name="ERA5 @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>ERA5BasinsDaily</timeSeriesSetsId>
+	</filter>
+	<!-- Obsevation Stations -->
 	<filter id="HindcastHydroStations" name="Hindcast Hydro Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>HindcastHydroStations</timeSeriesSetsId>
@@ -1107,5 +1236,14 @@
 	<filter id="HindcastMeteoStations" name="Hindcast Meteo Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>HindcastMeteoStations</timeSeriesSetsId>
+	</filter>
+	<!-- Model Results -->
+	<filter id="RavenElbowHistoric" name="Raven Elbow Historic">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RavenElbowDischargeHistoric</timeSeriesSetsId>
+	</filter>
+	<filter id="RavenElbowForecast" name="Raven Elbow Forecast">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RavenElbowDischargeForecast</timeSeriesSetsId>
 	</filter>
 </filters>

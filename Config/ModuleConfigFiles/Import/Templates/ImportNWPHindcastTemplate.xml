@@ -93,7 +93,7 @@ http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
-		<externUnit parameterId="PC.nwp" unit="kg m-2" cumulativeSum="true"/>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
 		<externUnit parameterId="PR.nwp" unit="mm/s"/>
 		<externUnit parameterId="TA.nwp" unit="K"/>
 		<externUnit parameterId="XS.nwp" unit="kg/kg"/>

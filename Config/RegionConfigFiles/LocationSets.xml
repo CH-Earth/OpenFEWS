@@ -383,23 +383,19 @@
 		<locationSetId>YukonHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DownloadMeteoStations">
-		<locationSetId>YukonMeteoStations</locationSetId>
+		<locationSetId>ElbowMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="DownloadHydroStations">
-		<locationSetId>YukonHydroStations</locationSetId>
+		<locationSetId>ElbowHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayBasins">
-		<locationSetId>ChenaBasins</locationSetId>
-		<locationSetId>RossBasins</locationSetId>
+		<locationSetId>ElbowBasins</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayMeteoStations">
-		<locationSetId>BowMeteoStations</locationSetId>
-		<locationSetId>YukonMeteoStations</locationSetId>
+		<locationSetId>ElbowMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayHydroStations">
-		<locationSetId>BowHydroStations</locationSetId>
-		<locationSetId>YukonHydroStations</locationSetId>
-		<locationSetId>USGSStations</locationSetId>
+		<locationSetId>ElbowHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DischargeDisplayLocationsBow">
 		<locationSetId>BowHydroStations</locationSetId>

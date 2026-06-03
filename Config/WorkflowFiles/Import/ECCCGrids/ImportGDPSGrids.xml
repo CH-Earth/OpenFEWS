@@ -25,7 +25,9 @@
 			<!-- Data Source Name-->
 			<string key="MODEL" value="GDPS"/>
 			<!-- NWP Timestep-->
-			<string key="TIMESTEP" value="3"/>
+			<int key="TIMESTEP" value="3"/>
+			<!--Forecast Length Hours -->
+			<int key="FORECAST_LENGTH_HOURS" value="168"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
 		</properties>

@@ -2,6 +2,7 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!--Define Properties for Templates-->
 	<properties>
+		<string key="DATA_SOURCE" value="ECMWF"/>
 		<!-- EnsembleID if needed-->
 		<string key="ENSEMBLE" value="main"/>
 		<!--Subbasin Location-->
@@ -21,14 +22,20 @@
 	<activity>
 		<properties>
 			<!-- Data Source Name-->
-			<string key="DATA_SOURCE" value="ECMWF"/>
-			<!-- Data Source Name-->
 			<string key="MODEL" value="ERA5"/>
-			<!-- NWP Timestep-->
+			<!-- Input Grid-->
+			<string key="INPUTGRID" value="ERA5"/>
+			<!-- Input Module Instance ID-->
+			<string key="INPUTMODULEINSTANCE" value="ImportERA5"/>
+			<!--Ensemble-->
+			<string key="ENSEMBLE" value="main"/>
+			<!--Timeseries Type-->
 			<string key="TIMESTEP" value="1"/>
-			<!-- Expiry Timestep-->
-			<string key="EXPIRYTIME" value="7"/>
+			<!--Parameter Type-->
+			<string key="PARAMETER" value="PC.sim"/>
+			<!--File Type-->
+			<string key="IMPORTTYPE" value="grib2"/>
 		</properties>
-		<workflowId>ImportNWPTemplate</workflowId>
+		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
 	</activity>
 </workflow>

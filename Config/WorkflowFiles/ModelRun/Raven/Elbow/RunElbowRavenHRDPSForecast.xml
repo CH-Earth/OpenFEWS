@@ -2,7 +2,7 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Run Model Forecast -->
 	<properties>
-		<string key="MODEL" value="Bow"/>
+		<string key="MODEL" value="Elbow"/>
 		<string key="FORECAST" value="HRDPS"/>
 		<string key="STARTTIME" value="-5"/>
 		<string key="ENDTIME" value="3"/>
@@ -10,7 +10,7 @@
 		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessHRDPS"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="BowRavenForecast"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
 		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
 	</properties>
 <!--Set Forecast Length-->
@@ -34,7 +34,7 @@
 		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessHRDPS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenHRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenHRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Postprocess Model Results-->
@@ -48,7 +48,7 @@
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenHRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenHRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

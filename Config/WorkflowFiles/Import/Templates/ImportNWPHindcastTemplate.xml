@@ -15,16 +15,12 @@
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>Import$MODEL$</moduleInstanceId>
-		<moduleConfigFileName>ImportNWPDynamicalTemplate</moduleConfigFileName>
+		<moduleConfigFileName>ImportNWPHindcastTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Preprocess Forecast Data for Input to Modelling-->
 	<activity>
-		<properties>
-			<string key="GRID_TIMESERIESTYPE" value="external forecasting"/>
-			<string key="PROCESSED_TIMESERIESTYPE" value="external forecasting"/>
-		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>Preprocess$MODEL$</moduleInstanceId>
-		<moduleConfigFileName>PreprocessNWPDynamicalTemplate</moduleConfigFileName>
+		<moduleConfigFileName>PreprocessNWPHindcastTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

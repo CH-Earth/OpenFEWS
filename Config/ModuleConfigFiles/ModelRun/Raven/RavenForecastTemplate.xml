@@ -8,10 +8,10 @@
 		<workDir>%ROOT_DIR%/$MODEL$/work</workDir>
 		<exportDir>%ROOT_DIR%/$MODEL$/input</exportDir>
 		<exportDataSetDir>%ROOT_DIR%/$MODEL$/work</exportDataSetDir>
-		<exportIdMap>IdExportRaven</exportIdMap>
+		<exportIdMap>IdExportRavenForecast</exportIdMap>
 		<exportUnitConversionsId>ExportRaven</exportUnitConversionsId>
 		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
-		<importIdMap>IdImportRaven</importIdMap>
+		<importIdMap>IdImportRavenForecast</importIdMap>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
 		<dumpDir>%ROOT_DIR%</dumpDir>
 		<diagnosticFile>%ROOT_DIR%/$MODEL$/output/diag.xml</diagnosticFile>

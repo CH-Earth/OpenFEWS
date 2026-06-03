@@ -91,7 +91,6 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
@@ -209,7 +208,6 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>

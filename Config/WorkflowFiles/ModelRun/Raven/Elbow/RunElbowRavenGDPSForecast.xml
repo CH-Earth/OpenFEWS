@@ -5,15 +5,14 @@
 		<string key="FORECAST" value="GDPS"/>
 		<string key="STARTTIME" value="-5"/>
 		<string key="ENDTIME" value="7"/>
-		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
-		 <string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
+		 <string key="HISTORICMODULEINSTANCE" value="ImportMeteoStations"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
-		<string key="MODEL" value="Bow"/>
+		<string key="MODEL" value="Elbow"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="BowRavenForecast"/>
-		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
+		<string key="FORECASTLOCATIONSET" value="ProcessBasins"/>
 	</properties>
-	
 <!--Set Forecast Length-->
 	<activity>
 		<runIndependent>true</runIndependent>
@@ -21,21 +20,21 @@
 		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
 	</activity>
 <!--Set Merge Historic and Forecast Data-->
-	<activity>
+<!--	<activity>
 		<properties>
-		<string key="LOCATIONSET" value="BowSubBasins"/>
+		<string key="LOCATIONSET" value="ElbowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
 		<moduleConfigFileName>MergeForecastGridsTemplate</moduleConfigFileName>
-	</activity>
+	</activity>-->
 <!--Run model in for GDPS Forecast --> 
 	<activity>
 	<properties>
 		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGDPS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenGDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 	</activity>
 	
@@ -45,12 +44,12 @@
 		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
 		<string key="PARAMETER" value="QR.sim"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="MODELOUTPUTLOCATION" value="BowSubBasins"/>
-		<string key="STATIONLOCATIONS" value="ModelHydroStations"/>
+		<string key="MODELOUTPUTLOCATION" value="ElbowSubBasins"/>
+		<string key="STATIONLOCATIONS" value="ProcessHydroStations"/>
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenGDPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

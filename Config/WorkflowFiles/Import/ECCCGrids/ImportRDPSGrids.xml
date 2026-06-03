@@ -26,6 +26,8 @@
 			<string key="MODEL" value="RDPS"/>
 			<!-- NWP Timestep-->
 			<string key="TIMESTEP" value="1"/>
+			<!--Forecast Length Hours -->
+			<string key="FORECAST_LENGTH_HOURS" value="84"/>
 			<!-- Expiry Timestep-->
 			<string key="EXPIRYTIME" value="7"/>
 		</properties>

@@ -242,7 +242,7 @@
 			<workflowId>RunElbowRavenHistoric</workflowId>
 			<localRun>false</localRun>
 		</node>
-		<!--		<node id="ElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)">
+	<node id="ElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)">
 			<workflowId>RunElbowRavenHRDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
@@ -253,7 +253,7 @@
 		<node id="ElbowRavenGDPSForecast" name="Run Elbow Raven (GDPS)">
 			<workflowId>RunElbowRavenGDPSForecast</workflowId>
 			<localRun>false</localRun>
-		</node>-->
+		</node>
 	</nodes>
 	<!-- SUMMA Model Nodes-->
 	<nodes id="SUMMABowModelNodes" name="Run Bow SUMMA Models">

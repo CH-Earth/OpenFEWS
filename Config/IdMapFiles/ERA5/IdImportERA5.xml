@@ -27,6 +27,7 @@
 	
 	<parameter internal="PR.nwp" external="avg_tprate"/>
 	<parameter internal="TA.nwp" external="t2m"/>
+	<parameter internal="PC.sim" external="tp"/>
 	
 	<enableOneToOneMapping/>
 </idMap>
