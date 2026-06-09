@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Obs_precip_HRU_scalar</variableId>
+		<!-- Raven historic run's output of what it used for precip for each HRU-->
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Obs_temp_HRU_scalar</variableId>
+		<!-- Raven historic run's output of what it used for temperature for each HRU-->
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Forecast_precip</variableId>
+		<!-- precip forecast that has been raven HRU averaged-->
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-1" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Forecast_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-1" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GDPS_temp</variableId>
+		<!--This is used for the final merge to extend the temperature to 7 days-->
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Temporary-->
+	<!--Output-->
+	<variable>
+		<variableId>Output_precip</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<!-- Final Merge -->
+	<transformation id="merge_precip">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_precip</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Obs_precip_HRU_scalar</variableId>
+				</inputVariable>
+				<!-- Additional Gap Fill is only for very last component of forecast (i.e. GDPS doesn't go full 7 days from T0)-->
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>Output_precip</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="additional_precip">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Output_precip</variableId>
+				</inputVariable>
+				<defaultValue>0</defaultValue>
+				<outputVariable>
+					<variableId>Output_precip</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="merge_temp">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Obs_temp_HRU_scalar</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>GDPS_temp</variableId>
+				</inputVariable>
+				<!-- Additional Gap Fill is only for very last component of forecast (i.e. GDPS doesn't go full 7 days from T0)-->
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>Output_temp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

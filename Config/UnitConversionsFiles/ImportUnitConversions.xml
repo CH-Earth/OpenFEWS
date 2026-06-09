@@ -20,9 +20,9 @@
 		<incrementer>0</incrementer>
 	</unitConversion>
 	<unitConversion>
-		<inputUnitType>mm</inputUnitType>
+		<inputUnitType>m</inputUnitType>
 		<outputUnitType>mm</outputUnitType>
-		<multiplier>1</multiplier>
+		<multiplier>1000</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
 	<unitConversion>

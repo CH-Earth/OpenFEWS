@@ -24,6 +24,7 @@
 				<url>https://wateroffice.ec.gc.ca/</url>
 			</node>
 		</nodes>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<nodes id="ImportWSC" name="Import Hydrological Data">
 		<node id="ImportECCCWaterOffice" name="Import Hydrometric Data from ECCC">
@@ -129,6 +130,18 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="ImportNOAAGridNodes" name="Import Dynamical Forecasts">
+		<node id="ImportIFSDynamical" name="Import IFS from Dynamical">
+			<workflowId>ImportIFSDynamical</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGEFSDynamical" name="Import GEFS from Dynamical">
+			<workflowId>ImportGEFSDynamical</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 	<nodes id="ImportNRSPSGridNodes" name="Import NSRPS">
 		<node id="ImportNSRPS" name="Import NRDPS Discharge">
 			<workflowId>ImportNSRPSGrids</workflowId>
@@ -157,6 +170,7 @@
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>Developer</viewPermission>
 	</nodes>
 	<nodes id="ImportSnow" name="Import Snow Data">
 		<node id="ImportSnowCast" name="Import SnowCast">
@@ -238,11 +252,17 @@
 	</nodes>
 	<!-- Raven Model Nodes-->
 	<nodes id="RavenElbowModelNodes" name="Run Elbow Raven Models">
-		<node id="RunElbowRavenHistoric" name="Run Elbow Raven (Historic Update)">
+		<node id="ElbowRavenHistoric" name="Run Elbow Raven (Timeseries Update)">
 			<workflowId>RunElbowRavenHistoric</workflowId>
+			<visibleModifierGroup>ModifyMeteoElbowRaven</visibleModifierGroup>
 			<localRun>false</localRun>
 		</node>
-	<node id="ElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)">
+		<node id="ElbowRavenHistoricStateUpdate" name="Run Elbow Raven (State Update)">
+			<workflowId>RunElbowRavenHistoricStateUpdate</workflowId>
+			<visibleModifierGroup>ModifyMeteoElbowRaven</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="ElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)">
 			<workflowId>RunElbowRavenHRDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
@@ -252,6 +272,22 @@
 		</node>
 		<node id="ElbowRavenGDPSForecast" name="Run Elbow Raven (GDPS)">
 			<workflowId>RunElbowRavenGDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ElbowRavenREPSForecast" name="Run Elbow Raven (REPS)">
+			<workflowId>RunElbowRavenREPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ElbowRavenGEPSForecast" name="Run Elbow Raven (GEPS)">
+			<workflowId>RunElbowRavenGEPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ElbowRavenGEFSForecast" name="Run Elbow Raven (GEFS)">
+			<workflowId>RunElbowRavenGEFSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ElbowRavenIFSForecast" name="Run Elbow Raven (IFS)">
+			<workflowId>RunElbowRavenIFSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
 	</nodes>
@@ -281,6 +317,7 @@
 			<workflowId>RunRossSUMMAGEPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>YukonForecaster</viewPermission>
 	</nodes>
 	<nodes id="SUMMAChenaModelNodes" name="Run Chena SUMMA Model">
 		<node id="ChenaSUMMAHistoric" name="Run Chena SUMMA (Historic Update)">
@@ -300,6 +337,7 @@
 			<workflowId>RunChenaSUMMAGEPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>YukonForecaster</viewPermission>
 	</nodes>
 	<nodes id="BowMESHModelNodes" name="Run Bow MESH Model">
 		<node id="BowMESHHistoric" name="Run Bow MESH (Historic Update)">
@@ -315,6 +353,7 @@
 			<workflowId>RunBowMESHGDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<nodes id="HindcastingWorkflows" name="Run Hindcasting Workflows">
 		<node id="ImportHindcastMeteoObservationECCC" name="Import Meteo Observations (ECCC)">
@@ -326,7 +365,7 @@
 			<localRun>false</localRun>
 		</node>
 		<node id="ImportHindcastHydroObservationECCC" name="Import Hydro Observations (WSC)">
-			<workflowId>ImportECCCAPIHydroHindcast</workflowId>
+			<workflowId>ImportECCCWaterOffice</workflowId>
 			<localRun>false</localRun>
 		</node>
 		<node id="ImportHindcastPrecipAnalysis" name="Import Precipitation Re-analysis">

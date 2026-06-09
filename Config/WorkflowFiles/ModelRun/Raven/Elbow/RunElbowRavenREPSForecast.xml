@@ -14,7 +14,10 @@
 		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessREPS"/>
 		<string key="ENSEMBLE" value="REPS"/>
-		<string key="EXPORTDATASET" value="ElbowRavenForecastEns"/>
+		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
+		<string key="FORECASTLOCATIONSET" value="ProcessBasins"/>
+		<string key="MODEL" value="Elbow"/>
+		
 	</properties>
 	<!--Set Forecast Length-->
 	<activity>
@@ -23,7 +26,7 @@
 		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
 	</activity>
 	<!--Set Merge Historic and Forecast Data-->
-	<activity>
+<!--	<activity>
 		<properties>
 			<string key="LOCATIONSET" value="ElbowSubBasins"/>
 		</properties>
@@ -34,12 +37,11 @@
 			<ensembleId>REPS</ensembleId>
 			<runInLoop>true</runInLoop>
 		</ensemble>
-	</activity>
+	</activity>-->
 	<!--Run model in for REPS Forecast -->
 	<activity>
 		<properties>
 			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessREPS"/>
-			<string key="MODULEDATASET" value="RavenForecastEns"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ElbowRavenREPSForecast</moduleInstanceId>

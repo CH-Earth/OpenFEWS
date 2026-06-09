@@ -12,10 +12,6 @@ http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
 			</importTimeZone>
 			<dataFeedId>$MODEL$</dataFeedId>
 		</general>
-<!--		<startTimeShift>
-			<parameterId>PR.nwp</parameterId>
-			<relativePeriod start="-1" end="0" unit="hour"/>
-		</startTimeShift>-->
 		<timeSeriesSet>
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 			<valueType>grid</valueType>

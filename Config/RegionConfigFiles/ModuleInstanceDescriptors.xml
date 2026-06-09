@@ -349,6 +349,12 @@
 	<moduleInstanceDescriptor id="SetForecastLengthGEPS">
 		<description>Set Forecast Length based on available GEPS data</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="SetForecastLengthGEFS">
+		<description>Set Forecast Length based on available GEFS data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="SetForecastLengthIFS">
+		<description>Set Forecast Length based on available IFS data</description>
+	</moduleInstanceDescriptor>
 	<!--Modify Historic and Forecast Gridded Data -->
 	<moduleInstanceDescriptor id="ModifyRDPS">
 		<description>Modify for Regional Deterministic Prediction System</description>
@@ -426,6 +432,9 @@
 	<moduleInstanceDescriptor id="ElbowRavenHistoric">
 		<description>Run the Elbow model with Historic Data</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ElbowRavenHistoricHRDPA">
+		<description>Run the Elbow model with Historic Data</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ElbowRavenForecast">
 		<description>Run the Elbow model with Forecast Data</description>
 	</moduleInstanceDescriptor>
@@ -442,7 +451,13 @@
 		<description>Run the Elbow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ElbowRavenGEPSForecast">
-		<description>Run the Bow model with REPS Forecast Data</description>
+		<description>Run the Elbow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+		<moduleInstanceDescriptor id="ElbowRavenGEFSForecast">
+		<description>Run the Bow model with GEFS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ElbowRavenIFSForecast">
+		<description>Run the Bow model with IFS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<!-- Model Run Module Instances - SUMMA -->
 	<moduleInstanceDescriptor id="SUMMABinaries">

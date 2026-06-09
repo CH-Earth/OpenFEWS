@@ -17,10 +17,10 @@
 			<parameterId>$PARAMETER$</parameterId>
 			<locationId>$MODEL$</locationId>
 			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="$TIMESTEP_HOUR$"/>
 			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
-		<externUnit parameterId="$PARAMETER$" unit="kg m-2"/>
+		<externUnit parameterId="$PARAMETER$" unit="$PARAMETER_UNIT$"/>
 	</import>
 </timeSeriesImportRun>

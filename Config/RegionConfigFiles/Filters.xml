@@ -1,6 +1,6 @@
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
 	<!-- Add default filter Id -->
-	<defaultFilterId>HydroStations</defaultFilterId>
+	<defaultFilterId>HindcastHydroStations</defaultFilterId>
 	<!-- Timeseries Sets -->
 	<!-- Timeseries Sets - Hindcast Observation Data-->
 	<timeSeriesSets id="HindcastHydroStations">
@@ -121,53 +121,6 @@
 			<timeStep id="day_GMT"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>HREPA</ensembleId>
-		</timeSeriesSet>
-	</timeSeriesSets>
-	<!-- Timeseries Sets - Water Survey of Canada -->
-	<timeSeriesSets id="HydroStations">
-		<timeSeriesSet>
-			<moduleInstanceId>ImportWSC</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>HG.obs</parameterId>
-			<locationSetId>DisplayHydroStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-5" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>5</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportWSC</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>QR.obs</parameterId>
-			<locationSetId>DisplayHydroStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-5" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>5</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportUSGS</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>HG.obs</parameterId>
-			<locationSetId>DisplayHydroStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="15"/>
-			<relativeViewPeriod unit="day" start="-5" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>5</synchLevel>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportUSGS</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>QR.obs</parameterId>
-			<locationSetId>DisplayHydroStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="minute" multiplier="15"/>
-			<relativeViewPeriod unit="day" start="-5" end="0"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>5</synchLevel>
 		</timeSeriesSet>
 	</timeSeriesSets>
 	<!-- Timeseries Sets - Forecast @ Basins-->
@@ -339,10 +292,10 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PC.sim</parameterId>
 			<locationSetId>HindcastBasins</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
@@ -352,7 +305,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>HindcastBasins</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -525,7 +478,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PC.sim</parameterId>
 			<locationSetId>HindcastBasins</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="day" multiplier="1"/>
@@ -728,10 +681,10 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PC.sim</parameterId>
 			<locationSetId>HindcastMeteoStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
@@ -740,7 +693,7 @@
 			<parameterId>TA.nwp</parameterId>
 			<locationSetId>HindcastMeteoStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -931,7 +884,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessERA5</moduleInstanceId>
 			<valueType>scalar</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PC.sim</parameterId>
 			<locationSetId>HindcastMeteoStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="day" multiplier="1"/>
@@ -959,15 +912,54 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
-	<timeSeriesSets id="RavenElbowDischargeForecast">
+	<timeSeriesSets id="RavenElbowForecast">
 		<timeSeriesSet>
-			<moduleInstanceSetId>ElbowRavenForecast</moduleInstanceSetId>
+			<moduleInstanceId>ElbowRavenRDPSForecast</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.sim</parameterId>
 			<locationSetId>HindcastHydroStations</locationSetId>
-			<timeSeriesType>simulated historical</timeSeriesType>
-			<timeStep unit="day" multiplier="1"/>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEFS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HindcastHydroStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>IFS</ensembleId>
 		</timeSeriesSet>
 	</timeSeriesSets>
 	<!-- First Level Filters -->
@@ -977,8 +969,8 @@
 	<filter id="HindcastData" name="Hindcast Data">
 		<child foreignKey="HindcastHydroStations"/>
 		<child foreignKey="HindcastMeteoStations"/>
-		<!--		<child foreignKey="ForecastDataStations"/>
-		<child foreignKey="ForecastDataBasins"/>-->
+		<child foreignKey="ForecastDataStations"/>
+		<child foreignKey="ForecastDataBasins"/>
 		<child foreignKey="ForecastDataBasinsDaily"/>
 		<child foreignKey="ForecastDataStationsDaily"/>
 		<child foreignKey="HydroModelResults"/>
@@ -1025,7 +1017,7 @@
 		<child foreignKey="GEFSBasinsDaily"/>
 		<child foreignKey="IFSBasinsDaily"/>
 	</filter>
-	<filter id="ForecastDataStationsDaily" name="Forecast Data Daily - By Basin">
+	<filter id="ForecastDataStationsDaily" name="Forecast Data Daily - By Station">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HRDPAStationsDaily"/>
 		<child foreignKey="HREPAStationsDaily"/>
@@ -1045,10 +1037,6 @@
 		<child foreignKey="RavenElbowForecast"/>
 	</filter>
 	<!-- Second Level Filters -->
-	<filter id="HydroStations" name="Hydro Stations">
-		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>HydroStations</timeSeriesSetsId>
-	</filter>
 	<filter id="RDPAStations" name="RDPA @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPAStations</timeSeriesSetsId>
@@ -1196,6 +1184,10 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPABasinsDaily</timeSeriesSetsId>
 	</filter>
+	<filter id="ERA5BasinsDaily" name="ERA5 @ Basins (Daily)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>ERA5BasinsDaily</timeSeriesSetsId>
+	</filter>
 	<filter id="RDPSBasinsDaily" name="RDPS @ Basins (Daily)">
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>RDPSBasinsDaily</timeSeriesSetsId>
@@ -1224,10 +1216,6 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>IFSBasinsDaily</timeSeriesSetsId>
 	</filter>
-	<filter id="ERA5BasinsDaily" name="ERA5 @ Basins (Daily)">
-		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>ERA5BasinsDaily</timeSeriesSetsId>
-	</filter>
 	<!-- Obsevation Stations -->
 	<filter id="HindcastHydroStations" name="Hindcast Hydro Stations">
 		<validationIconsVisible>false</validationIconsVisible>
@@ -1244,6 +1232,6 @@
 	</filter>
 	<filter id="RavenElbowForecast" name="Raven Elbow Forecast">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>RavenElbowDischargeForecast</timeSeriesSetsId>
+		<timeSeriesSetsId>RavenElbowForecast</timeSeriesSetsId>
 	</filter>
 </filters>

@@ -3,7 +3,7 @@
 	<!-- Retrieve NWP grids from Environment Canada -->
 	<properties>
 		<!-- Data Source Name-->
-		<string key="DATA_SOURCE" value="ECCC_PRECIP_GRID"/>
+		<string key="DATA_SOURCE" value="ECMWF"/>
 		<!--Basin Location-->
 		<string key="BASINLOCATIONS" value="HindcastBasins"/>
 		<!--Subbasin Location-->
@@ -11,7 +11,7 @@
 		<!--Station Locations-->
 		<string key="STATIONLOCATIONS" value="HindcastMeteoStations"/>
 		<!--Starttime-->
-		<string key="STARTTIME" value="-14"/>
+		<string key="STARTTIME" value="-30"/>
 		<!--Endtime-->
 		<string key="ENDTIME" value="0"/>
 		<!--Timeseries Type-->
@@ -23,21 +23,21 @@
 	<activity>
 		<properties>
 			<!-- Data Source Name-->
-			<string key="MODEL" value="HREPA"/>
+			<string key="MODEL" value="ERA5"/>
 			<!-- Input Grid-->
-			<string key="INPUTGRID" value="HREPA"/>
+			<string key="INPUTGRID" value="ERA5"/>
 			<!-- Input Module Instance ID-->
-			<string key="INPUTMODULEINSTANCE" value="ImportHREPA"/>
+			<string key="INPUTMODULEINSTANCE" value="ImportERA5"/>
 			<!--Ensemble-->
 			<string key="ENSEMBLE" value="main"/>
 			<!--Timeseries Type-->
 			<int key="TIMESTEP_HOUR" value="6"/>
 			<!--Parameter Type-->
 			<string key="PARAMETER" value="PC.sim"/>
-			<!--Parameter Type-->
-			<string key="PARAMETER_UNIT" value="kg m-2"/>
+			<!--Parameter Unit-->
+			<string key="PARAMETER_UNIT" value="m"/>
 			<!--File Type-->
-			<string key="IMPORTTYPE" value="NETCDF-CF_GRID"/>
+			<string key="IMPORTTYPE" value="grib2"/>
 		</properties>
 		<workflowId>ImportPrecipAnalysisTemplate</workflowId>
 	</activity>

@@ -371,16 +371,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="basin_precip_disaggregate_timestep">
-		<disaggregation>
-			<accumulative>
+		<deaccumulation>
+			<sum>
 				<inputVariable>
 					<variableId>basin_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>basin_precip</variableId>
 				</outputVariable>
-			</accumulative>
-		</disaggregation>
+			</sum>
+		</deaccumulation>
 	</transformation>
 	<transformation id="basin_precip_daily">
 		<aggregation>
@@ -407,16 +407,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="subbasin_precip">
-		<disaggregation>
-			<accumulative>
+		<deaccumulation>
+			<sum>
 				<inputVariable>
 					<variableId>subbasin_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>subbasin_precip</variableId>
 				</outputVariable>
-			</accumulative>
-		</disaggregation>
+			</sum>
+		</deaccumulation>
 	</transformation>
 	<transformation id="subbasin_precip_daily">
 		<aggregation>
@@ -444,16 +444,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="station_precip">
-		<disaggregation>
-			<accumulative>
+		<deaccumulation>
+			<sum>
 				<inputVariable>
 					<variableId>station_precip_cumulative</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>station_precip</variableId>
 				</outputVariable>
-			</accumulative>
-		</disaggregation>
+			</sum>
+		</deaccumulation>
 	</transformation>
 	<transformation id="station_precip_daily">
 		<aggregation>
@@ -481,16 +481,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="basin_temperature_daily">
-		<aggregation>
-			<accumulative>
+		<statisticsSerial>
+			<mean>
 				<inputVariable>
 					<variableId>basin_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>basin_temperature_daily</variableId>
 				</outputVariable>
-			</accumulative>
-		</aggregation>
+			</mean>
+		</statisticsSerial>
 	</transformation>
 	<transformation id="basin_temp_daily_max">
 		<statisticsSerial>
@@ -529,16 +529,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="subbasin_temperature_daily">
-		<aggregation>
-			<accumulative>
+		<statisticsSerial>
+			<mean>
 				<inputVariable>
 					<variableId>subbasin_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>subbasin_temperature_daily</variableId>
 				</outputVariable>
-			</accumulative>
-		</aggregation>
+			</mean>
+		</statisticsSerial>
 	</transformation>
 	<transformation id="subbasin_temp_daily_max">
 		<statisticsSerial>
@@ -578,16 +578,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="station_temperature_daily">
-		<aggregation>
-			<accumulative>
+		<statisticsSerial>
+			<mean>
 				<inputVariable>
 					<variableId>station_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>station_temperature_daily</variableId>
 				</outputVariable>
-			</accumulative>
-		</aggregation>
+			</mean>
+		</statisticsSerial>
 	</transformation>
 	<transformation id="station_temp_daily_max">
 		<statisticsSerial>

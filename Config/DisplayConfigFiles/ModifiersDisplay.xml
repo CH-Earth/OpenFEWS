@@ -7,6 +7,8 @@
 	<showApplyToButton>true</showApplyToButton>
 <!--	<modifiersSelection>topology</modifiersSelection>-->
 	<createModifierButtons>
+		<modifierId>ModifyPCElbowRaven</modifierId>
+		<modifierId>ModifyTAElbowRaven</modifierId>
 		<modifierId>MultiplyPC_Historic</modifierId>
 		<modifierId>AdjustTA_Historic</modifierId>
 		<modifierId>MultiplyPC_RDPS</modifierId>

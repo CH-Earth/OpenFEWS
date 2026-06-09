@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modifierTypes xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierTypes.xsd">
 	<rollbackOverlappingModifiers>false</rollbackOverlappingModifiers>
+	<timeSeriesModifier id="ModifyPCElbowRaven" name="Modify Precipitation Gauges">
+		<timeSeries>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>ElbowMeteoStations</locationSetId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>time zero</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="ModifyTAElbowRaven" name="Modify Temperature Gauges">
+		<timeSeries>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>ElbowMeteoStations</locationSetId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>time zero</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="AdjustTA_Historic" name="Add or Subtract Temperature (Historic)">
+		<timeSeries>
+			<moduleInstanceId>ModifyHistoricGrids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>time zero</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
 	<timeSeriesModifier id="MultiplyPC_Historic" name="Multiply Precipitation (Historic)">
 		<timeSeries>
 			<moduleInstanceId>ModifyHistoricGrids</moduleInstanceId>
@@ -262,6 +304,13 @@
 				</template>
 		</locationAttributeModifier>
 	</attributeModifiers>
+	<modifiersGroup id="ModifyMeteoElbowRaven">
+		<modifierId>ModifyPCElbowRaven</modifierId>
+		<modifierId>ModifyTAElbowRaven</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="MultiplyPC_Historic">
+		<modifierId>MultiplyPC_Historic</modifierId>
+	</modifiersGroup>
 	<modifiersGroup id="AdjustStates_SUMMA">
 		<modifierId>AdjustStates_SUMMA</modifierId>
 	</modifiersGroup>

@@ -2,20 +2,20 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Run Model Forecast -->
 	<properties>
-		<string key="FORECAST" value="GEPS"/>
+		<string key="FORECAST" value="GEFS"/>
 		<string key="STARTTIME" value="-5"/>
 		<string key="FORECAST_ENDTIME" value="7"/>
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
-		<string key="FORECASTMODULEINSTANCE" value="PreprocessGEPS"/>
+		<string key="FORECASTMODULEINSTANCE" value="PreprocessGEFS"/>
 		<string key="MODEL" value="Elbow"/>
-		<string key="ENSEMBLE" value="GEPS"/>
+		<string key="ENSEMBLE" value="GEFS"/>
 		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
 		<string key="FORECASTLOCATIONSET" value="ProcessBasins"/>
 	</properties>
 	<!--Set Forecast Length-->
 	<activity>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>SetForecastLengthGEPS</moduleInstanceId>
+		<moduleInstanceId>SetForecastLengthGEFS</moduleInstanceId>
 		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
 	</activity>
 	<!--Set Merge Historic and Forecast Data-->
@@ -24,37 +24,37 @@
 		<string key="LOCATIONSET" value="ElbowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEFS</moduleInstanceId>
 		<moduleConfigFileName>MergeRavenMeteoTemplate</moduleConfigFileName>
 		<ensemble>
-			<ensembleId>GEPS</ensembleId>
+			<ensembleId>GEFS</ensembleId>
 			<runInLoop>true</runInLoop>
 		</ensemble>
 	</activity>
-<!--Run model in for GEPS Forecast-->
+<!--Run model in for GEFS Forecast-->
 	<activity>
 	<properties>
-		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGEPS"/>
+		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGEFS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 		<ensemble>
-			<ensembleId>GEPS</ensembleId>
+			<ensembleId>GEFS</ensembleId>
 			<runInLoop>true</runInLoop>
 		</ensemble>
 	</activity>
-		<!--Calculate Statistics for GEPS Forecast-->
+		<!--Calculate Statistics for GEFS Forecast-->
 	<activity>
 	<properties>
-		<string key="INPUTMODULEINSTANCE" value="ElbowRavenGEPSForecast"/>
+		<string key="INPUTMODULEINSTANCE" value="ElbowRavenGEFSForecast"/>
 		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
 		<string key="PARAMETER" value="QR.sim"/>
 		<string key="LOCATIONSET" value="ElbowHydroStations"/>
 		<string key="TIMESTEP" value="1"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
 		<moduleConfigFileName>CalculateEnsembleStatisticsTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

@@ -4,31 +4,30 @@
 	<properties>
 		<string key="FORECAST" value="GDPS"/>
 		<string key="STARTTIME" value="-5"/>
-		<string key="ENDTIME" value="7"/>
+		<string key="FORECAST_ENDTIME" value="7"/>
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
-		 <string key="HISTORICMODULEINSTANCE" value="ImportMeteoStations"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
 		<string key="MODEL" value="Elbow"/>
 		<string key="ENSEMBLE" value="main"/>
 		<string key="EXPORTDATASET" value="ElbowRavenForecast"/>
 		<string key="FORECASTLOCATIONSET" value="ProcessBasins"/>
 	</properties>
-<!--Set Forecast Length-->
+	<!--Set Forecast Length-->
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>SetForecastLengthGDPS</moduleInstanceId>
 		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
 	</activity>
-<!--Set Merge Historic and Forecast Data-->
-<!--	<activity>
+	<!--Set Merge Historic and Forecast Data-->
+	<activity>
 		<properties>
 		<string key="LOCATIONSET" value="ElbowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
-		<moduleConfigFileName>MergeForecastGridsTemplate</moduleConfigFileName>
-	</activity>-->
-<!--Run model in for GDPS Forecast --> 
+		<moduleConfigFileName>MergeRavenMeteoTemplate</moduleConfigFileName>
+	</activity>
+<!--Run model in for GDPS Forecast-->
 	<activity>
 	<properties>
 		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGDPS"/>
@@ -36,20 +35,5 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
-	</activity>
-	
-<!-- Postprocess Model Results-->
-	<activity>
-	<properties>
-		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
-		<string key="PARAMETER" value="QR.sim"/>
-		<string key="ENSEMBLE" value="main"/>
-		<string key="MODELOUTPUTLOCATION" value="ElbowSubBasins"/>
-		<string key="STATIONLOCATIONS" value="ProcessHydroStations"/>
-		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
-	</properties>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
-		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

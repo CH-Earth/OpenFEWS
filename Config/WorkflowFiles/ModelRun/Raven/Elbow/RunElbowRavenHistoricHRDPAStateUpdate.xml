@@ -7,27 +7,17 @@
 		<string key="STARTTIME" value="-30"/>
 		<string key="ENDTIME" value="0"/>
 	</properties>
-	<!-- Gap fill input observations-->
-		<activity>
-		<properties>
-			<string key="INPUT_MODULE_INSTANCE_ID" value="ImportMeteoStations"/>
-			<string key="LOCATIONSET" value="ElbowMeteoStations"/>
-			<string key="TIMESTEP" value="day_GMT"/>
-		</properties>
-		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
-		<moduleConfigFileName>FillMeteoStationDataTemplate</moduleConfigFileName>
-	</activity>
 	<!-- Run Raven Historic-->
 	<activity>
 		<properties>
-		<string key="INPUTMODULEINSTANCEMETEO" value="ElbowRavenHistoric"/>
+		<string key="INPUTMODULEINSTANCEPRECIPMETEO" value="PreprocessHRDPA"/>
+		<string key="INPUTMODULEINSTANCETEMPMETEO" value="ImportMeteoStations"/>
 		<string key="INPUTLOCATIONSET" value="ElbowMeteoStations"/>
 		<string key="OUTPUTTIMESERIES" value="ElbowRavenHistoric"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
-		<moduleConfigFileName>RavenHistoricTemplate</moduleConfigFileName>
+		<moduleInstanceId>ElbowRavenHistoricHRDPA</moduleInstanceId>
+		<moduleConfigFileName>RavenHistoricPrecipAnalysisStateUpdateTemplate</moduleConfigFileName>
 	</activity>
 	
 	<!-- Postprocess Model Results-->
@@ -38,7 +28,7 @@
 			<string key="LOCATIONSET" value="ElbowSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+		<moduleInstanceId>ElbowRavenHistoricHRDPA</moduleInstanceId>
 		<moduleConfigFileName>PreprocessMeteoToDailyTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

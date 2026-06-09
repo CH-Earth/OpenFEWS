@@ -12,8 +12,8 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -25,12 +25,12 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="minute" multiplier="5"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>HG_day</variableId>
+		<variableId>HG_day_merge</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -38,11 +38,12 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>QR_day</variableId>
+		<variableId>QR_day_merge</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportWSC</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -50,11 +51,12 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<!--Output-->
-	<variable>
+<!--	<variable>
 		<variableId>HG_day_temp</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
@@ -64,8 +66,8 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -78,8 +80,8 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<relativeViewPeriod unit="day" start="-30" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -91,9 +93,10 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
-	</variable>
+	</variable>-->
 	<variable>
 		<variableId>QR_day_mean</variableId>
 		<timeSeriesSet>
@@ -105,8 +108,8 @@
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
-			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<relativeViewPeriod unit="day" start="-36500" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -121,7 +124,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -136,7 +139,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -151,7 +154,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -166,7 +169,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -181,7 +184,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -196,10 +199,10 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
-	<variable>
+<!--	<variable>
 		<variableId>HG_day_merge</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
@@ -208,9 +211,10 @@
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep id="day_GMT"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
-	</variable>
+	</variable>-->
 	<variable>
 		<variableId>HG_day_mean</variableId>
 		<timeSeriesSet>
@@ -223,7 +227,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -238,7 +242,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -253,7 +257,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -268,7 +272,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -283,7 +287,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -298,7 +302,7 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -313,11 +317,11 @@
 			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
-			<readWriteMode>read only</readWriteMode>
+			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<!--Transformations-->
-	<transformation id="QR_Daily_Mean">
+	<!--<transformation id="QR_Daily_Mean">
 		<statisticsSerial>
 			<mean>
 				<inputVariable>
@@ -331,12 +335,13 @@
 	</transformation>
 	<transformation id="QR_Daily_Merge">
 		<merge>
-			<simple>
-				<inputVariable>
-					<variableId>QR_day_temp</variableId>
-				</inputVariable>
+			<simple> 
+			<trimOutput>false</trimOutput>
 				<inputVariable>
 					<variableId>QR_day</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>QR_day_temp</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_merge</variableId>
@@ -359,6 +364,7 @@
 	<transformation id="HG_Daily_Merge">
 		<merge>
 			<simple>
+			<trimOutput>false</trimOutput>
 				<inputVariable>
 					<variableId>HG_day_temp</variableId>
 				</inputVariable>
@@ -370,7 +376,7 @@
 				</outputVariable>
 			</simple>
 		</merge>
-	</transformation>
+	</transformation>-->
 	<transformation id="QR_min">
 		<statisticsPeriodic>
 			<min>

@@ -144,21 +144,32 @@
 	<workflowDescriptor id="RunElbowRavenHistoric" name="Run Elbow Raven (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenHistoricStateUpdate" name="Run Elbow Raven - State Update (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenHistoricHRDPAStateUpdate" name="Run Elbow Raven - HRDPA State Update (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
 	<workflowDescriptor id="RunElbowRavenHRDPSForecast" name="Run Elbow Raven (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
-		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunElbowRavenRDPSForecast" name="Run Elbow Raven (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
-		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunElbowRavenGDPSForecast" name="Run Elbow Raven (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
-		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunElbowRavenREPSForecast" name="Run Elbow Raven (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
-		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenGEPSForecast" name="Run Elbow Raven (GEPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenGEFSForecast" name="Run Elbow Raven (GEFS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunElbowRavenIFSForecast" name="Run Elbow Raven (IFS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
 	<!--SUMMA Model Run Workflow Descriptors -->
 	<workflowDescriptor id="RunBowSUMMAHistoric" name="Run Bow SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
@@ -167,37 +178,48 @@
 	</workflowDescriptor>
 	<workflowDescriptor id="RunChenaSUMMAHistoric" name="Run Chena SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunChenaSUMMAGDPSForecast" name="Run Chena SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunChenaSUMMAHRRRForecast" name="Run Chena SUMMA (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunChenaSUMMAGEPSForecast" name="Run Chena SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAHistoric" name="Run Ross SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAGDPSForecast" name="Run Ross SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAHRRRForecast" name="Run Ross SUMMA (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAGEPSForecast" name="Run Ross SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>YukonForecaster</viewPermission>
 	</workflowDescriptor>
 	<!--SUMMA Model Run Workflow Descriptors -->
 	<workflowDescriptor id="RunBowMESHHistoric" name="Run Bow MESH (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowMESHGDPSForecast" name="Run Bow MESH (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowMESHHRRRForecast" name="Run Bow MESH (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<!--<workflowDescriptor id="RunBowSUMMARDPSForecast" name="Run Bow SUMMA (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
@@ -283,10 +305,6 @@
 		</node>
 		<node name="Import ERA5 Reanalysis Data">
 			<workflowId>ImportERA5</workflowId>
-			<workflowId>ImportERA5Yukon</workflowId>
-			<workflowId>ImportERA5Bow</workflowId>
-			<workflowId>ImportERA5Chena</workflowId>
-			<workflowId>ImportERA5Ross</workflowId>
 		</node>
 		<node name="Import Radar Data">
 			<workflowId>RetrieveECCCRadarComposite</workflowId>
@@ -330,9 +348,13 @@
 		</node>
 		<node name="Run Model - Elbow Raven">
 			<workflowId>RunElbowRavenHistoric</workflowId>
+			<workflowId>RunElbowRavenHistoricStateUpdate</workflowId>
 			<workflowId>RunElbowRavenRDPSForecast</workflowId>
 			<workflowId>RunElbowRavenGDPSForecast</workflowId>
 			<workflowId>RunElbowRavenREPSForecast</workflowId>
+			<workflowId>RunElbowRavenGEPSForecast</workflowId>
+			<workflowId>RunElbowRavenGEFSForecast</workflowId>
+			<workflowId>RunElbowRavenIFSForecast</workflowId>
 		</node>
 		<node name="Run Model - Bow SUMMA">
 			<workflowId>RunBowSUMMAHistoric</workflowId>

@@ -4,7 +4,7 @@
 	<!-- General Properties -->
 	<properties>
 		<string key="MODEL" value="Elbow"/>
-		<string key="STARTTIME" value="-30"/>
+		<string key="STARTTIME" value="-25"/>
 		<string key="ENDTIME" value="0"/>
 	</properties>
 	<!-- Gap fill input observations-->
@@ -27,7 +27,7 @@
 	</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
-		<moduleConfigFileName>RavenHistoricTemplate</moduleConfigFileName>
+		<moduleConfigFileName>RavenHistoricStateUpdateTemplate</moduleConfigFileName>
 	</activity>
 	
 	<!-- Postprocess Model Results-->

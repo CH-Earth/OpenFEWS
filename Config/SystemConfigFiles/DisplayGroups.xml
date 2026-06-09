@@ -1529,7 +1529,9 @@
 	<plot id="ElbowRavenHistoricTemplate">
 		<subplot>
 			<line>
-				<label>NRT 5 Min Data</label>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ImportWSC</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1537,18 +1539,21 @@
 					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="minute" multiplier="5"/>
+					<relativeViewPeriod unit="day" start="-30" end="5"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>QR.measured @ID@</label>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ImportWSC</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep unit="day"/>
+					<timeStep id="day_GMT"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
@@ -1564,81 +1569,111 @@
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
+			<line>
+				<label>QR.modelled HRDPA @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenHistoricHRDPA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
 		</subplot>
 	</plot>
 	<plot id="ElbowRavenForecastTemplate">
 		<subplot>
 			<line>
-				<label>NRT 5 Min Data</label>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ImportWSC</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="minute" multiplier="5"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>Daily Measured Data</label>
-				<timeSeriesSet>
-					<moduleInstanceId>ImportWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<line>
 				<label>Historic Model Run @ID@</label>
 				<timeSeriesSet>
-					<moduleInstanceId>BowWflowHistoric</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.sim</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>simulated historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep unit="day" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
 				<label>RDPS Forecast @ID@</label>
 				<timeSeriesSet>
-					<moduleInstanceId>BowWflowRDPSForecast</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenRDPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.sim</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>simulated forecasting</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
 				<label>GDPS Forecast @ID@</label>
 				<timeSeriesSet>
-					<moduleInstanceId>BowWflowGDPSForecast</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.sim</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>simulated forecasting</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
+			<color>blue</color>
 				<label>GEPS Forecast @ID@</label>
 				<timeSeriesSet>
-					<moduleInstanceId>BowWflowGEPSForecast</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.sim</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>simulated forecasting</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 					<ensembleId>GEPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>GEFS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>IFS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<area>
@@ -1649,7 +1684,7 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>max</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
@@ -1660,7 +1695,7 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>min</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
@@ -1675,7 +1710,7 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>90</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
@@ -1686,7 +1721,7 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>10</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
@@ -1701,7 +1736,7 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>75</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
@@ -1712,206 +1747,160 @@
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<qualifierId>25</qualifierId>
-					<locationSetId>BowHydroStations</locationSetId>
+					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep id="$DAY_TIMESTEP$"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
 			</area>
-		</subplot>
-		<subplot>
-			<line>
-				<color>red</color>
-				<lineStyle>solid;thick</lineStyle>
-				<axis>left</axis>
-				<label>GEPS (mean)</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<qualifierId>mean</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<line>
-				<color>blue</color>
-				<lineStyle>constant</lineStyle>
-				<axis>left</axis>
-				<label>RDPS</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="1"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<line>
-				<color>green</color>
-				<lineStyle>constant</lineStyle>
-				<axis>left</axis>
-				<label>GDPS</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<area>
-				<color>red</color>
-				<opaquenessPercentage>25</opaquenessPercentage>
-				<label>GEPS (min-max)</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<qualifierId>max</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<qualifierId>min</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-			</area>
-			<area>
-				<color>red</color>
-				<opaquenessPercentage>25</opaquenessPercentage>
-				<label>GEPS (25%-75%)</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<qualifierId>75%</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>TA.nwp</parameterId>
-					<qualifierId>25%</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-				</timeSeriesSet>
-			</area>
-		</subplot>
-		<subplot>
-			<line>
-				<color>blue4</color>
-				<lineStyle>solid;thick</lineStyle>
-				<axis>left</axis>
-				<label>GEPS (mean)</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<qualifierId>mean</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<line>
-				<color>blue</color>
-				<lineStyle>solid;thick</lineStyle>
-				<axis>left</axis>
-				<label>RDPS-Acc</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="1"/>
-					<readWriteMode>read only</readWriteMode>
-				</timeSeriesSet>
-			</line>
-			<line>
-				<color>green</color>
-				<lineStyle>solid;thick</lineStyle>
-				<axis>left</axis>
-				<label>GDPS-Acc</label>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
-					<readWriteMode>read only</readWriteMode>
-				</timeSeriesSet>
-			</line>
 			<area>
 				<color>blue</color>
 				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>GEPS (min-max)</label>
+				<label>25%-75%</label>
 				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<qualifierId>max</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<qualifierId>min</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>blue</color>
+				<color>light blue</color>
 				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>GEPS (25%-75%)</label>
+				<label>Min-Max</label>
 				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
-					<qualifierId>75%</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 				<timeSeriesSet>
-					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
-					<parameterId>PC.nwp.acc</parameterId>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>green</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
 					<qualifierId>25%</qualifierId>
-					<locationSetId>ModelBasins</locationSetId>
-					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="6"/>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>green1</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>red</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>red2</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ElbowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</area>
@@ -2470,24 +2459,10 @@
 		</subplot>
 	</plot>
 	<!--Display Groups -->
-	<displayGroup id="ImportHYDATHistoric" name="HYDAT Stations Historic">
-		<nodeId>DownloadHistoricalHydrometricData</nodeId>
+	<displayGroup id="ImportWSC" name="WSC Station Data">
+		<nodeId>ImportECCCWaterOffice</nodeId>
 		<singleLocationDisplays>
-			<locationSetId>DownloadHydroStations</locationSetId>
-			<plotId>WSCTemplate</plotId>
-		</singleLocationDisplays>
-	</displayGroup>
-	<displayGroup id="ImportHYDATRecent" name="HYDAT Stations Recent">
-		<nodeId>DownloadRealTimeHydrometricData</nodeId>
-		<singleLocationDisplays>
-			<locationSetId>DownloadHydroStations</locationSetId>
-			<plotId>WSCTemplate</plotId>
-		</singleLocationDisplays>
-	</displayGroup>
-	<displayGroup id="ImportWSCHourly" name="WSC Stations Recent">
-		<nodeId>ImportWSCHourly</nodeId>
-		<singleLocationDisplays>
-			<locationSetId>DownloadHydroStations</locationSetId>
+			<locationSetId>ProcessHydroStations</locationSetId>
 			<plotId>WSCTemplate</plotId>
 		</singleLocationDisplays>
 	</displayGroup>
@@ -2633,10 +2608,24 @@
 	</displayGroup>
 	<!-- Model Result Displays-->
 	<displayGroup id="ElbowRavenHistoric" name="ElbowRavenHistoric">
-		<nodeId>RunElbowRavenHistoric</nodeId>
+		<nodeId>ElbowRavenHistoric</nodeId>
 		<singleLocationDisplays>
 			<locationSetId>ElbowHydroStations</locationSetId>
 			<plotId>ElbowRavenHistoricTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ElbowRavenGDPSForecast" name="ElbowRavenGDPSForecast">
+		<nodeId>ElbowRavenGDPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ElbowRavenGEPSForecast" name="ElbowRavenGEPSForecast">
+		<nodeId>ElbowRavenGEPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
 		</singleLocationDisplays>
 	</displayGroup>
 	<displayGroup id="BowWflowHistoric" name="BowWflowHistoric">

@@ -3,18 +3,12 @@
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
 
 	<!-- SubBasin Model Mapping-->
-
-	<map internalLocation="Elbow_Raven_sub3" internalParameter="QR.sim" externalLocation="sub3" externalParameter="q_sim"/>
-	<map internalLocation="Elbow_Raven_sub4" internalParameter="QR.sim" externalLocation="sub4" externalParameter="q_sim"/>
-	<map internalLocation="Elbow_Raven_sub5" internalParameter="QR.sim" externalLocation="sub5" externalParameter="q_sim"/>
-	<map internalLocation="Elbow_Raven_sub6" internalParameter="QR.sim" externalLocation="sub6" externalParameter="q_sim"/>
 	<map internalLocation="05BJ004" internalParameter="QR.sim" externalLocation="sub7" externalParameter="q_sim"/>	
 	<map internalLocation="05BJ010" internalParameter="QR.sim" externalLocation="sub11" externalParameter="q_sim"/>
 
 	<!-- Custom Output Mapping -->
-<!--	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="Average_SNOW" internalParameter="SWE.sim"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="Average_SNOW_LIQ" internalParameter="SWE.mlt"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="Average_SOIL[0]" internalParameter="SMI.sim"/>-->
+	<function internalLocationSet="ElbowSubBasins" internalParameter="TA.sim" externalLocationFunction="@HRU_ID@" externalParameterFunction="Average_TEMP_AVE"/>
+	<function internalLocationSet="ElbowSubBasins" internalParameter="PC.sim" externalLocationFunction="@HRU_ID@" externalParameterFunction="Average_PRECIP"/>
 	<enableOneToOneMapping/>
 </idMap>
 

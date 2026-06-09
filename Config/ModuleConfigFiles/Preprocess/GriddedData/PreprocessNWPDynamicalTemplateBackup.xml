@@ -24,28 +24,28 @@
 			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
-			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" endOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<!--Output-->
+	<!-- Precipitation Output-->
 	<variable>
-		<variableId>gridded_precip_rate</variableId>
+		<variableId>basin_precip_rate_unfilled</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
-			<valueType>grid</valueType>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
 			<parameterId>PR.nwp</parameterId>
 			<qualifierId>temp</qualifierId>
-			<locationId>$INPUTGRID$</locationId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
-			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="0" end="$FORECAST_LENGTH_HOURS$" endOverrulable="true"/>
 			<readWriteMode>add originals</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
 	</variable>
-	<!-- Precipitation Output-->
 	<variable>
 		<variableId>basin_precip_rate</variableId>
 		<timeSeriesSet>
@@ -86,6 +86,20 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>subbasin_precip_rate_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PR.nwp</parameterId>
+			<qualifierId>temp</qualifierId>
+			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>subbasin_precip_rate</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
@@ -120,6 +134,20 @@
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
 			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
 			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_precip_rate_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PR.nwp</parameterId>
+			<qualifierId>temp</qualifierId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
@@ -327,32 +355,32 @@
 		</timeSeriesSet>
 	</variable>
 	<!--Transformations - precip-->
-	<transformation id="fill_gridded_precip">
+	<transformation id="precip_grid_to_basin">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>gridded_precip_rate_unfilled</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_precip_rate_unfilled</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="fill_basin_precip">
 		<interpolationSerial>
 			<default>
 				<inputVariable>
-					<variableId>gridded_precip_rate_unfilled</variableId>
+					<variableId>basin_precip_rate_unfilled</variableId>
 				</inputVariable>
 				<maxGapLength>1</maxGapLength>
 				<defaultValue>0</defaultValue>
 				<extrapolateDirection>start</extrapolateDirection>
 				<outputVariable>
-					<variableId>gridded_precip_rate</variableId>
+					<variableId>basin_precip_rate</variableId>
 				</outputVariable>
 			</default>
 		</interpolationSerial>
-	</transformation>
-	<transformation id="precip_grid_to_basin">
-		<interpolationSpatial>
-			<average>
-				<inputVariable>
-					<variableId>gridded_precip_rate</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>basin_precip_rate</variableId>
-				</outputVariable>
-			</average>
-		</interpolationSpatial>
 	</transformation>
 	<transformation id="basin_precip_rate_to_accum">
 		<user>
@@ -380,13 +408,28 @@
 		<interpolationSpatial>
 			<average>
 				<inputVariable>
-					<variableId>gridded_precip_rate</variableId>
+					<variableId>gridded_precip_rate_unfilled</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>subbasin_precip_rate</variableId>
+					<variableId>subbasin_precip_rate_unfilled</variableId>
 				</outputVariable>
 			</average>
 		</interpolationSpatial>
+	</transformation>
+	<transformation id="fill_subbasin_precip">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>subbasin_precip_rate_unfilled</variableId>
+				</inputVariable>
+				<maxGapLength>1</maxGapLength>
+				<defaultValue>0</defaultValue>
+				<extrapolateDirection>start</extrapolateDirection>
+				<outputVariable>
+					<variableId>subbasin_precip_rate</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
 	</transformation>
 	<transformation id="basin_precip_rate_to_accum">
 		<user>
@@ -414,14 +457,29 @@
 		<interpolationSpatial>
 			<closestDistance>
 				<inputVariable>
-					<variableId>gridded_precip_rate</variableId>
+					<variableId>gridded_precip_rate_unfilled</variableId>
 				</inputVariable>
 				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
 				<outputVariable>
-					<variableId>station_precip_rate</variableId>
+					<variableId>station_precip_rate_unfilled</variableId>
 				</outputVariable>
 			</closestDistance>
 		</interpolationSpatial>
+	</transformation>
+	<transformation id="fill_station_precip">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>station_precip_rate_unfilled</variableId>
+				</inputVariable>
+				<maxGapLength>1</maxGapLength>
+				<defaultValue>0</defaultValue>
+				<extrapolateDirection>start</extrapolateDirection>
+				<outputVariable>
+					<variableId>station_precip_rate</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
 	</transformation>
 	<transformation id="station_precip_rate_to_accum">
 		<user>
@@ -459,16 +517,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="basin_temperature_daily">
-		<statisticsSerial>
-			<mean>
+		<aggregation>
+		<instantaneous>
 				<inputVariable>
 					<variableId>basin_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>basin_temperature_daily</variableId>
 				</outputVariable>
-			</mean>
-		</statisticsSerial>
+		</instantaneous>
+		</aggregation>
 	</transformation>
 	<transformation id="basin_temp_daily_max">
 		<statisticsSerial>
@@ -507,16 +565,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="subbasin_temperature_daily">
-		<statisticsSerial>
-			<mean>
+		<aggregation>
+			<instantaneous>
 				<inputVariable>
 					<variableId>subbasin_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>subbasin_temperature_daily</variableId>
 				</outputVariable>
-			</mean>
-		</statisticsSerial>
+			</instantaneous>
+		</aggregation>
 	</transformation>
 	<transformation id="subbasin_temp_daily_max">
 		<statisticsSerial>
@@ -556,16 +614,16 @@
 		</interpolationSpatial>
 	</transformation>
 	<transformation id="station_temperature_daily">
-		<statisticsSerial>
-			<mean>
+		<aggregation>
+			<instantaneous>
 				<inputVariable>
 					<variableId>station_temperature</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>station_temperature_daily</variableId>
 				</outputVariable>
-			</mean>
-		</statisticsSerial>
+			</instantaneous>
+		</aggregation>
 	</transformation>
 	<transformation id="station_temp_daily_max">
 		<statisticsSerial>

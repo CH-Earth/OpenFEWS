@@ -10,7 +10,7 @@
 			<parameterId>$PARAMETER$</parameterId>
 			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>$GRIDTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
@@ -24,7 +24,7 @@
 			<parameterId>$PARAMETER$</parameterId>
 			<locationSetId>$BASINLOCATIONS$</locationSetId>
 			<timeSeriesType>$BASINTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
@@ -37,7 +37,7 @@
 			<parameterId>$PARAMETER$</parameterId>
 			<locationSetId>$SUBBASINLOCATIONS$</locationSetId>
 			<timeSeriesType>$SUBBASINTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>
@@ -50,7 +50,7 @@
 			<parameterId>$PARAMETER$</parameterId>
 			<locationSetId>$STATIONLOCATIONS$</locationSetId>
 			<timeSeriesType>$STATIONTIMESERIESTYPE$</timeSeriesType>
-			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 			<ensembleId>$ENSEMBLE$</ensembleId>
 		</timeSeriesSet>

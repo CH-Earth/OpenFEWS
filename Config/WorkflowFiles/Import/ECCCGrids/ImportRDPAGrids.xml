@@ -31,9 +31,11 @@
 			<!--Ensemble-->
 			<string key="ENSEMBLE" value="main"/>
 			<!--Timeseries Type-->
-			<string key="TIMESTEP" value="6"/>
+			<int key="TIMESTEP_HOUR" value="6"/>
 			<!--Parameter Type-->
 			<string key="PARAMETER" value="PC.sim"/>
+			<!--Parameter Type-->
+			<string key="PARAMETER_UNIT" value="kg m-2"/>
 			<!--File Type-->
 			<string key="IMPORTTYPE" value="grib2"/>
 		</properties>

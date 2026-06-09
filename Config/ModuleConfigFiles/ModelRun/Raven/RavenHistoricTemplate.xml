@@ -134,20 +134,34 @@
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</importNetcdfActivity>
-<!--			<importNetcdfActivity>
-				<importFile>$MODEL$_SNOW_Continuous_Average_ByHRU.nc</importFile>
+			<importNetcdfActivity>
+				<importFile>$MODEL$_RavenPrecipUsedByHRU.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>SWE.sim</parameterId>
+						<parameterId>PC.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="day"/>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</importNetcdfActivity>-->
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>$MODEL$_RavenTempUsedByHRU.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
 		</importActivities>
 	</activities>
 </generalAdapterRun>

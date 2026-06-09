@@ -33,4 +33,21 @@
 	<map internalLocation="05BJ004" internalParameter="QR.sim" externalLocation="7" externalParameter="HYDROGRAPH"/>
 	<map internalLocation="05BJ010" internalParameter="QR.sim" externalLocation="11" externalParameter="HYDROGRAPH"/>
 	<map internalLocation="05BJ001" internalParameter="QR.sim" externalLocation="13" externalParameter="HYDROGRAPH"/>
+	
+		<!-- Gauge mapping - Raven Elbow -->		
+	<map internalLocation="3050778" internalParameter="PC.sim" externalLocation="1" externalParameter="PRECIP"/>
+	<map internalLocation="05BL813" internalParameter="PC.sim" externalLocation="2" externalParameter="PRECIP"/>
+	<map internalLocation="3031092" internalParameter="PC.sim" externalLocation="3" externalParameter="PRECIP"/>
+	<map internalLocation="05BJ806" internalParameter="PC.sim" externalLocation="4" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BH803" internalParameter="PC.sim" externalLocation="5" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BJ804" internalParameter="PC.sim" externalLocation="6" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BF825" internalParameter="PC.sim" externalLocation="7" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BL809" internalParameter="PC.sim" externalLocation="8" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BH802" internalParameter="PC.sim" externalLocation="9" externalParameter="PRECIP"/>
+ 	<map internalLocation="FIRES-B4" internalParameter="PC.sim" externalLocation="10" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BJ805" internalParameter="PC.sim" externalLocation="11" externalParameter="PRECIP"/>
+ 	<map internalLocation="05BL812" internalParameter="PC.sim" externalLocation="12" externalParameter="PRECIP"/>
+ 	<map internalLocation="FIRES-B5" internalParameter="PC.sim" externalLocation="13" externalParameter="PRECIP"/>
+	<map internalLocation="05BL810" internalParameter="PC.sim" externalLocation="14" externalParameter="PRECIP"/>
+	<map internalLocation="05BF827" internalParameter="PC.sim" externalLocation="15" externalParameter="PRECIP"/>
 </idMap>
