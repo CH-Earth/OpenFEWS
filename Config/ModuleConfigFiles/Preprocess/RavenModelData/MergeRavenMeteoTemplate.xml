@@ -33,6 +33,38 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>Obs_temp_max_HRU_scalar</variableId>
+		<!-- Raven historic run's output of what it used for temperature for each HRU-->
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Obs_temp_min_HRU_scalar</variableId>
+		<!-- Raven historic run's output of what it used for temperature for each HRU-->
+		<timeSeriesSet>
+			<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>Forecast_precip</variableId>
 		<!-- precip forecast that has been raven HRU averaged-->
 		<timeSeriesSet>
@@ -60,12 +92,70 @@
 		</timeSeriesSet>
 	</variable>
 	<variable>
+		<variableId>Forecast_temp_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-1" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>Forecast_temp_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Preprocess$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-1" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
 		<variableId>GDPS_temp</variableId>
 		<!--This is used for the final merge to extend the temperature to 7 days-->
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GDPS_temp_max</variableId>
+		<!--This is used for the final merge to extend the temperature to 7 days-->
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GDPS_temp_min</variableId>
+		<!--This is used for the final merge to extend the temperature to 7 days-->
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep id="$TIMESTEP$"/>
@@ -94,6 +184,34 @@
 			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_temp_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$FORECAST_ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_temp_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
 			<locationSetId>$LOCATIONSET$</locationSetId>
 			<timeSeriesType>simulated forecasting</timeSeriesType>
 			<timeStep unit="day" multiplier="1"/>
@@ -149,6 +267,46 @@
 				<fillGapConstant>0</fillGapConstant>
 				<outputVariable>
 					<variableId>Output_temp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="merge_temp_max">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_temp_max</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Obs_temp_max_HRU_scalar</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>GDPS_temp_max</variableId>
+				</inputVariable>
+				<!-- Additional Gap Fill is only for very last component of forecast (i.e. GDPS doesn't go full 7 days from T0)-->
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>Output_temp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="merge_temp_min">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_temp_min</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Obs_temp_min_HRU_scalar</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>GDPS_temp_min</variableId>
+				</inputVariable>
+				<!-- Additional Gap Fill is only for very last component of forecast (i.e. GDPS doesn't go full 7 days from T0)-->
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>Output_temp_min</variableId>
 				</outputVariable>
 			</simple>
 		</merge>

@@ -74,7 +74,17 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>TA.obs</parameterId>
+						<parameterId>TAmax.obs</parameterId>
+						<locationSetId>$INPUTLOCATIONSET$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmin.obs</parameterId>
 						<locationSetId>$INPUTLOCATIONSET$</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>

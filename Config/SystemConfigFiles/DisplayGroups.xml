@@ -1586,20 +1586,22 @@
 	<plot id="ElbowRavenForecastTemplate">
 		<subplot>
 			<line>
-				<color>red</color>
+				<color>black</color>
 				<lineStyle>constant</lineStyle>
-				<label>NRT (5-min) Data  @ID@</label>
+				<label>Measured Data  @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ImportWSC</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.obs</parameterId>
 					<locationSetId>ElbowHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep unit="minute" multiplier="5"/>
+					<timeStep id="day_GMT"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
 			<line>
+				<color>blue</color>
+				<lineStyle>constant</lineStyle>
 				<label>Historic Model Run @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenHistoric</moduleInstanceId>
@@ -1612,7 +1614,9 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>RDPS Forecast @ID@</label>
+				<color>medium violet red</color>
+				<lineStyle>constant</lineStyle>
+				<label>RDPS Forecast </label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenRDPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1624,7 +1628,9 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>GDPS Forecast @ID@</label>
+				<color>brown</color>
+				<lineStyle>constant</lineStyle>
+				<label>GDPS Forecast </label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGDPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1636,8 +1642,9 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-			<color>blue</color>
-				<label>GEPS Forecast @ID@</label>
+				<color>purple</color>
+				<lineStyle>dashed</lineStyle>
+				<label>GEPS Forecast </label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1651,7 +1658,9 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>GEFS Forecast @ID@</label>
+				<color>red</color>
+				<lineStyle>dashed</lineStyle>
+				<label>GEFS Forecast </label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1664,7 +1673,9 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>IFS Forecast @ID@</label>
+				<color>green</color>
+				<lineStyle>dashed</lineStyle>
+				<label>IFS Forecast </label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1677,87 +1688,9 @@
 				</timeSeriesSet>
 			</line>
 			<area>
-				<color>slate gray1</color>
-				<opaquenessPercentage>30</opaquenessPercentage>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>max</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>min</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</area>
-			<area>
-				<color>slate gray2</color>
-				<opaquenessPercentage>30</opaquenessPercentage>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>90</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>10</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</area>
-			<area>
-				<color>slate gray3</color>
-				<opaquenessPercentage>30</opaquenessPercentage>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>75</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-				<timeSeriesSet>
-					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.obs</parameterId>
-					<qualifierId>25</qualifierId>
-					<locationSetId>ElbowHydroStations</locationSetId>
-					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<cycle unit="year"/>
-					<readWriteMode>add originals</readWriteMode>
-				</timeSeriesSet>
-			</area>
-			<area>
-				<color>blue</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>25%-75%</label>
+				<color>purple</color>
+				<opaquenessPercentage>70</opaquenessPercentage>
+				<label>25%-75% GEPS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1780,9 +1713,9 @@
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>light blue</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>Min-Max</label>
+				<color>purple</color>
+				<opaquenessPercentage>20</opaquenessPercentage>
+				<label>Min-Max GEPS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1806,8 +1739,8 @@
 			</area>
 			<area>
 				<color>green</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>25%-75%</label>
+				<opaquenessPercentage>70</opaquenessPercentage>
+				<label>25%-75% IFS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1830,9 +1763,9 @@
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>green1</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>Min-Max</label>
+				<color>green</color>
+				<opaquenessPercentage>20</opaquenessPercentage>
+				<label>Min-Max IFS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenIFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1856,8 +1789,8 @@
 			</area>
 			<area>
 				<color>red</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>25%-75%</label>
+				<opaquenessPercentage>70</opaquenessPercentage>
+				<label>25%-75% GEFS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -1880,9 +1813,9 @@
 				</timeSeriesSet>
 			</area>
 			<area>
-				<color>red2</color>
-				<opaquenessPercentage>50</opaquenessPercentage>
-				<label>Min-Max</label>
+				<color>red</color>
+				<opaquenessPercentage>20</opaquenessPercentage>
+				<label>Min-Max GEFS</label>
 				<timeSeriesSet>
 					<moduleInstanceId>ElbowRavenGEFSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
@@ -2614,6 +2547,20 @@
 			<plotId>ElbowRavenHistoricTemplate</plotId>
 		</singleLocationDisplays>
 	</displayGroup>
+	<displayGroup id="ElbowRavenHistoricStateUpdate" name="ElbowRavenHistoricStateUpdate">
+		<nodeId>ElbowRavenHistoricStateUpdate</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenHistoricTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ElbowRavenHRDPSForecast" name="ElbowRavenHRDPSForecast">
+		<nodeId>ElbowRavenHRDPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
 	<displayGroup id="ElbowRavenGDPSForecast" name="ElbowRavenGDPSForecast">
 		<nodeId>ElbowRavenGDPSForecast</nodeId>
 		<singleLocationDisplays>
@@ -2621,8 +2568,29 @@
 			<plotId>ElbowRavenForecastTemplate</plotId>
 		</singleLocationDisplays>
 	</displayGroup>
+	<displayGroup id="ElbowRavenREPSForecast" name="ElbowRavenREPSForecast">
+		<nodeId>ElbowRavenREPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
 	<displayGroup id="ElbowRavenGEPSForecast" name="ElbowRavenGEPSForecast">
 		<nodeId>ElbowRavenGEPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ElbowRavenGEFSForecast" name="ElbowRavenGEFSForecast">
+		<nodeId>ElbowRavenGEFSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ElbowHydroStations</locationSetId>
+			<plotId>ElbowRavenForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ElbowRavenIFSForecast" name="ElbowRavenIFSForecast">
+		<nodeId>ElbowRavenIFSForecast</nodeId>
 		<singleLocationDisplays>
 			<locationSetId>ElbowHydroStations</locationSetId>
 			<plotId>ElbowRavenForecastTemplate</plotId>

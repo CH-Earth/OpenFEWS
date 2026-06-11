@@ -4,35 +4,63 @@
 	<!-- Gauge mapping - Raven Elbow -->		
 	<map internalLocation="3050778" internalParameter="PC.obs" externalLocation="1" externalParameter="PRECIP"/>
 	<map internalLocation="3050778" internalParameter="TA.obs" externalLocation="1" externalParameter="TEMP_AVE"/>
+	<map internalLocation="3050778" internalParameter="TAmax.obs" externalLocation="1" externalParameter="TEMP_MAX"/>
+	<map internalLocation="3050778" internalParameter="TAmin.obs" externalLocation="1" externalParameter="TEMP_MIN"/>
 	<map internalLocation="05BL813" internalParameter="PC.obs" externalLocation="2" externalParameter="PRECIP"/>
 	<map internalLocation="05BL813" internalParameter="TA.obs" externalLocation="2" externalParameter="TEMP_AVE"/>
+	<map internalLocation="05BL813" internalParameter="TAmax.obs" externalLocation="2" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BL813" internalParameter="TAmin.obs" externalLocation="2" externalParameter="TEMP_MIN"/>
 	<map internalLocation="3031092" internalParameter="PC.obs" externalLocation="3" externalParameter="PRECIP"/>
 	<map internalLocation="3031092" internalParameter="TA.obs" externalLocation="3" externalParameter="TEMP_AVE"/>
+	<map internalLocation="3031092" internalParameter="TAmax.obs" externalLocation="3" externalParameter="TEMP_MAX"/>
+	<map internalLocation="3031092" internalParameter="TAmin.obs" externalLocation="3" externalParameter="TEMP_MIN"/>
 	<map internalLocation="05BJ806" internalParameter="PC.obs" externalLocation="4" externalParameter="PRECIP"/>
  	<map internalLocation="05BJ806" internalParameter="TA.obs" externalLocation="4" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BJ806" internalParameter="TAmax.obs" externalLocation="4" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BJ806" internalParameter="TAmin.obs" externalLocation="4" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BH803" internalParameter="PC.obs" externalLocation="5" externalParameter="PRECIP"/>
  	<map internalLocation="05BH803" internalParameter="TA.obs" externalLocation="5" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BH803" internalParameter="TAmax.obs" externalLocation="5" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BH803" internalParameter="TAmin.obs" externalLocation="5" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BJ804" internalParameter="PC.obs" externalLocation="6" externalParameter="PRECIP"/>
  	<map internalLocation="05BJ804" internalParameter="TA.obs" externalLocation="6" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BJ804" internalParameter="TAmax.obs" externalLocation="6" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BJ804" internalParameter="TAmin.obs" externalLocation="6" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BF825" internalParameter="PC.obs" externalLocation="7" externalParameter="PRECIP"/>
  	<map internalLocation="05BF825" internalParameter="TA.obs" externalLocation="7" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BF825" internalParameter="TAmax.obs" externalLocation="7" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BF825" internalParameter="TAmin.obs" externalLocation="7" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BL809" internalParameter="PC.obs" externalLocation="8" externalParameter="PRECIP"/>
  	<map internalLocation="05BL809" internalParameter="TA.obs" externalLocation="8" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BL809" internalParameter="TAmax.obs" externalLocation="8" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BL809" internalParameter="TAmin.obs" externalLocation="8" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BH802" internalParameter="PC.obs" externalLocation="9" externalParameter="PRECIP"/>
  	<map internalLocation="05BH802" internalParameter="TA.obs" externalLocation="9" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BH802" internalParameter="TAmax.obs" externalLocation="9" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BH802" internalParameter="TAmin.obs" externalLocation="9" externalParameter="TEMP_MIN"/>
  	<map internalLocation="FIRES-B4" internalParameter="PC.obs" externalLocation="10" externalParameter="PRECIP"/>
  	<map internalLocation="FIRES-B4" internalParameter="TA.obs" externalLocation="10" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="FIRES-B4" internalParameter="TAmax.obs" externalLocation="10" externalParameter="TEMP_MAX"/>
+	<map internalLocation="FIRES-B4" internalParameter="TAmin.obs" externalLocation="10" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BJ805" internalParameter="PC.obs" externalLocation="11" externalParameter="PRECIP"/>
  	<map internalLocation="05BJ805" internalParameter="TA.obs" externalLocation="11" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BJ805" internalParameter="TAmax.obs" externalLocation="11" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BJ805" internalParameter="TAmin.obs" externalLocation="11" externalParameter="TEMP_MIN"/>
  	<map internalLocation="05BL812" internalParameter="PC.obs" externalLocation="12" externalParameter="PRECIP"/>
  	<map internalLocation="05BL812" internalParameter="TA.obs" externalLocation="12" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="05BL812" internalParameter="TAmax.obs" externalLocation="12" externalParameter="TEMP_MAX"/>
+	<map internalLocation="05BL812" internalParameter="TAmin.obs" externalLocation="12" externalParameter="TEMP_MIN"/>
  	<map internalLocation="FIRES-B5" internalParameter="PC.obs" externalLocation="13" externalParameter="PRECIP"/>
  	<map internalLocation="FIRES-B5" internalParameter="TA.obs" externalLocation="13" externalParameter="TEMP_AVE"/>
+ 	<map internalLocation="FIRES-B5" internalParameter="TAmax.obs" externalLocation="13" externalParameter="TEMP_MAX"/>
+	<map internalLocation="FIRES-B5" internalParameter="TAmin.obs" externalLocation="13" externalParameter="TEMP_MIN"/>
 	<map internalLocation="05BL810" internalParameter="PC.obs" externalLocation="14" externalParameter="PRECIP"/>
 	<map internalLocation="05BF827" internalParameter="PC.obs" externalLocation="15" externalParameter="PRECIP"/>
 	<map internalLocation="05BJ004" internalParameter="QR.sim" externalLocation="7" externalParameter="HYDROGRAPH"/>
 	<map internalLocation="05BJ010" internalParameter="QR.sim" externalLocation="11" externalParameter="HYDROGRAPH"/>
 	<map internalLocation="05BJ001" internalParameter="QR.sim" externalLocation="13" externalParameter="HYDROGRAPH"/>
+	
+	
 	
 		<!-- Gauge mapping - Raven Elbow -->		
 	<map internalLocation="3050778" internalParameter="PC.sim" externalLocation="1" externalParameter="PRECIP"/>

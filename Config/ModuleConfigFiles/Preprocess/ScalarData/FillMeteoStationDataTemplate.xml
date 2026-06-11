@@ -26,6 +26,30 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>station_temperature_max_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUT_MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_temperature_min_unfilled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUT_MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
 	<!--Output Station-->
 	<variable>
 		<variableId>station_precip_filled</variableId>
@@ -51,6 +75,30 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>station_temperature_max_filled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_temperature_min_filled</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
 	<!--Transformations-->
 	<transformation id="station_precip_fill">
 		<merge>
@@ -66,15 +114,39 @@
 		</merge>
 	</transformation>
 	<transformation id="station_temperature_fill">
-	<interpolationSerial>
-		<block>
-			<inputVariable>
-				<variableId>station_temperature_unfilled</variableId>
-			</inputVariable>
-			<outputVariable>
-				<variableId>station_temperature_filled</variableId>
-			</outputVariable>
-		</block>
-	</interpolationSerial>
+		<interpolationSerial>
+			<block>
+				<inputVariable>
+					<variableId>station_temperature_unfilled</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>station_temperature_filled</variableId>
+				</outputVariable>
+			</block>
+		</interpolationSerial>
+	</transformation>
+		<transformation id="station_temperature_max_fill">
+		<interpolationSerial>
+			<block>
+				<inputVariable>
+					<variableId>station_temperature_max_unfilled</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>station_temperature_max_filled</variableId>
+				</outputVariable>
+			</block>
+		</interpolationSerial>
+	</transformation>
+		<transformation id="station_temperature_fill">
+		<interpolationSerial>
+			<block>
+				<inputVariable>
+					<variableId>station_temperature_min_unfilled</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>station_temperature_min_filled</variableId>
+				</outputVariable>
+			</block>
+		</interpolationSerial>
 	</transformation>
 </transformationModule>

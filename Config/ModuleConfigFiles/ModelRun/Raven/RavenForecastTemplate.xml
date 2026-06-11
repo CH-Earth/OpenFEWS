@@ -79,6 +79,16 @@
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
+<!--					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<qualifierId>min</qualifierId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>-->
 				</timeSeriesSets>
 				<omitMissingValues>true</omitMissingValues>
 			</exportNetcdfActivity>

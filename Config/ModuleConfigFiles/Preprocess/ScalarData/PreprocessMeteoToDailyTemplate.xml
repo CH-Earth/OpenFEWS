@@ -51,6 +51,32 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<variable>
+		<variableId>TA_day_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_day_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
 	<!--Output-->
 	<!--Transformations-->
 	<transformation id="PC_Daily_sum">
@@ -75,6 +101,30 @@
 					<variableId>TA_day</variableId>
 				</outputVariable>
 			</mean>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="TA_Daily_Max">
+		<statisticsSerial>
+			<max>
+				<inputVariable>
+					<variableId>TA_hourly</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_day_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsSerial>
+	</transformation>
+		<transformation id="TA_Daily_Min">
+		<statisticsSerial>
+			<min>
+				<inputVariable>
+					<variableId>TA_hourly</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_day_min</variableId>
+				</outputVariable>
+			</min>
 		</statisticsSerial>
 	</transformation>
 </transformationModule>
